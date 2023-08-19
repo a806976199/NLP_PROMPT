@@ -1,0 +1,8 @@
+
+进入chatglm2的配置文件目录:
+cd /work/home/science/project/chenkejie_code/ChatGLM2-6B
+
+激活chatglm2的环境,这个环境已经安装了chatglm2-6b训练需要的包
+conda activate chatglm2 
+
+然后就通过slurm调度系统提交作业来跑代码,但是这个提交作业的脚本我还没弄好.
