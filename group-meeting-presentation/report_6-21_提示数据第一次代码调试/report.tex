@@ -1,0 +1,381 @@
+\documentclass[t]{beamer}
+\usepackage{CJKutf8}
+\usepackage{amsfonts}
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{amsthm}
+    \usepackage{enumerate}
+    \usepackage{graphicx}
+    \usepackage{layout}
+    \usepackage{mathrsfs}
+    \usepackage{fancyhdr}
+    \usepackage{subfigure}
+    \usepackage{tcolorbox}
+    \usepackage{tikz-cd}
+    \usepackage{color}
+    \usepackage{pifont}
+    \usepackage{verbatim}
+    \usepackage{mathtools}
+    \usepackage{float}
+    \usepackage{bm}
+    \usetheme{AnnArbor}
+% \usetheme{Antibes}
+\usecolortheme{beaver}
+\usepackage{listings}
+
+% 设置JSON样式
+\lstdefinestyle{json}{
+    basicstyle=\tiny\ttfamily,
+    columns=fullflexible,
+    showstringspaces=false,
+    commentstyle=\color{gray},
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    breaklines=true,
+    frame=single,
+    captionpos=b,
+    aboveskip=10pt,
+    belowskip=10pt
+}
+
+\lstset{
+    language=Python, % 设置代码块语言为Python
+    breaklines=true, % 自动换行
+    basicstyle=\small\ttfamily, % 设置基本字体样式
+    keywordstyle=\bfseries\color{blue}, % 设置关键字样式
+    commentstyle=\itshape\color{gray}, % 设置注释样式
+    showstringspaces=false, % 不显示字符串中的空格
+    frame=single, % 设置代码块边框样式
+    numbers=left, % 行号显示在左侧
+    numberstyle=\tiny\color{gray}, % 设置行号样式
+    stepnumber=1, % 设置行号间隔
+    tabsize=4 % 设置制表符宽度
+}
+
+
+% 设置shell样式
+\lstdefinestyle{shell}{
+    language=bash,
+    basicstyle=\tiny\ttfamily,
+    columns=fullflexible,
+    showstringspaces=false,
+    commentstyle=\color{gray},
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    breaklines=true,
+    frame=single,
+    captionpos=b,
+    aboveskip=10pt,
+    belowskip=10pt
+}
+
+% 添加网址的命令
+\usepackage{hyperref}
+% 这是一个带链接文本的示例：\href{https://www.example.com}{点击这里访问网站}
+% 普通的示例：\url{https://www.example.com}
+% 表格
+\usepackage{booktabs}
+\usepackage{multirow}
+
+% \setbeamertemplate{navigation symbols}{}
+
+\usepackage{textpos}
+
+\newcommand{\dif}{\mathrm{d}}
+\newtheorem{thm}{{定理}}
+
+% some common command
+\newcommand{\mm}[1]{$ #1$\newline}
+% \newcommand{\tuichu}{\Rightarrow}
+% \newcommand{\li}[1]{\newline#1}
+
+
+
+\newcommand{\analysis}[2]{\forall \mathcal{E}{#1},\exists \delta {#2},s.t.}
+\newcommand{\denyanalysis}[2]{\exists \mathcal{E}{#1},\forall \delta {#2},s.t.}
+\newcommand{\yield}{\Rightarrow }
+\newcommand{\jj}{\newline}
+\newcommand{\ff}[1]{$ #1$}   % math environment + newline
+\newcommand{\fgn}[1]{\begin{equation}#1\end{equation}  }
+\newcommand{\fg}[1]{$$ #1$$}   % math environment + newline 
+\newcommand{\pf}{$proof.$\newline}
+\newcommand{\ee}{\newline\ff{\Box}\newline}
+\newcommand{\fenshi}[2]{\ff{\frac{#1}{#2}}}
+\newcommand{\shenlue}{\vdots\jj}
+\newcommand{\abs}[1]{{\left \lvert #1 \right\rvert}}
+\newcommand{\loge}[1]{In ({#1})}
+\newcommand{\logical}[2]{log_{#2}^{#1}}
+\newcommand{\summary}[3]{$\sum_{{#1}={#2}}^{#3}  $}
+\newcommand{\denjia}[2]{{#1}\Leftrightarrow {#2}}
+\newcommand{\jihe}[3]{ {#1}  = \{ {#2} \mid {#3} \} }
+\newcommand{\ve}[2]{\left\langle {#1},{#2}\right \rangle}
+\newcommand{\dakuohao}[2]{\begin{array}{rcl}{#1}\end{array} \} \Rightarrow{#2}}
+\newcommand{\sxb}[3]{#1^{#2}_{#3}}
+\newcommand{\sss}[2]{#1^{#2}}
+\newcommand{\xxx}[2]{#1_{#2}}
+\newcommand{\bri}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\ri}[1]{\romannumeral#1} 
+\newcommand{\polynomial}[8]{#1_{#2}#6^{#7}+#1_{#3}#6^{#8}+...+#1_{#4}#6+#1_{#5} }
+\newcommand{\newd}[4]{f[{#1}_{#2},{#4},{#1}_{#3}]}
+\newcommand{\lb}[2]{\begin{align*}\begin{split}{#1}\{ {#2}\end{split}\end{align*}}
+\newcommand{\tab}[1]{\begin{array}{ll} {#1}\end{array}}
+
+
+% 向量乘积
+\newcommand{\avg}[1]{\left\langle #1 \right\rangle}
+% 偏微分方程
+\newcommand{\difFrac}[2]{\frac{\dif #1}{\dif #2}}
+\newcommand{\pdfrac}[2]{\frac{\partial{#1}}{\partial{#2}}}
+% 不同章节
+\newcommand{\one}[1]{\section{#1}}
+\newcommand{\two}[1]{\subsection{#1}}
+\newcommand{\three}[1]{\subsubsection{#1}}
+\newcommand{\aone}[1]{\section*{#1}}
+\newcommand{\atwo}[1]{\subsection*{#1}}
+\newcommand{\athree}[1]{\subsubsection*{#1}}
+% 大括号，左右都有
+\newcommand{\lbra}[1]{\left\{  {\begin{matrix} #1 \end{matrix}}\right. } 
+% 样式 括号前缀 + 括号 
+\newcommand{\lbras}[2]{{#1}\left\{ {  {\begin{matrix} #2 \end{matrix}}}\right. } 
+\newcommand{\rbra}[1]{ \left.  {\begin{matrix} #1 \end{matrix}} \right\}  } 
+% 模长
+\newcommand{\distance}[1]{\parallel #1\parallel }
+% 等价
+\newcommand{\equ}{\Longleftrightarrow }
+% 共轭
+\newcommand{\cja}[1]{\overline{#1}}
+% 两个矩阵，上面是 方框[] 下面是线条| 中间是 无
+\newcommand{\mtx}[1]{\begin{matrix}#1\end{matrix} }
+\newcommand{\bmtx}[1]{\begin{bmatrix}#1\end{bmatrix} }
+\newcommand{\vmtx}[1]{\begin{vmatrix}#1\end{vmatrix} }
+% \newcommand{\table}[1]{\begin{array}[lr]{ccc} #1 \end{array}}
+
+%输入普通字符
+\newcommand{\ww}[1]{\text{#1}}
+
+% 所有内容 直接头文件搞定
+\newcommand{\everything}[1]{\begin{document}\begin{CJK*}{UTF8}{gkai}#1\end{CJK*}\end{document}}
+
+
+% 存放代码(失败了)
+\newcommand{\cccode}[1]{\begin{lstlisting}#1\end{lstlisting}}
+
+% 改变特定行序列
+\newcommand{\ttt}{\subsection{}}
+
+% 嵌套序号
+\newcommand{\eee}[1]{\begin{enumerate}#1\end{enumerate}}
+
+
+% 模板里面的一些宏
+\newcommand{\pdfFrac}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\OFL}{\mathrm{OFL}}
+\newcommand{\UFL}{\mathrm{UFL}}
+\newcommand{\fl}{\mathrm{fl}}
+\newcommand{\op}{\odot}
+\newcommand{\Eabs}{E_{\mathrm{abs}}}
+\newcommand{\Erel}{E_{\mathrm{rel}}}
+% 变化颜色
+\newcommand{\red}{\textcolor{red}}
+\newcommand{\blue}{\textcolor{blue}}
+
+
+
+% 流程图需要用到的宏包
+\usepackage{palatino}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width = 2cm, minimum height=1cm,text centered, draw = black, fill = red!40]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=2cm, minimum height=1cm, text centered, draw=black, fill = blue!40]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill = yellow!50]
+\tikzstyle{decision} = [diamond, aspect = 3, text centered, draw=black, fill = green!30]
+% 箭头形式
+\tikzstyle{arrow} = [->,>=stealth]
+% 4个非常重要 的新命令
+\newcommand{\start}[2]{    \node (start) [startstop]{#1};\node (in1) [io, below of = start]{#2};\lin{start}{in1}{}}
+\newcommand{\stopp}[3]{\node (out1) [io, below of= #1]{#2};\node (stop) [startstop, below of=out1]{#3};\lin{out1}{stop}{} }
+\newcommand{\pro}[6]{    \node (#3) [process, #2 of=#1,xshift=#4 cm]{#5};}
+\newpage
+\newcommand{\lin}[3]{\draw [arrow] (#1) --node [above] {#3} (#2);}
+
+
+\begin{document}
+\begin{CJK*}{UTF8}{gkai}
+% 一般第一页显示PPT标题以及作者信息
+
+% \BackgroundPic{./Screenshot from 2022-04-20 16-31-08.png}
+
+% 增加学校 前面
+\addtobeamertemplate{title page}{}{
+	\begin{tikzpicture}[remember picture,overlay]
+		% \node[yshift=85pt,xshift=50pt]{\includegraphics[height=2cm]{Screenshot from 2022-04-20 16-51-21.png}};
+\end{tikzpicture}
+}
+
+
+	% \title{时间序列数据集}
+	\title{组会汇报}
+	\subtitle {} %不需要
+	\author{
+		陈钶杰\, \\
+		专业:计算数学\,
+	} % 显示作者
+	% \institute {学院：数学科学学院} % 设置学院机构	
+	\date{\today}  % 显示日期
+\titlepage
+
+% 设置目录
+\begin{frame}{目录}
+\frametitle{目录}	
+\tableofcontents  % 显示目录
+\end{frame} 
+
+
+\section{代码的调试工作}
+
+\subsection{简单函数的指令微调测试}
+
+% \subsection{调试选用的预训练模型}
+
+
+\subsection{测试的数据集}
+
+\begin{frame}[fragile]
+	\frametitle{对instruction类型的key-value进行格式修改}	
+    \begin{lstlisting}
+		def format_example(example: dict) -> dict:
+		context = f"Instruction: {example['instruction']}\n"
+		if example.get("input"):
+			context += f"Input: {example['input']}\n"
+		context += "Answer: "
+        target = example["output"]
+        # {"context": context, "target": target}
+        example['context'] = context
+        example['target'] = target
+        return example
+    \end{lstlisting}
+	\begin{itemize}
+		\item 将instruction和input进行合并作为context
+		\item 将output作为target
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{数据集的形式}	
+	\begin{itemize}
+		\item 对于基本的时间序列中形如"2021-01-01 00:00:00",在词长度等上面比较繁琐，所以使用一个简单的序列x来替代
+		\item 使用了如下的基本序列：
+		\ff{
+			\bmtx{
+				x & sin(x) \\
+				1 &  sin(1) \\
+				\vdots & \vdots \\
+			}
+		}
+		\item 指令微调的形式如下：
+		\begin{lstlisting}[style=json]
+			{
+				"Instruction": "For a test data sequence, from the existing 16 sequences,predict the last column of future 8 sequences?",
+				"Input": "0,0.0,#,1,0.8415,#,2,0.9093,#,3,0.1411,#,4,-0.7568,#,5,-0.9589,#,6,-0.2794,#,7,0.657,#,8,0.9894,#,9,0.4121,#,10,-0.544,#,11,-1.0,#,12,-0.5366,#,13,0.4202,#,14,0.9906,#,15,0.6503",
+				"Output": "-0.2879,-0.9614,-0.751,0.1499,0.9129,0.8367,-0.0089,-0.8462"
+			  }
+		\end{lstlisting}
+		\item 其中预测形式是(input:1-16 output:17-20),(input:2-17 output:18-22),...
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{对测试集合的调整}
+	\begin{itemize}
+		\item 在数量上一共给定了10000和30000长度的序列。
+		\item 在instruction预测长度有三种：16预测8,8预测4,两种混合的情况(这种情况下序列长度是20000)
+		\item 两种序列：单变量序列\ff{(x,sin(x))},多变量序列\ff{(x,cos(x),sin(x^2 + 2),sin(x))}
+		\item 使用的预训练模型为chatglm
+	\end{itemize}
+	记10000长度，16预测8,单变量序列的数据集的训练结果：result-10000-16-8-one
+\end{frame}
+
+\subsection{评估指标说明}
+
+\begin{frame}
+	\frametitle{Rouge评价指标}
+	\begin{itemize}
+		\item 举个例子说明召回率，精确度，F1分数三种指标，举个例子说明：比如有200件信封，其中垃圾邮件150，现在要判定好坏邮件，模型判断出了100封有问题的邮件。但是实际上有80封是垃圾邮件，其他的是没有问题的。
+		\eee{
+			\item 召回率就是正确预测的数量/所有正确的数量=80/150=0.53，
+			\item 精确度就是正确预测的数量/所有预测为正的样本数量=80/100=0.8
+			\item F1分数是综合考虑召回率和精确度的评估指标。他是召回率和精确度的调和平均值，用于评估模型在分类任务中的性能。\\
+			计算公式：\ff{
+				\ww{F1分数}=\frac{2(\ww{精确度}*\ww{召回率})}{\ww{精确度}+\ww{召回率}}=0.637
+			}
+			\item F1 分数的取值范围是 0 到 1，越接近 1 表示模型的性能越好。
+			% \item F1 分数的重要性在于它平衡了召回率和精确度的权衡。召回率衡量了模型的覆盖能力，即模型能够正确预测出多少个正例样本；而精确度衡量了模型的准确性，即模型在预测为正例的样本中有多少个是真正的正例。F1 分数通过取调和平均值，既考虑了模型的覆盖能力，又考虑了模型的准确性。
+			% \item F1 分数特别适用于那些具有不均衡类别分布的问题，其中正例和负例样本数量差异较大。在这种情况下，仅使用召回率或精确度可能会导致评估结果有所偏颇。而使用 F1 分数可以综合考虑两者，提供更全面的性能评估。
+		}
+	\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{评价指标}
+	\begin{itemize}
+		\item Rouge-1（Rouge-N）： 衡量生成的摘要与参考摘要之间的 unigram（单个词）重叠程度。
+		\item Rouge-2（Rouge-N）：衡量生成的摘要与参考摘要之间的 bigram（两个连续词）重叠程度。
+		\item Rouge-L：衡量生成的摘要与参考摘要之间的长序列重叠程度。
+		\item BLEU-4：计算4个连续词之间的重叠程度
+		\item (rouge指标通常使用上述的F1分数)
+	\end{itemize}
+\end{frame}
+
+\subsection{运行结果}
+
+\begin{frame}[fragile]
+	\frametitle{运行结果展示}	
+	\begin{itemize}
+		\item 见result.xlsx
+	\end{itemize}
+\end{frame}
+
+\subsection{结果分析}
+
+\begin{frame}[fragile]
+	\frametitle{运行结果分析}	
+	\begin{itemize}
+		\item 基本上预测长度越短，效果就越好，比如根据8个预测后面4个效果比根据16个数据预测后面8个数据要更好。
+		\item 使用的序列越长效果反而不好，猜测可能的原因是发生了过拟合。
+		\item 数据集中包含不同预测长度的序列的模型的预测结果良好。
+	\end{itemize}
+\end{frame}
+
+{后续工作}
+
+\begin{frame}
+	\frametitle{后续工作}
+	\eee{
+		\item 前面测试的虽然是不同的预测长度序列，但是数据集的序列是固定的，比如是(x,sin(x))序列不同的长度的预测。之后可以尝试同一个数据集里有(x,sin(x)),(x,cos(x),sin(x))等多种不同的序列，并且预测长度也可以不同。
+		\item 改变评估指标\\
+		这边的评估指标Rouge是文本摘要质量的评估指标,这个指标主要评估的是序列之间的相似度，比如目标序列1.1,1.2,1.3,预测结果100,1.2,1.3的效果是远高于预测结果1.0,1.3,1.4。所以对于序列预测，最终的评估指标应该改成MAE或MSE.构建合适的评估数据集。
+		\item 当前的目标：此模型能够对于已有的多种不同的时间序列数据集(已经见过的)进行预测。
+		% \item 当前的目标是将所有时间序列的指令数据集合进行特殊的合并。构建出一个可以测试所有数据集的模型，这个是当前我需要做的。
+		% \eee{
+			% \item 实现简单的序列良好效果，何为良好的效果：能够对于序列作出相比时间序列模型误差不大，能够具有良好的误差？
+			% \item 如果效果不好的要如何修改指令数据集合？通过喂养更多的数据集合吗？但是感觉需要更大的模型喂养更多？这个倒有很多方法，但是效果到底好不好也不知道了？
+			% \item 如果上面的问题全部都解决了，那就还有一个问题就是不能测试太长的数据集合。这个问题是硬伤，不知道如何解决？
+			% \item 
+		% }
+	}
+\end{frame}
+
+% 结束语
+\section{}
+\begin{frame}
+	\frametitle{}
+	\begin{center}
+		\Huge{谢谢老师和同学的聆听!}
+	\end{center}
+\end{frame}
+
+
+\end{CJK*}
+\end{document}

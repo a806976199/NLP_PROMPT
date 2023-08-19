@@ -1,0 +1,7 @@
+\beamer@sectionintoc {1}{论文:PromptCast时间序列预测}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{文章中和当前工作相似的内容}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{文章中得到的一些启发}{5}{0}{1}
+\beamer@sectionintoc {2}{代码调试工作}{9}{0}{2}
+\beamer@subsectionintoc {2}{1}{结果展示}{9}{0}{2}
+\beamer@subsectionintoc {2}{2}{实验结果分析}{12}{0}{2}
+\beamer@subsectionintoc {2}{3}{下一步的计划}{13}{0}{2}

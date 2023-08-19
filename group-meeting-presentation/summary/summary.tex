@@ -1,0 +1,336 @@
+\documentclass[a4paper,oneside]{article}
+\usepackage{geometry}
+\geometry{margin=1.5cm, vmargin={0pt,1cm}}
+\setlength{\topmargin}{-1cm}
+\setlength{\paperheight}{29.7cm}
+\setlength{\textheight}{25.3cm}
+\usepackage{CJKutf8}
+%\usepackage{ctex}
+ \usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{layout}
+\usepackage{mathdots}
+% 代码需要用到的宏包
+\usepackage{listings} %用来写代码
+\usepackage{xcolor} %代码高亮
+\lstset{language=C++}
+\lstset{
+    numbers=left, 
+    numberstyle= \tiny, 
+    keywordstyle= \color{ blue!70},
+    commentstyle= \color{red!50!green!50!blue!50}, 
+    frame=shadowbox, % 阴影效果
+    rulesepcolor= \color{ red!20!green!20!blue!20} ,
+    % escapeinside=``, % 英文分号中可写入中文
+    escapeinside=(), % 英文分号中可写入中文
+    xleftmargin=2em, aboveskip=1em,
+    framexleftmargin=2em
+ } % 代码设置
+%  具体使用的例子
+% \noindent 代码如下： 
+% \begin{lstlisting}
+% \end{lstlisting}
+
+% 多文件使用latex需要用到
+\usepackage{subfiles} % Best loaded last in the preamble
+
+ 
+% 画图学习使用的宏包
+\usepackage{tikz}  %画图包
+\usetikzlibrary{arrows.meta}%画箭头用的包
+\newcommand{\point}[2]{\coordinate (o) at(#2) node[] at (o) {$#1$}; }
+% \point{O}{0.5,0.5}
+% \large \draw[help lines,step = 0.2] (0,0) grid (1,1); %辅助线格子
+% \draw[-latex] (0,0) -- (1.1,0);
+% \draw[-latex] (0,0) -- (0,1.1);%实心箭头    
+% \draw[green] (0.5,0.5) circle (0.12);%圆
+% \draw[yellow] (0,0) rectangle (1,1);%矩形 
+
+
+
+% some common command
+\newcommand{\mm}[1]{$ #1$\newline}
+% \newcommand{\tuichu}{\Rightarrow}
+% \newcommand{\li}[1]{\newline#1}
+
+
+
+\newcommand{\analysis}[2]{\forall \mathcal{E}{#1},\exists \delta {#2},s.t.}
+\newcommand{\denyanalysis}[2]{\exists \mathcal{E}{#1},\forall \delta {#2},s.t.}
+\newcommand{\yield}{\Rightarrow }
+\newcommand{\jj}{\newline}
+\newcommand{\ff}[1]{$ #1$}   % math environment + newline
+\newcommand{\fgn}[1]{\begin{equation}#1\end{equation}  }
+\newcommand{\fg}[1]{$$ #1$$}   % math environment + newline 
+\newcommand{\pf}{$proof.$\newline}
+\newcommand{\ee}{\newline\ff{\Box}\newline}
+\newcommand{\fenshi}[2]{\ff{\frac{#1}{#2}}}
+\newcommand{\shenlue}{\vdots\jj}
+\newcommand{\abs}[1]{{\left \lvert #1 \right\rvert}}
+\newcommand{\loge}[1]{In ({#1})}
+\newcommand{\logical}[2]{log_{#2}^{#1}}
+\newcommand{\summary}[3]{$\sum_{{#1}={#2}}^{#3}  $}
+\newcommand{\denjia}[2]{{#1}\Leftrightarrow {#2}}
+\newcommand{\jihe}[3]{ {#1}  = \{ {#2} \mid {#3} \} }
+\newcommand{\ve}[2]{\left\langle {#1},{#2}\right \rangle}
+\newcommand{\dakuohao}[2]{\begin{array}{rcl}{#1}\end{array} \} \Rightarrow{#2}}
+\newcommand{\sxb}[3]{#1^{#2}_{#3}}
+\newcommand{\sss}[2]{#1^{#2}}
+\newcommand{\xxx}[2]{#1_{#2}}
+\newcommand{\bri}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\ri}[1]{\romannumeral#1} 
+\newcommand{\polynomial}[8]{#1_{#2}#6^{#7}+#1_{#3}#6^{#8}+...+#1_{#4}#6+#1_{#5} }
+\newcommand{\newd}[4]{f[{#1}_{#2},{#4},{#1}_{#3}]}
+\newcommand{\lb}[2]{\begin{align*}\begin{split}{#1}\{ {#2}\end{split}\end{align*}}
+\newcommand{\tab}[1]{\begin{array}{ll} {#1}\end{array}}
+
+%注释代码
+\newcommand{\undef}[1]{\iffalse #1 \fi}
+
+% 微分
+\newcommand{\dif}{\mathrm{d}}
+% 向量乘积
+\newcommand{\avg}[1]{\left\langle #1 \right\rangle}
+% 偏微分方程
+\newcommand{\difFrac}[2]{\frac{\dif #1}{\dif #2}}
+\newcommand{\pdfrac}[2]{\frac{\partial{#1}}{\partial{#2}}}
+% 不同章节
+\newcommand{\one}[1]{\section{#1}}
+\newcommand{\two}[1]{\subsection{#1}}
+\newcommand{\three}[1]{\subsubsection{#1}}
+\newcommand{\aone}[1]{\section*{#1}}
+\newcommand{\atwo}[1]{\subsection*{#1}}
+\newcommand{\athree}[1]{\subsubsection*{#1}}
+% 大括号，左右都有
+\newcommand{\lbra}[1]{\left\{  {\begin{matrix} #1 \end{matrix}}\right. } 
+% 样式 括号前缀 + 括号 
+\newcommand{\lbras}[2]{{#1}\left\{ {  {\begin{matrix} #2 \end{matrix}}}\right. } 
+\newcommand{\rbra}[1]{ \left.  {\begin{matrix} #1 \end{matrix}} \right\}  } 
+% 模长
+\newcommand{\distance}[1]{\parallel #1\parallel }
+% 等价
+\newcommand{\equ}{\Longleftrightarrow }
+% 共轭
+\newcommand{\cja}[1]{\overline{#1}}
+% 两个矩阵，上面是 方框[] 下面是线条| 中间是 无
+\newcommand{\mtx}[1]{\begin{matrix}#1\end{matrix} }
+\newcommand{\bmtx}[1]{\begin{bmatrix}#1\end{bmatrix} }
+\newcommand{\vmtx}[1]{\begin{vmatrix}#1\end{vmatrix} }
+% \newcommand{\table}[1]{\begin{array}[lr]{ccc} #1 \end{array}}
+
+%输入普通字符
+\newcommand{\ww}[1]{\text{#1}}
+
+% 所有内容 直接头文件搞定
+\newcommand{\everything}[1]{\begin{document}\begin{CJK*}{UTF8}{gkai}#1\end{CJK*}\end{document}}
+
+
+% 存放代码(失败了)
+\newcommand{\cccode}[1]{\begin{lstlisting}#1\end{lstlisting}}
+
+% 改变特定行序列
+\newcommand{\ttt}{\subsection{}}
+
+% 嵌套序号
+\newcommand{\eee}[1]{\begin{enumerate}#1\end{enumerate}}
+
+
+% 模板里面的一些宏
+\newcommand{\pdfFrac}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\OFL}{\mathrm{OFL}}
+\newcommand{\UFL}{\mathrm{UFL}}
+\newcommand{\fl}{\mathrm{fl}}
+\newcommand{\op}{\odot}
+\newcommand{\Eabs}{E_{\mathrm{abs}}}
+\newcommand{\Erel}{E_{\mathrm{rel}}}
+% 变化颜色
+\newcommand{\red}{\textcolor{red}}
+\newcommand{\blue}{\textcolor{blue}}
+
+
+
+% 流程图需要用到的宏包
+\usepackage{palatino}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width = 2cm, minimum height=1cm,text centered, draw = black, fill = red!40]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=2cm, minimum height=1cm, text centered, draw=black, fill = blue!40]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill = yellow!50]
+\tikzstyle{decision} = [diamond, aspect = 3, text centered, draw=black, fill = green!30]
+% 箭头形式
+\tikzstyle{arrow} = [->,>=stealth]
+% 4个非常重要 的新命令
+\newcommand{\start}[2]{    \node (start) [startstop]{#1};\node (in1) [io, below of = start]{#2};\lin{start}{in1}{}}
+\newcommand{\stopp}[3]{\node (out1) [io, below of= #1]{#2};\node (stop) [startstop, below of=out1]{#3};\lin{out1}{stop}{} }
+\newcommand{\pro}[6]{    \node (#3) [process, #2 of=#1,xshift=#4 cm]{#5};}
+\newpage
+\newcommand{\lin}[3]{\draw [arrow] (#1) --node [above] {#3} (#2);}
+
+
+
+% 显示目录到几级标题
+\setcounter{tocdepth}{1}
+
+
+
+\begin{document}
+% 页眉页脚
+\pagestyle{fancy}
+\fancyhead{}
+\lhead{NAME (ChenKejie 22135030)}
+\chead{}
+\rhead{Date 2022.3}
+% 中文
+\begin{CJK*}{UTF8}{gkai}
+
+%标题，文章开头
+\title{chatglm模型序列预测结论汇总}
+\author{陈钶杰\, \\
+  学号: 22135030\\}
+\date{\today}
+\maketitle
+\newpage
+
+% 正式内容
+
+\section{序列相关的基本性质汇总(预测已经见过的任务)}
+
+\begin{itemize}
+  \item 预测长度越短，预测结果的误差就越小.
+  \item 对于相同的训练任务，给定的训练数据较多时，预测结果的误差就越小。
+  % \item 对于一个预测长度，预测函数相同的模型，训练数据超出一定的阈值的时候，会使得误差变大，猜测可能是因为过拟合的原因导致的。
+  \item 对于相同的训练任务，给定的训练数据超过某个阈值，会使得预测结果的误差变大。(这可能是因为过拟合导致的)
+  % \item 有不同预测长度的序列模型的预测结果良好。(不太好)
+  % \item 当预测任务，以及预测序列相同时，可以看出给定训练的序列越长，效果越好。
+  \item 进行预测时,历史序列的长度越长,最终预测结果的误差就越小.
+  % \item 当训练数据集的数量，测试的序列相同时，预测的长度越短，效果越好。
+  \item 进行预测时,需要预测的长度越短,最终预测结果的误差就越小.
+  % \item 当训练总数据集数量，预测长度相同时，训练的序列向量越长，对最终的预测结果更加精确。
+  \item 对于两种不同的函数序列(其中预测维度的函数相同),那么其中维度更高的函数序列,最终的预测误差会更小.
+  % \item 对于一个预测长度不一致的数据集合，最终的误差比较大，且预测序列长度和目标序列长度相似度大约是76\%
+  \item 在多种类函数序列训练任务中,预测结果的误差,以及任务的通过率均低于单一训练任务.
+  % \item 从混合的预测长度，时间序列的数据集合训练结果中也可以看出这个长向量时间序列的预测结果要好于短向量的结果，且预测短的序列要优于预测长序列的误差。
+  \item 在对于多种预测长度的训练任务中,同样可以看到历史序列的长度越长以及需要预测的长度越短,最终预测结果的误差就越小.
+  % \item 从中可以看出，不同的预测长度对于精确度影响不大，但是不同种的序列对精确度的影响比较大。
+  \item 不同的预测长度的训练任务对于预测结果精确度影响不大，不同的函数序列训练任务对精确度的影响比较大。
+  % \item 但类型数量取1000的时候，对于不同种类的序列会使得最终误差较大，但是提高数量到5000，能够让误差明显的变小。
+  \item 同上,通过增加训练数据的数量,可以改善预测结果的误差.
+\end{itemize}
+
+\section{泛化性结论汇总(未见过的预测任务)}
+\begin{itemize}
+  \item 预测的函数序列和训练的函数序列相同,但预测序列的长度和训练的长度不同,,结果发现正确的预测长度应该是4,但是结果预测长度全部是8.从中可以看出,模型在解决预测长度不同的新问题上泛化能力较弱.
+  \item 在预测没见过的任务上,误差明显大于见过的任务.
+  \item 可能预测序列的维度对预测结果的误差影响不大.
+  \item 提高训练的数据量,对于最终的通过率有明显的提升.但是预测的准确率没有明显的上升.
+\end{itemize}
+
+\section{从相关论文中总结出的一些结论}
+\begin{itemize}
+  \item 在使用的10个语言模型和10个时间序列模型的比较中
+  \eee{
+    \item 大部分语言模型的性能是要高于时间序列模型。在三个测试数据集中，大部分语言模型的MAE和MSE均超越了时间序列预测模型。
+    \item 测试的几个的预训练模型中,Pretrained Model Size越大,预测效果也越好.
+  }
+  \item 关于模型泛化能力的测试：
+  \eee{
+    \item 在泛化能力的测试上面，语言模型的预测结果的误差小于时间序列模型。说明语言模型的泛化能力更强.
+    % \item 泛化的任务对于语言模型而言，肯定也不如非泛化的效果。
+    \item 语言模型在处理泛化任务上,也能够保证一定的缺失率(通过率)。
+  }
+  \item 关于序列预测长度的相关结论
+  \eee{
+    \item 给定同样的历史序列长度，预测长度越短，预测结果误差越小
+    \item 预测相同的长度，给定的历史序列越长，预测结果误差越小
+  }
+  \item 提示指令的相关结论
+  \eee{
+    \item 关于提问，相互间隔有规律的提问方式(类似表格形式的提问方式)比并排(简单的陈述句)的方式在预测效果上更好。
+    \item 通过热力图说明transformer的多头注意力机制是如何解读指令数据的内容.
+    \item 对于语言模型而言,他能够将注意力的大部分比重都放在有效提示中(提示命令中的序列语句),在无效的提示词中有更小的比重.
+    \item 语言模型确实用到了历史序列的信息，这为语言模型进行时间序列的预测奠定基础.
+    % 具体的提问语言模型是如何进行预测未来的数据的，他能够使用transformer的注意力来进行预测！
+    % \item 通过使用热力图，将提示中的每一个单词的重要性都展示出来了，可以看到越到后面几层，提示中的历史数据就变成最重要的信息了，这不仅说明了这个提示序列的重要性，还
+  }
+\end{itemize}
+
+
+
+
+\end{CJK*}\end{document}
+
+% 这是文件标题和文件名
+% \pagestyle{fancy}
+% \fancyhead{}
+% \lhead{NAME (put your uID here)}
+% \chead{Numerical Analysis homework \#?}
+% \rhead{Date}
+
+% 模板格式作业
+% \section*{
+%         \bri{1}
+% }
+% \subsection*{\bri{1}}
+
+
+
+
+
+
+
+
+
+% \subsection{}
+% \subsubsection{模板:\texttt{}}
+%     % 作用
+% \subsubsection{功能}
+% \begin{enumerate}
+%     \item 
+% \end{enumerate}
+% \subsubsection{数据成员}
+% \begin{enumerate}
+%     \item 
+% \end{enumerate}
+% \subsubsection{函数}
+% \begin{enumerate}
+%     \item 
+% \end{enumerate}
+
+
+% \begin{tikzpicture}[node distance=2cm]
+%     \start{input}{输入半径等}
+%     \pro{in1}{below}{pro1}{0}{first}
+
+%     \pro{pro1}{below}{pro2}{0}{fdjasl}
+    
+%     \lin{in1}{pro1}{}            
+%     \lin{pro1}{pro2}{}            
+
+%     \stopp{pro2}{aa}{bb}    
+%     \lin{pro2}{out1}{}    
+
+
+%     \pro{pro1}{right}{pro1}{2}{c5}    
+    
+%     \pro{pro1}{below}{pro2}{0}{new}        
+
+%     \lin{in1}{pro1}{}                
+%     \lin{pro1}{pro2}{}                
+
+%     \pro{pro1}{right}{pro1}{2}{c7}    
+
+%     \pro{pro1}{below}{pro2}{2}{cccdfkslfjdl}
+
+%     \lin{in1}{pro1}{}                        
+%     \lin{pro1}{pro2}{}                            
+
+%     \stopp{pro2}{aa}{bb}
+    
+%     \lin{pro2}{out1}{}    
+% \end{tikzpicture}

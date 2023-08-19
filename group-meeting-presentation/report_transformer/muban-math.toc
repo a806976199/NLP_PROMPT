@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{transformer模型}{3}{0}{1}
+\beamer@sectionintoc {2}{BERT模型}{8}{0}{2}
+\beamer@sectionintoc {3}{GPT模型}{10}{0}{3}
+\beamer@sectionintoc {4}{Prompt learning 模型}{14}{0}{4}

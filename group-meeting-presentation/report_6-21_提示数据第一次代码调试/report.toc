@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{代码的调试工作}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{简单函数的指令微调测试}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{测试的数据集}{3}{0}{1}
+\beamer@subsectionintoc {1}{3}{评估指标说明}{6}{0}{1}
+\beamer@subsectionintoc {1}{4}{运行结果}{8}{0}{1}
+\beamer@subsectionintoc {1}{5}{结果分析}{9}{0}{1}

@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{Tree of Thought的实现思路:}{3}{0}{1}
+\beamer@sectionintoc {2}{代码调试}{7}{0}{2}
+\beamer@subsectionintoc {2}{1}{使用特殊的提示的结果}{7}{0}{2}
+\beamer@subsectionintoc {2}{2}{添加中间步骤的输出后的结果}{9}{0}{2}
+\beamer@subsectionintoc {2}{3}{实验结果分析}{10}{0}{2}
+\beamer@subsectionintoc {2}{4}{下一步的计划}{11}{0}{2}

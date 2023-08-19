@@ -1,0 +1,11 @@
+\frametitle{运行完的结果}	
+    \begin{lstlisting}[style=json]
+		{
+			"epoch": 0.42,
+			"train_loss": 4.3601599731445315,
+			"train_runtime": 15178.543,
+			"train_samples": 114599,
+			"train_samples_per_second": 3.162,
+			"train_steps_per_second": 0.198
+		}
+    \end{lstlisting}	

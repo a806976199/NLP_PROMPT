@@ -1,0 +1,281 @@
+\documentclass[a4paper,oneside]{article}
+\usepackage{geometry}
+\geometry{margin=1.5cm, vmargin={0pt,1cm}}
+\setlength{\topmargin}{-1cm}
+\setlength{\paperheight}{29.7cm}
+\setlength{\textheight}{25.3cm}
+\usepackage{CJKutf8}
+%\usepackage{ctex}
+ \usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{layout}
+\usepackage{mathdots}
+% 代码需要用到的宏包
+\usepackage{listings} %用来写代码
+\usepackage{xcolor} %代码高亮
+\lstset{language=C++}
+\lstset{
+    numbers=left, 
+    numberstyle= \tiny, 
+    keywordstyle= \color{ blue!70},
+    commentstyle= \color{red!50!green!50!blue!50}, 
+    frame=shadowbox, % 阴影效果
+    rulesepcolor= \color{ red!20!green!20!blue!20} ,
+    % escapeinside=``, % 英文分号中可写入中文
+    escapeinside=(), % 英文分号中可写入中文
+    xleftmargin=2em, aboveskip=1em,
+    framexleftmargin=2em
+ } % 代码设置
+%  具体使用的例子
+% \noindent 代码如下： 
+% \begin{lstlisting}
+% \end{lstlisting}
+
+% 多文件使用latex需要用到
+\usepackage{subfiles} % Best loaded last in the preamble
+
+ 
+% 画图学习使用的宏包
+\usepackage{tikz}  %画图包
+\usetikzlibrary{arrows.meta}%画箭头用的包
+\newcommand{\point}[2]{\coordinate (o) at(#2) node[] at (o) {$#1$}; }
+% \point{O}{0.5,0.5}
+% \large \draw[help lines,step = 0.2] (0,0) grid (1,1); %辅助线格子
+% \draw[-latex] (0,0) -- (1.1,0);
+% \draw[-latex] (0,0) -- (0,1.1);%实心箭头    
+% \draw[green] (0.5,0.5) circle (0.12);%圆
+% \draw[yellow] (0,0) rectangle (1,1);%矩形 
+
+
+
+% some common command
+\newcommand{\mm}[1]{$ #1$\newline}
+% \newcommand{\tuichu}{\Rightarrow}
+% \newcommand{\li}[1]{\newline#1}
+
+
+
+\newcommand{\analysis}[2]{\forall \mathcal{E}{#1},\exists \delta {#2},s.t.}
+\newcommand{\denyanalysis}[2]{\exists \mathcal{E}{#1},\forall \delta {#2},s.t.}
+\newcommand{\yield}{\Rightarrow }
+\newcommand{\jj}{\newline}
+\newcommand{\ff}[1]{$ #1$}   % math environment + newline
+\newcommand{\fgn}[1]{\begin{equation}#1\end{equation}  }
+\newcommand{\fg}[1]{$$ #1$$}   % math environment + newline 
+\newcommand{\pf}{$proof.$\newline}
+\newcommand{\ee}{\newline\ff{\Box}\newline}
+\newcommand{\fenshi}[2]{\ff{\frac{#1}{#2}}}
+\newcommand{\shenlue}{\vdots\jj}
+\newcommand{\abs}[1]{{\left \lvert #1 \right\rvert}}
+\newcommand{\loge}[1]{In ({#1})}
+\newcommand{\logical}[2]{log_{#2}^{#1}}
+\newcommand{\summary}[3]{$\sum_{{#1}={#2}}^{#3}  $}
+\newcommand{\denjia}[2]{{#1}\Leftrightarrow {#2}}
+\newcommand{\jihe}[3]{ {#1}  = \{ {#2} \mid {#3} \} }
+\newcommand{\ve}[2]{\left\langle {#1},{#2}\right \rangle}
+\newcommand{\dakuohao}[2]{\begin{array}{rcl}{#1}\end{array} \} \Rightarrow{#2}}
+\newcommand{\sxb}[3]{#1^{#2}_{#3}}
+\newcommand{\sss}[2]{#1^{#2}}
+\newcommand{\xxx}[2]{#1_{#2}}
+\newcommand{\bri}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\ri}[1]{\romannumeral#1} 
+\newcommand{\polynomial}[8]{#1_{#2}#6^{#7}+#1_{#3}#6^{#8}+...+#1_{#4}#6+#1_{#5} }
+\newcommand{\newd}[4]{f[{#1}_{#2},{#4},{#1}_{#3}]}
+\newcommand{\lb}[2]{\begin{align*}\begin{split}{#1}\{ {#2}\end{split}\end{align*}}
+\newcommand{\tab}[1]{\begin{array}{ll} {#1}\end{array}}
+
+%注释代码
+\newcommand{\undef}[1]{\iffalse #1 \fi}
+
+% 微分
+\newcommand{\dif}{\mathrm{d}}
+% 向量乘积
+\newcommand{\avg}[1]{\left\langle #1 \right\rangle}
+% 偏微分方程
+\newcommand{\difFrac}[2]{\frac{\dif #1}{\dif #2}}
+\newcommand{\pdfrac}[2]{\frac{\partial{#1}}{\partial{#2}}}
+% 不同章节
+\newcommand{\one}[1]{\section{#1}}
+\newcommand{\two}[1]{\subsection{#1}}
+\newcommand{\three}[1]{\subsubsection{#1}}
+\newcommand{\aone}[1]{\section*{#1}}
+\newcommand{\atwo}[1]{\subsection*{#1}}
+\newcommand{\athree}[1]{\subsubsection*{#1}}
+% 大括号，左右都有
+\newcommand{\lbra}[1]{\left\{  {\begin{matrix} #1 \end{matrix}}\right. } 
+% 样式 括号前缀 + 括号 
+\newcommand{\lbras}[2]{{#1}\left\{ {  {\begin{matrix} #2 \end{matrix}}}\right. } 
+\newcommand{\rbra}[1]{ \left.  {\begin{matrix} #1 \end{matrix}} \right\}  } 
+% 模长
+\newcommand{\distance}[1]{\parallel #1\parallel }
+% 等价
+\newcommand{\equ}{\Longleftrightarrow }
+% 共轭
+\newcommand{\cja}[1]{\overline{#1}}
+% 两个矩阵，上面是 方框[] 下面是线条| 中间是 无
+\newcommand{\mtx}[1]{\begin{matrix}#1\end{matrix} }
+\newcommand{\bmtx}[1]{\begin{bmatrix}#1\end{bmatrix} }
+\newcommand{\vmtx}[1]{\begin{vmatrix}#1\end{vmatrix} }
+% \newcommand{\table}[1]{\begin{array}[lr]{ccc} #1 \end{array}}
+
+%输入普通字符
+\newcommand{\ww}[1]{\text{#1}}
+
+% 所有内容 直接头文件搞定
+\newcommand{\everything}[1]{\begin{document}\begin{CJK*}{UTF8}{gkai}#1\end{CJK*}\end{document}}
+
+
+% 存放代码(失败了)
+\newcommand{\cccode}[1]{\begin{lstlisting}#1\end{lstlisting}}
+
+% 改变特定行序列
+\newcommand{\ttt}{\subsection{}}
+
+% 嵌套序号
+\newcommand{\eee}[1]{\begin{enumerate}#1\end{enumerate}}
+
+
+% 模板里面的一些宏
+\newcommand{\pdfFrac}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\OFL}{\mathrm{OFL}}
+\newcommand{\UFL}{\mathrm{UFL}}
+\newcommand{\fl}{\mathrm{fl}}
+\newcommand{\op}{\odot}
+\newcommand{\Eabs}{E_{\mathrm{abs}}}
+\newcommand{\Erel}{E_{\mathrm{rel}}}
+% 变化颜色
+\newcommand{\red}{\textcolor{red}}
+\newcommand{\blue}{\textcolor{blue}}
+
+
+
+% 流程图需要用到的宏包
+\usepackage{palatino}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width = 2cm, minimum height=1cm,text centered, draw = black, fill = red!40]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=2cm, minimum height=1cm, text centered, draw=black, fill = blue!40]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill = yellow!50]
+\tikzstyle{decision} = [diamond, aspect = 3, text centered, draw=black, fill = green!30]
+% 箭头形式
+\tikzstyle{arrow} = [->,>=stealth]
+% 4个非常重要 的新命令
+\newcommand{\start}[2]{    \node (start) [startstop]{#1};\node (in1) [io, below of = start]{#2};\lin{start}{in1}{}}
+\newcommand{\stopp}[3]{\node (out1) [io, below of= #1]{#2};\node (stop) [startstop, below of=out1]{#3};\lin{out1}{stop}{} }
+\newcommand{\pro}[6]{    \node (#3) [process, #2 of=#1,xshift=#4 cm]{#5};}
+\newpage
+\newcommand{\lin}[3]{\draw [arrow] (#1) --node [above] {#3} (#2);}
+
+
+
+% 显示目录到几级标题
+\setcounter{tocdepth}{1}
+
+
+
+\begin{document}
+% 页眉页脚
+\pagestyle{fancy}
+\fancyhead{}
+\lhead{NAME (ChenKejie 22135030)}
+\chead{Numerical Analysis homework \#}
+\rhead{Date 2022.3}
+% 中文
+\begin{CJK*}{UTF8}{gkai}
+
+%标题，文章开头
+\title{project2实验报告}
+\author{陈钶杰\, \\
+  学号: 22135030\\}
+\date{\today}
+\maketitle
+\newpage
+
+% 正式内容
+\section*{使用langchain}
+
+\eee{
+  \item 
+}
+
+
+\end{CJK*}\end{document}
+
+
+
+
+% 这是文件标题和文件名
+% \pagestyle{fancy}
+% \fancyhead{}
+% \lhead{NAME (put your uID here)}
+% \chead{Numerical Analysis homework \#?}
+% \rhead{Date}
+
+% 模板格式作业
+% \section*{
+%         \bri{1}
+% }
+% \subsection*{\bri{1}}
+
+
+
+
+
+
+
+
+
+% \subsection{}
+% \subsubsection{模板:\texttt{}}
+%     % 作用
+% \subsubsection{功能}
+% \begin{enumerate}
+%     \item 
+% \end{enumerate}
+% \subsubsection{数据成员}
+% \begin{enumerate}
+%     \item 
+% \end{enumerate}
+% \subsubsection{函数}
+% \begin{enumerate}
+%     \item 
+% \end{enumerate}
+
+
+% \begin{tikzpicture}[node distance=2cm]
+%     \start{input}{输入半径等}
+%     \pro{in1}{below}{pro1}{0}{first}
+
+%     \pro{pro1}{below}{pro2}{0}{fdjasl}
+    
+%     \lin{in1}{pro1}{}            
+%     \lin{pro1}{pro2}{}            
+
+%     \stopp{pro2}{aa}{bb}    
+%     \lin{pro2}{out1}{}    
+
+
+%     \pro{pro1}{right}{pro1}{2}{c5}    
+    
+%     \pro{pro1}{below}{pro2}{0}{new}        
+
+%     \lin{in1}{pro1}{}                
+%     \lin{pro1}{pro2}{}                
+
+%     \pro{pro1}{right}{pro1}{2}{c7}    
+
+%     \pro{pro1}{below}{pro2}{2}{cccdfkslfjdl}
+
+%     \lin{in1}{pro1}{}                        
+%     \lin{pro1}{pro2}{}                            
+
+%     \stopp{pro2}{aa}{bb}
+    
+%     \lin{pro2}{out1}{}    
+% \end{tikzpicture}

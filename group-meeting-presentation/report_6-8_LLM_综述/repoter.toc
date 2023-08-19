@@ -1,0 +1,7 @@
+\beamer@sectionintoc {1}{NLP模型综述}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{大型语言模型(LLM)的技术精要}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{压缩即智能?}{8}{0}{1}
+\beamer@subsectionintoc {1}{4}{高效微调数据的方法(PEFT)}{10}{0}{1}
+\beamer@subsectionintoc {1}{5}{自然语言在代码上所面临的一些问题}{11}{0}{1}
+\beamer@subsectionintoc {1}{6}{经过微调的LLaMA在算术任务上的性能优于GPT-4}{12}{0}{1}
+\beamer@sectionintoc {2}{代码上的尝试}{13}{0}{2}
