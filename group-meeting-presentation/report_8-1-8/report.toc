@@ -1,7 +1,0 @@
-\beamer@sectionintoc {1}{相关的论文}{3}{0}{1}
-\beamer@sectionintoc {2}{langchain}{5}{0}{2}
-\beamer@sectionintoc {3}{代码调试相关}{8}{0}{3}
-\beamer@subsectionintoc {3}{1}{使用粗粒化,逐步推导的方式进行多步预测序列}{8}{0}{3}
-\beamer@subsectionintoc {3}{2}{给定更多的中间步骤来解决一些基础的数学问题}{15}{0}{3}
-\beamer@subsectionintoc {3}{3}{实验结果分析}{16}{0}{3}
-\beamer@subsectionintoc {3}{4}{下一步的计划}{17}{0}{3}
