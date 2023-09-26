@@ -1,0 +1,452 @@
+\documentclass[t]{beamer}
+\usepackage{CJKutf8}
+\usepackage{amsfonts}
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{amsthm}
+    \usepackage{enumerate}
+    \usepackage{graphicx}
+    \usepackage{layout}
+    \usepackage{mathrsfs}
+    \usepackage{fancyhdr}
+    \usepackage{subfigure}
+    \usepackage{tcolorbox}
+    \usepackage{tikz-cd}
+    \usepackage{color}
+    \usepackage{pifont}
+    \usepackage{verbatim}
+    \usepackage{mathtools}
+    \usepackage{float}
+    \usepackage{bm}
+    \usetheme{AnnArbor}
+% \usetheme{Antibes}
+\usecolortheme{beaver}
+\usepackage{listings}
+
+% 设置JSON样式
+\lstdefinestyle{json}{
+    basicstyle=\tiny\ttfamily,
+    columns=fullflexible,
+    showstringspaces=false,
+    commentstyle=\color{gray},
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    breaklines=true,
+    frame=single,
+    captionpos=b,
+    aboveskip=10pt,
+    belowskip=10pt
+}
+
+\lstset{
+    language=Python, % 设置代码块语言为Python
+    breaklines=true, % 自动换行
+    basicstyle=\small\ttfamily, % 设置基本字体样式
+    keywordstyle=\bfseries\color{blue}, % 设置关键字样式
+    commentstyle=\itshape\color{gray}, % 设置注释样式
+    showstringspaces=false, % 不显示字符串中的空格
+    frame=single, % 设置代码块边框样式
+    numbers=left, % 行号显示在左侧
+    numberstyle=\tiny\color{gray}, % 设置行号样式
+    stepnumber=1, % 设置行号间隔
+    tabsize=4 % 设置制表符宽度
+}
+
+
+% 设置shell样式
+\lstdefinestyle{shell}{
+    language=bash,
+    basicstyle=\tiny\ttfamily,
+    columns=fullflexible,
+    showstringspaces=false,
+    commentstyle=\color{gray},
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    breaklines=true,
+    frame=single,
+    captionpos=b,
+    aboveskip=10pt,
+    belowskip=10pt
+}
+
+\usepackage{subfigure}
+
+% 添加网址的命令
+\usepackage{hyperref}
+% 这是一个带链接文本的示例：\href{https://www.example.com}{点击这里访问网站}
+% 普通的示例：\url{https://www.example.com}
+% 表格
+\usepackage{booktabs}
+\usepackage{multirow}
+
+% \setbeamertemplate{navigation symbols}{}
+
+\usepackage{textpos}
+
+\newcommand{\dif}{\mathrm{d}}
+\newtheorem{thm}{{定理}}
+
+% some common command
+\newcommand{\mm}[1]{$ #1$\newline}
+% \newcommand{\tuichu}{\Rightarrow}
+% \newcommand{\li}[1]{\newline#1}
+
+
+
+\newcommand{\analysis}[2]{\forall \mathcal{E}{#1},\exists \delta {#2},s.t.}
+\newcommand{\denyanalysis}[2]{\exists \mathcal{E}{#1},\forall \delta {#2},s.t.}
+\newcommand{\yield}{\Rightarrow }
+\newcommand{\jj}{\newline}
+\newcommand{\ff}[1]{$ #1$}   % math environment + newline
+\newcommand{\fgn}[1]{\begin{equation}#1\end{equation}  }
+\newcommand{\fg}[1]{$$ #1$$}   % math environment + newline 
+\newcommand{\pf}{$proof.$\newline}
+\newcommand{\ee}{\newline\ff{\Box}\newline}
+\newcommand{\fenshi}[2]{\ff{\frac{#1}{#2}}}
+\newcommand{\shenlue}{\vdots\jj}
+\newcommand{\abs}[1]{{\left \lvert #1 \right\rvert}}
+\newcommand{\loge}[1]{In ({#1})}
+\newcommand{\logical}[2]{log_{#2}^{#1}}
+\newcommand{\summary}[3]{$\sum_{{#1}={#2}}^{#3}  $}
+\newcommand{\denjia}[2]{{#1}\Leftrightarrow {#2}}
+\newcommand{\jihe}[3]{ {#1}  = \{ {#2} \mid {#3} \} }
+\newcommand{\ve}[2]{\left\langle {#1},{#2}\right \rangle}
+\newcommand{\dakuohao}[2]{\begin{array}{rcl}{#1}\end{array} \} \Rightarrow{#2}}
+\newcommand{\sxb}[3]{#1^{#2}_{#3}}
+\newcommand{\sss}[2]{#1^{#2}}
+\newcommand{\xxx}[2]{#1_{#2}}
+\newcommand{\bri}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\ri}[1]{\romannumeral#1} 
+\newcommand{\polynomial}[8]{#1_{#2}#6^{#7}+#1_{#3}#6^{#8}+...+#1_{#4}#6+#1_{#5} }
+\newcommand{\newd}[4]{f[{#1}_{#2},{#4},{#1}_{#3}]}
+\newcommand{\lb}[2]{\begin{align*}\begin{split}{#1}\{ {#2}\end{split}\end{align*}}
+\newcommand{\tab}[1]{\begin{array}{ll} {#1}\end{array}}
+
+
+% 向量乘积
+\newcommand{\avg}[1]{\left\langle #1 \right\rangle}
+% 偏微分方程
+\newcommand{\difFrac}[2]{\frac{\dif #1}{\dif #2}}
+\newcommand{\pdfrac}[2]{\frac{\partial{#1}}{\partial{#2}}}
+% 不同章节
+\newcommand{\one}[1]{\section{#1}}
+\newcommand{\two}[1]{\subsection{#1}}
+\newcommand{\three}[1]{\subsubsection{#1}}
+\newcommand{\aone}[1]{\section*{#1}}
+\newcommand{\atwo}[1]{\subsection*{#1}}
+\newcommand{\athree}[1]{\subsubsection*{#1}}
+% 大括号，左右都有
+\newcommand{\lbra}[1]{\left\{  {\begin{matrix} #1 \end{matrix}}\right. } 
+% 样式 括号前缀 + 括号 
+\newcommand{\lbras}[2]{{#1}\left\{ {  {\begin{matrix} #2 \end{matrix}}}\right. } 
+\newcommand{\rbra}[1]{ \left.  {\begin{matrix} #1 \end{matrix}} \right\}  } 
+% 模长
+\newcommand{\distance}[1]{\parallel #1\parallel }
+% 等价
+\newcommand{\equ}{\Longleftrightarrow }
+% 共轭
+\newcommand{\cja}[1]{\overline{#1}}
+% 两个矩阵，上面是 方框[] 下面是线条| 中间是 无
+\newcommand{\mtx}[1]{\begin{matrix}#1\end{matrix} }
+\newcommand{\bmtx}[1]{\begin{bmatrix}#1\end{bmatrix} }
+\newcommand{\vmtx}[1]{\begin{vmatrix}#1\end{vmatrix} }
+% \newcommand{\table}[1]{\begin{array}[lr]{ccc} #1 \end{array}}
+
+%输入普通字符
+\newcommand{\ww}[1]{\text{#1}}
+
+% 所有内容 直接头文件搞定
+\newcommand{\everything}[1]{\begin{document}\begin{CJK*}{UTF8}{gkai}#1\end{CJK*}\end{document}}
+
+
+% 存放代码(失败了)
+\newcommand{\cccode}[1]{\begin{lstlisting}#1\end{lstlisting}}
+
+% 改变特定行序列
+\newcommand{\ttt}{\subsection{}}
+
+% 嵌套序号
+\newcommand{\eee}[1]{\begin{enumerate}#1\end{enumerate}}
+
+
+% 模板里面的一些宏
+\newcommand{\pdfFrac}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\OFL}{\mathrm{OFL}}
+\newcommand{\UFL}{\mathrm{UFL}}
+\newcommand{\fl}{\mathrm{fl}}
+\newcommand{\op}{\odot}
+\newcommand{\Eabs}{E_{\mathrm{abs}}}
+\newcommand{\Erel}{E_{\mathrm{rel}}}
+% 变化颜色
+\newcommand{\red}{\textcolor{red}}
+\newcommand{\blue}{\textcolor{blue}}
+% 注释代码
+% \newcommand{\undef}[1]{\iffalse #1 \fi}
+
+% 流程图需要用到的宏包
+\usepackage{palatino}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width = 2cm, minimum height=1cm,text centered, draw = black, fill = red!40]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=2cm, minimum height=1cm, text centered, draw=black, fill = blue!40]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill = yellow!50]
+\tikzstyle{decision} = [diamond, aspect = 3, text centered, draw=black, fill = green!30]
+% 箭头形式
+\tikzstyle{arrow} = [->,>=stealth]
+% 4个非常重要 的新命令
+\newcommand{\start}[2]{    \node (start) [startstop]{#1};\node (in1) [io, below of = start]{#2};\lin{start}{in1}{}}
+\newcommand{\stopp}[3]{\node (out1) [io, below of= #1]{#2};\node (stop) [startstop, below of=out1]{#3};\lin{out1}{stop}{} }
+\newcommand{\pro}[6]{    \node (#3) [process, #2 of=#1,xshift=#4 cm]{#5};}
+\newpage
+\newcommand{\lin}[3]{\draw [arrow] (#1) --node [above] {#3} (#2);}
+
+
+\begin{document}
+\begin{CJK*}{UTF8}{gkai}
+% 一般第一页显示PPT标题以及作者信息
+
+% \BackgroundPic{./Screenshot from 2022-04-20 16-31-08.png}
+
+% 增加学校 前面
+\addtobeamertemplate{title page}{}{
+	\begin{tikzpicture}[remember picture,overlay]
+		% \node[yshift=85pt,xshift=50pt]{\includegraphics[height=2cm]{Screenshot from 2022-04-20 16-51-21.png}};
+\end{tikzpicture}
+}
+	% \title{时间序列数据集}
+	\title{组会汇报}
+	\subtitle {} %不需要
+	\author{
+		陈钶杰\, \\
+		专业:计算数学\,
+	} % 显示作者
+	% \institute {学院：数学科学学院} % 设置学院机构	
+	\date{\today}  % 显示日期
+\titlepage
+
+% 设置目录
+\begin{frame}{目录}
+\frametitle{目录}	
+\tableofcontents  % 显示目录
+\end{frame}
+
+
+\section{代码调试}
+
+\subsection{使用LSTM模型进行序列分类任务}
+\begin{frame}
+    \frametitle{LSTM模型与自然语言模型进行序列分类对比实验}
+    \eee{
+        \item 所选用的数据集:美股实时行情数据,经过筛选以后一共得到774支股票,将所有股票数据合并后再分成训练集和测试集.
+        \item chatglm模型:使用合并的训练集数据进行训练，并对测试集进行相应的测试。
+        \item LSTM模型:进行训练的时候选择了单支股票测试结果和多只股票数据合并的两种训练集，并且测试同一组数据结果并进行比较。
+        % 我将这个100个数据集合合并然后进行测试一下，然后就是
+        \item 将美股数据的k线图分别用A,B,C,..,L这12个字母表示，并使用char\_tensor的方法将字符文本映射到对应的目标字符上。
+        \item 使用Word2Vec方法对所有数据集中的字符进行训练以后，并对每个字符的高维向量进行降维，然后进行可视化。
+        % 展示的几个数据集合，以及整体的1000个股票合并的结果的结果，还有就是那单独6个的结果。
+        % \item 准确度结果数据详见excel表格
+    }
+\end{frame}
+
+% 直接用excl.xsl表示出来，反正用这个没啥意义了。
+\begin{frame}
+    \begin{table}[ht]
+        \centering
+        \caption{准确率结果}
+        \large
+        \label{tab:example}
+        \begin{tabular}{|c|l|r|c|c|c|}
+        \hline
+        模型& lstm & chatglm \\
+        \hline
+        AGR & 0.2254 & \red{0.4405}  \\
+        % 7
+        \hline
+        AMD & \red{0.3710} & {0.205} \\
+        % 1
+        \hline
+        BAH & 0.3185 & \red{0.4045} \\
+        % 8
+        \hline
+        BKR & \red{0.20} & {0.115} \\
+        \hline
+        IGF & {0.1053} & \red{0.3172} \\
+        % 10
+        \hline
+    \end{tabular}
+        \end{table}
+\end{frame}
+
+\subsection{预测结果可视化}
+
+\begin{frame}
+    \frametitle{\tiny AGR股票}    
+    \begin{figure}[ht]
+        \centering
+        \subfigure[chatglm测试结果]{
+            \includegraphics[width=0.45\textwidth]{png/AGR_chatglm.png}
+        }
+        \hfill
+        \subfigure[lstm测试结果]{
+            \includegraphics[width=0.45\textwidth]{png/AGR_lstm.png}
+        }
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\tiny AMD股票}    
+    \begin{figure}[ht]
+        \centering
+        \subfigure[chatglm测试结果]{
+            \includegraphics[width=0.45\textwidth]{png/AMD_chatglm.png}
+        }
+        \hfill
+        \subfigure[lstm测试结果]{
+            \includegraphics[width=0.45\textwidth]{png/AMD_lstm.png}
+        }
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\tiny BAH股票}    
+    \begin{figure}[ht]
+        \centering
+        \subfigure[chatglm测试结果]{
+            \includegraphics[width=0.45\textwidth]{png/BAH_chatglm.png}
+        }
+        \hfill
+        \subfigure[lstm测试结果]{
+            \includegraphics[width=0.45\textwidth]{png/BAH_lstm.png}
+        }
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\tiny BKR股票}    
+    \begin{figure}[ht]
+        \centering
+        \subfigure[chatglm测试结果]{
+            \includegraphics[width=0.45\textwidth]{png/BKR_chatglm.png}
+        }
+        \hfill
+        \subfigure[lstm测试结果]{
+            \includegraphics[width=0.45\textwidth]{png/BKR_lstm.png}
+        }
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\tiny IGF股票}    
+    \begin{figure}[ht]
+        \centering
+        \subfigure[chatglm测试结果]{
+            \includegraphics[width=0.45\textwidth]{png/IGF_chatglm.png}
+        }
+        \hfill
+        \subfigure[lstm测试结果]{
+            \includegraphics[width=0.45\textwidth]{png/IGF_lstm.png}
+        }
+    \end{figure}
+\end{frame}
+
+\subsection{k线图编码以后的进行降维可视化结果}
+\begin{frame}
+    \includegraphics[scale=0.4]{png/total.png}
+\end{frame}
+\begin{frame}
+    \includegraphics[scale=0.35]{png/k-1.png}\\
+    \ff{
+    \large    \bmtx{C & & & B & & & D & & & A}
+    }\\
+    \includegraphics[scale=0.3]{png/k-2.png}\\
+    \ff{
+    \large    \bmtx{G & & & F & & & H & & & E}
+    }\\
+    \includegraphics[scale=0.14]{png/k-3.png}\\
+    \ff{
+    \large    \bmtx{I & & & L & & & J  & & & K}
+    }
+\end{frame}
+
+% \begin{frame}
+%     \frametitle{\tiny 降维可视化}    
+%     \begin{figure}[ht]
+%         \centering
+%         \subfigure[样例3]{
+%             \includegraphics[width=0.45\textwidth]{png/visial_png/8.png}
+%         }
+%         \hfill
+%         \subfigure[样例4]{
+%             \includegraphics[width=0.45\textwidth]{png/visial_png/9.png}
+%         }
+%     \end{figure}
+% \end{frame}
+
+% \begin{frame}
+%     \frametitle{\tiny 降维可视化}    
+%     \begin{figure}[ht]
+%         \centering
+%         \subfigure[样例5]{
+%             \includegraphics[width=0.45\textwidth]{png/visial_png/10.png}
+%         }
+%         \hfill
+%         \subfigure[样例6]{
+%             \includegraphics[width=0.45\textwidth]{png/visial_png/22.png}
+%         }
+%     \end{figure}
+% \end{frame}
+
+% \begin{frame}
+%     \frametitle{\tiny 降维可视化}    
+%     \begin{figure}[ht]
+%         \centering
+%         \subfigure[样例7]{
+%             \includegraphics[width=0.45\textwidth]{png/visial_png/29.png}
+%         }
+%         \hfill
+%         \subfigure[混合100个测试数据集的结果]{
+%             \includegraphics[width=0.45\textwidth]{png/visial_png/100.png}
+%         }
+%     \end{figure}
+% \end{frame}
+
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+        \item 经过比较，lstm模型和chatglm模型的结果差不多，但是chatglm模型总体来说比较稳定。
+        % 但是lstm的结果在单个数据集上的测试结果大部分是一条直线，就像是对数据集合用了一条直线进行最佳拟合。
+        \item 通过使用Word2Vec可视化发现，k线图预测中最高价和最低价对最终预测结果的影响比较大。
+        % \item 总得来说预测的准确度还是和数据集合有关其中部分数据结果使用这两个模型都准确，反之都不准确。
+        % \item 将k线图的分类使用one-hot编码降维可视化以后，特别从100个数据集合合并集的结果中看，总体规律不太明显。
+        % \item 总的来说这两种模型来泛化
+        % \item 
+	\end{itemize}
+\end{frame}
+
+
+
+
+\subsection{下一步的计划}
+\begin{frame}
+	\frametitle{下一步计划及相关问题}	
+	\begin{itemize}
+        \item 是否继续寻找其他的序列模型进行对比实验
+        \item 寻找提高chatglm模型预测结果的精确性的方法
+        % \item 提取模型中的注意力权重，查看模型对于输入信息的处理细节
+        % \eee{
+        %     \item 如何解决经过规范化以后数值比较接近的问题？
+        % }
+	\end{itemize}
+\end{frame}
+
+% 结束语
+\section{}
+\begin{frame}
+	\frametitle{}
+	\begin{center}
+		\Huge{谢谢老师和同学们的聆听!}
+	\end{center}
+\end{frame}
+
+\end{CJK*}
+\end{document}
