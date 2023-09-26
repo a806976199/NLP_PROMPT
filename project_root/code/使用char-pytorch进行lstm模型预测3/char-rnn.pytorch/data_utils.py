@@ -2,8 +2,6 @@ import json
 import csv
 
 #获取相应的数据集(得到“26然后总的长度”)
-file_name = "filter_data/AAAU.csv"
-
 number_to_letter = {
     '1': 'A',
     '2': 'B',
@@ -46,5 +44,3 @@ def get_data(file_name):
     for i in range(0,len(data) - 25):
         file.append(data[i:i + 26])
     return file,len(file)
-
-file, file_len = get_data(file_name)

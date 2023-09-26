@@ -62,15 +62,3 @@ def get_datas(file_names):
         file.append(data[i:i + 26])
     return file,len(file)
 
-
-
-#获得所有的文件数据结果
-# import glob
-# file_pattern = "filter_data/*.csv"
-# all_file = []
-# for file_name in glob.glob(file_pattern):
-#     print(file_name)
-#     all_file.append(file_name)
-# all_file = sorted(all_file)[:-1]
-
-# file, file_len = get_datas(all_file)

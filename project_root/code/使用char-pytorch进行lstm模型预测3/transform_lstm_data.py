@@ -3,7 +3,6 @@ import csv
 
 file_name = "filter_data/AAAU.csv"
 
-
 def get_data(file_name):
     data = []
     file = []
