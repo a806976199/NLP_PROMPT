@@ -1,0 +1,440 @@
+\documentclass[t]{beamer}
+\usepackage{CJKutf8}
+\usepackage{amsfonts}
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{amsthm}
+    \usepackage{enumerate}
+    \usepackage{graphicx}
+    \usepackage{layout}
+    \usepackage{mathrsfs}
+    \usepackage{fancyhdr}
+    \usepackage{subfigure}
+    \usepackage{tcolorbox}
+    \usepackage{tikz-cd}
+    \usepackage{color}
+    \usepackage{pifont}
+    \usepackage{verbatim}
+    \usepackage{mathtools}
+    \usepackage{float}
+    \usepackage{bm}
+    \usetheme{AnnArbor}
+% \usetheme{Antibes}
+\usecolortheme{beaver}
+\usepackage{listings}
+
+% 设置JSON样式
+\lstdefinestyle{json}{
+    basicstyle=\tiny\ttfamily,
+    columns=fullflexible,
+    showstringspaces=false,
+    commentstyle=\color{gray},
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    breaklines=true,
+    frame=single,
+    captionpos=b,
+    aboveskip=10pt,
+    belowskip=10pt
+}
+
+\lstset{
+    language=Python, % 设置代码块语言为Python
+    breaklines=true, % 自动换行
+    basicstyle=\small\ttfamily, % 设置基本字体样式
+    keywordstyle=\bfseries\color{blue}, % 设置关键字样式
+    commentstyle=\itshape\color{gray}, % 设置注释样式
+    showstringspaces=false, % 不显示字符串中的空格
+    frame=single, % 设置代码块边框样式
+    numbers=left, % 行号显示在左侧
+    numberstyle=\tiny\color{gray}, % 设置行号样式
+    stepnumber=1, % 设置行号间隔
+    tabsize=4 % 设置制表符宽度
+}
+
+
+% 设置shell样式
+\lstdefinestyle{shell}{
+    language=bash,
+    basicstyle=\tiny\ttfamily,
+    columns=fullflexible,
+    showstringspaces=false,
+    commentstyle=\color{gray},
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    breaklines=true,
+    frame=single,
+    captionpos=b,
+    aboveskip=10pt,
+    belowskip=10pt
+}
+
+\usepackage{subfigure}
+
+% 添加网址的命令
+\usepackage{hyperref}
+% 这是一个带链接文本的示例：\href{https://www.example.com}{点击这里访问网站}
+% 普通的示例：\url{https://www.example.com}
+% 表格
+\usepackage{booktabs}
+\usepackage{multirow}
+
+% \setbeamertemplate{navigation symbols}{}
+
+\usepackage{textpos}
+
+\newcommand{\dif}{\mathrm{d}}
+\newtheorem{thm}{{定理}}
+
+% some common command
+\newcommand{\mm}[1]{$ #1$\newline}
+% \newcommand{\tuichu}{\Rightarrow}
+% \newcommand{\li}[1]{\newline#1}
+
+
+
+\newcommand{\analysis}[2]{\forall \mathcal{E}{#1},\exists \delta {#2},s.t.}
+\newcommand{\denyanalysis}[2]{\exists \mathcal{E}{#1},\forall \delta {#2},s.t.}
+\newcommand{\yield}{\Rightarrow }
+\newcommand{\jj}{\newline}
+\newcommand{\ff}[1]{$ #1$}   % math environment + newline
+\newcommand{\fgn}[1]{\begin{equation}#1\end{equation}  }
+\newcommand{\fg}[1]{$$ #1$$}   % math environment + newline 
+\newcommand{\pf}{$proof.$\newline}
+\newcommand{\ee}{\newline\ff{\Box}\newline}
+\newcommand{\fenshi}[2]{\ff{\frac{#1}{#2}}}
+\newcommand{\shenlue}{\vdots\jj}
+\newcommand{\abs}[1]{{\left \lvert #1 \right\rvert}}
+\newcommand{\loge}[1]{In ({#1})}
+\newcommand{\logical}[2]{log_{#2}^{#1}}
+\newcommand{\summary}[3]{$\sum_{{#1}={#2}}^{#3}  $}
+\newcommand{\denjia}[2]{{#1}\Leftrightarrow {#2}}
+\newcommand{\jihe}[3]{ {#1}  = \{ {#2} \mid {#3} \} }
+\newcommand{\ve}[2]{\left\langle {#1},{#2}\right \rangle}
+\newcommand{\dakuohao}[2]{\begin{array}{rcl}{#1}\end{array} \} \Rightarrow{#2}}
+\newcommand{\sxb}[3]{#1^{#2}_{#3}}
+\newcommand{\sss}[2]{#1^{#2}}
+\newcommand{\xxx}[2]{#1_{#2}}
+\newcommand{\bri}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\ri}[1]{\romannumeral#1} 
+\newcommand{\polynomial}[8]{#1_{#2}#6^{#7}+#1_{#3}#6^{#8}+...+#1_{#4}#6+#1_{#5} }
+\newcommand{\newd}[4]{f[{#1}_{#2},{#4},{#1}_{#3}]}
+\newcommand{\lb}[2]{\begin{align*}\begin{split}{#1}\{ {#2}\end{split}\end{align*}}
+\newcommand{\tab}[1]{\begin{array}{ll} {#1}\end{array}}
+
+
+% 向量乘积
+\newcommand{\avg}[1]{\left\langle #1 \right\rangle}
+% 偏微分方程
+\newcommand{\difFrac}[2]{\frac{\dif #1}{\dif #2}}
+\newcommand{\pdfrac}[2]{\frac{\partial{#1}}{\partial{#2}}}
+% 不同章节
+\newcommand{\one}[1]{\section{#1}}
+\newcommand{\two}[1]{\subsection{#1}}
+\newcommand{\three}[1]{\subsubsection{#1}}
+\newcommand{\aone}[1]{\section*{#1}}
+\newcommand{\atwo}[1]{\subsection*{#1}}
+\newcommand{\athree}[1]{\subsubsection*{#1}}
+% 大括号，左右都有
+\newcommand{\lbra}[1]{\left\{  {\begin{matrix} #1 \end{matrix}}\right. } 
+% 样式 括号前缀 + 括号 
+\newcommand{\lbras}[2]{{#1}\left\{ {  {\begin{matrix} #2 \end{matrix}}}\right. } 
+\newcommand{\rbra}[1]{ \left.  {\begin{matrix} #1 \end{matrix}} \right\}  } 
+% 模长
+\newcommand{\distance}[1]{\parallel #1\parallel }
+% 等价
+\newcommand{\equ}{\Longleftrightarrow }
+% 共轭
+\newcommand{\cja}[1]{\overline{#1}}
+% 两个矩阵，上面是 方框[] 下面是线条| 中间是 无
+\newcommand{\mtx}[1]{\begin{matrix}#1\end{matrix} }
+\newcommand{\bmtx}[1]{\begin{bmatrix}#1\end{bmatrix} }
+\newcommand{\vmtx}[1]{\begin{vmatrix}#1\end{vmatrix} }
+% \newcommand{\table}[1]{\begin{array}[lr]{ccc} #1 \end{array}}
+
+%输入普通字符
+\newcommand{\ww}[1]{\text{#1}}
+
+% 所有内容 直接头文件搞定
+\newcommand{\everything}[1]{\begin{document}\begin{CJK*}{UTF8}{gkai}#1\end{CJK*}\end{document}}
+
+
+% 存放代码(失败了)
+\newcommand{\cccode}[1]{\begin{lstlisting}#1\end{lstlisting}}
+
+% 改变特定行序列
+\newcommand{\ttt}{\subsection{}}
+
+% 嵌套序号
+\newcommand{\eee}[1]{\begin{enumerate}#1\end{enumerate}}
+
+
+% 模板里面的一些宏
+\newcommand{\pdfFrac}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\OFL}{\mathrm{OFL}}
+\newcommand{\UFL}{\mathrm{UFL}}
+\newcommand{\fl}{\mathrm{fl}}
+\newcommand{\op}{\odot}
+\newcommand{\Eabs}{E_{\mathrm{abs}}}
+\newcommand{\Erel}{E_{\mathrm{rel}}}
+% 变化颜色
+\newcommand{\red}{\textcolor{red}}
+\newcommand{\blue}{\textcolor{blue}}
+% 注释代码
+% \newcommand{\undef}[1]{\iffalse #1 \fi}
+
+% 流程图需要用到的宏包
+\usepackage{palatino}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width = 2cm, minimum height=1cm,text centered, draw = black, fill = red!40]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=2cm, minimum height=1cm, text centered, draw=black, fill = blue!40]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill = yellow!50]
+\tikzstyle{decision} = [diamond, aspect = 3, text centered, draw=black, fill = green!30]
+% 箭头形式
+\tikzstyle{arrow} = [->,>=stealth]
+% 4个非常重要 的新命令
+\newcommand{\start}[2]{    \node (start) [startstop]{#1};\node (in1) [io, below of = start]{#2};\lin{start}{in1}{}}
+\newcommand{\stopp}[3]{\node (out1) [io, below of= #1]{#2};\node (stop) [startstop, below of=out1]{#3};\lin{out1}{stop}{} }
+\newcommand{\pro}[6]{    \node (#3) [process, #2 of=#1,xshift=#4 cm]{#5};}
+\newpage
+\newcommand{\lin}[3]{\draw [arrow] (#1) --node [above] {#3} (#2);}
+
+
+\begin{document}
+\begin{CJK*}{UTF8}{gkai}
+% 一般第一页显示PPT标题以及作者信息
+
+% \BackgroundPic{./Screenshot from 2022-04-20 16-31-08.png}
+
+% 增加学校 前面
+\addtobeamertemplate{title page}{}{
+	\begin{tikzpicture}[remember picture,overlay]
+		% \node[yshift=85pt,xshift=50pt]{\includegraphics[height=2cm]{Screenshot from 2022-04-20 16-51-21.png}};
+\end{tikzpicture}
+}
+	% \title{时间序列数据集}
+	\title{组会汇报}
+	\subtitle {} %不需要
+	\author{
+		陈钶杰\, \\
+		专业:计算数学\,
+	} % 显示作者
+	% \institute {学院：数学科学学院} % 设置学院机构	
+	\date{\today}  % 显示日期
+\titlepage
+
+% 设置目录
+\begin{frame}{目录}
+\frametitle{目录}	
+\tableofcontents  % 显示目录
+\end{frame}
+
+
+\section{代码调试}
+
+\begin{frame}
+    \frametitle{LSTM模型与自然语言模型进行序列分类对比实验}
+    \eee{
+        % \item 所选用的数据集:美股实时行情数据,经过筛选以后一共得到774支股票,将所有股票数据合并后再分成训练集和测试集.
+        % \item 关于预测的准确度，主要做了以下几个测试,完善一下表格(补充实验，添加单个模型训练的所有数据结果，并进行相应的保存)
+        \item 关于FinGLM如何解决计算问题.
+        \item 将序列的窗口长度改为2,3,分别进行单一模型和共享模型的建模.
+        \item 将k线图的三种类型统计,并用excel表导出.
+        % \eee{
+        %     \item 没办法,只能用我自己的电脑跑代码,因为这个集成系统主要是数字考虑的,所以暂时没啥办法!!就用我之前准备好的代码就可以了吧!!!
+        %     \item 就是单一建模,共享建模,分别使用2个点和三个点进行尝试一下吧. 完成了一半,最后把数据统计出来 ok 
+        % } 
+    }
+\end{frame}
+
+
+\subsection{ChatGLM大模型在金融领域的相关应用}
+\begin{frame}
+    \frametitle{整体流程}
+    \includegraphics[scale=0.37]{png/process.png}
+\end{frame}
+
+\begin{frame}
+    \frametitle{如何解决计算题?}
+    \begin{itemize}
+        \item 问题:在2019年,A公司的营业利润率是多少?
+        \eee{
+            \item 通过提取关键字"营业利润率"将问题归类为计算题.
+            \item 根据关键字匹配计算公式:营业利润率=营业利润/营业收入
+            \item 然后构造新的问题链:
+            \eee{
+                \item 在2019年,A公司的营业利润是多少?
+                \item 在2019年,A公司的营业收入是多少?
+            }
+            \item 在得到答案以后使用,使用python进行计算!
+            \item 最后整合回答为:在2019年,A公司的营业利润是14,A公司的营业收入是100,根据公式,营业利润率=营业利润/营业收入得出结果14\%
+        }
+        \item 从源代码可以看出,他们主要是对于问题进行分类,然后对每个类别的问题都保存好模型参数,然后根据问题的种类,调用时加载特定的模型参数文件.总的来说,在这个项目中,他们并没有教会模型进行真正的理解这些问题,而是通过把一个复杂问题变成一系列的简单问题,然后逐个解决.
+    \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{主要思路}
+    \eee{
+        \item 对于问题分类中部分问题主要分为阅读理解题,计算题和信息检索题.    
+        \begin{itemize}
+            \item 通过微调语言模型,使其能够将问题进行编号归类        
+        \end{itemize}
+        \item 根据编号对应的问题类型选择合适的工具进行解决
+        \eee{
+            \item 信息检索编号:
+            \begin{itemize}
+                \item
+                比如问题如果是信息检索,尝试使用了NL2SQL系统(旨在将人类自然语言查询转换为数据库查询语言),但是效果不佳
+                \item 通过使用chatgpt协助生成各式的提问模板,得到训练集,然后再进行模型的微调,使得语言模型能以精确的SQL语言回答问题!
+            \end{itemize}
+            \item 其他意图识别:
+            \begin{itemize}
+                \item 核心就是构建数据集,至于构建方法,他们通过提取问题的关键词方法进行回答对应的问题
+            \end{itemize}
+        }
+        % \item 
+    }
+\end{frame}
+
+\subsection{使用滑动窗口方法来优化序列分类任务}
+
+% 直接用excl.xsl表示出来，反正用这个没啥意义了。
+\begin{frame}
+    \begin{table}[ht]
+        \centering
+        \caption{准确率结果(无特殊说明历史数据点均选取为25)}
+        \large
+        \label{tab:example}
+        \begin{tabular}{|c|l|r|c|c|}
+        \hline
+        模型& 平均准确率\\
+        \hline
+        随机初始化词向量,单一模型建模 & 27.26\% \\
+        \hline
+        Word2Vec方法,单一模型建模 & {27.36\%}\\
+        % 1
+        \hline
+        Word2Vec方法,历史数据点:100,单一模型建模& {27.40\%} \\
+        % 8
+        \hline
+        Word2Vec方法,窗口大小为2,单一模型建模 & {27.72\%} \\
+        \hline
+        Word2Vec方法,窗口大小为2,共享模型建模 & {28.90\%} \\
+        \hline
+        Word2Vec方法,窗口大小为3,单一模型建模 & {26.88\%} \\
+        \hline
+        Word2Vec方法,窗口大小为3,共享模型建模 & {27.06\%} \\
+        \hline        
+        Word2Vec方法，共享模型建模 & {29.49\%} \\
+        \hline
+        chatglm模型，历史数据点:25 & \blue{32.34\%} \\
+        \hline
+    \end{tabular}
+        \end{table}
+\end{frame}
+
+\subsection{k线图类别统计}
+
+\begin{frame}
+    \includegraphics[scale=0.35]{png/k-1.png}\\
+    \ff{
+    \large    \bmtx{C & & & B & & & D & & & A}
+        }\\
+    \includegraphics[scale=0.3]{png/k-2.png}\\
+    \ff{
+    \large    \bmtx{G & & & F & & & H & & & E}
+    }\\
+    \includegraphics[scale=0.14]{png/k-3.png}\\
+    \ff{
+    \large    \bmtx{I & & & L & & & J  & & & K}
+    }
+\end{frame}
+
+\begin{frame}
+    详见excel表格数据
+\end{frame}
+
+% \begin{frame}
+%     \frametitle{\tiny 降维可视化}    
+%     \begin{figure}[ht]
+%         \centering
+%         \subfigure[样例3]{
+%             \includegraphics[width=0.45\textwidth]{png/visial_png/8.png}
+%         }
+%         \hfill
+%         \subfigure[样例4]{
+%             \includegraphics[width=0.45\textwidth]{png/visial_png/9.png}
+%         }
+%     \end{figure}
+% \end{frame}
+
+% \begin{frame}
+%     \frametitle{\tiny 降维可视化}    
+%     \begin{figure}[ht]
+%         \centering
+%         \subfigure[样例5]{
+%             \includegraphics[width=0.45\textwidth]{png/visial_png/10.png}
+%         }
+%         \hfill
+%         \subfigure[样例6]{
+%             \includegraphics[width=0.45\textwidth]{png/visial_png/22.png}
+%         }
+%     \end{figure}
+% \end{frame}
+
+% \begin{frame}
+%     \frametitle{\tiny 降维可视化}    
+%     \begin{figure}[ht]
+%         \centering
+%         \subfigure[样例7]{
+%             \includegraphics[width=0.45\textwidth]{png/visial_png/29.png}
+%         }
+%         \hfill
+%         \subfigure[混合100个测试数据集的结果]{
+%             \includegraphics[width=0.45\textwidth]{png/visial_png/100.png}
+%         }
+%     \end{figure}
+% \end{frame}
+
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+        \item 在他们的设计实现中,并没有直接提高语言模型理解能力,而是通过将复杂问题变成多个简单的子问题,然后逐个解决.
+        \item 从分类结果中可以看到,使用共享模型的效果要优于单一模型.并且当滑动窗口选择2的时候,效果最好,其中选择3时,可能是因为类别太多导致的准确率下降.
+        % \item 总得来说预测的准确度还是和数据集合有关其中部分数据结果使用这两个模型都准确，反之都不准确。
+        % \item 将k线图的分类使用one-hot编码降维可视化以后，特别从100个数据集合合并集的结果中看，总体规律不太明显。
+        % \item 总的来说这两种模型来泛化
+        % \item 
+	\end{itemize}
+\end{frame}
+
+
+
+
+% \subsection{下一步的计划}
+% \begin{frame}
+% 	\frametitle{下一步计划及相关问题}	
+% 	\begin{itemize}
+%         \item 寻找其他相关模型进行比对？
+%         % \item 提取模型中的注意力权重，查看模型对于输入信息的处理细节
+%         % \eee{
+%         %     \item 如何解决经过规范化以后数值比较接近的问题？
+%         % }
+% 	\end{itemize}
+% \end{frame}
+
+% 结束语
+\section{}
+\begin{frame}
+	\frametitle{}
+	\begin{center}
+		\Huge{谢谢老师和同学们的聆听!}
+	\end{center}
+\end{frame}
+
+\end{CJK*}
+\end{document}
