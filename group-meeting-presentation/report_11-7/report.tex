@@ -1,0 +1,455 @@
+\documentclass[t]{beamer}
+\usepackage{CJKutf8}
+\usepackage{amsfonts}
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{amsthm}
+    \usepackage{enumerate}
+    \usepackage{graphicx}
+    \usepackage{layout}
+    \usepackage{mathrsfs}
+    \usepackage{fancyhdr}
+    \usepackage{subfigure}
+    \usepackage{tcolorbox}
+    \usepackage{tikz-cd}
+    \usepackage{color}
+    \usepackage{pifont}
+    \usepackage{verbatim}
+    \usepackage{mathtools}
+    \usepackage{float}
+    \usepackage{bm}
+    \usetheme{AnnArbor}
+% \usetheme{Antibes}
+\usecolortheme{beaver}
+\usepackage{listings}
+
+% 设置JSON样式
+\lstdefinestyle{json}{
+    basicstyle=\tiny\ttfamily,
+    columns=fullflexible,
+    showstringspaces=false,
+    commentstyle=\color{gray},
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    breaklines=true,
+    frame=single,
+    captionpos=b,
+    aboveskip=10pt,
+    belowskip=10pt
+}
+
+\lstset{
+    language=Python, % 设置代码块语言为Python
+    breaklines=true, % 自动换行
+    basicstyle=\small\ttfamily, % 设置基本字体样式
+    keywordstyle=\bfseries\color{blue}, % 设置关键字样式
+    commentstyle=\itshape\color{gray}, % 设置注释样式
+    showstringspaces=false, % 不显示字符串中的空格
+    frame=single, % 设置代码块边框样式
+    numbers=left, % 行号显示在左侧
+    numberstyle=\tiny\color{gray}, % 设置行号样式
+    stepnumber=1, % 设置行号间隔
+    tabsize=4 % 设置制表符宽度
+}
+
+
+% 设置shell样式
+\lstdefinestyle{shell}{
+    language=bash,
+    basicstyle=\tiny\ttfamily,
+    columns=fullflexible,
+    showstringspaces=false,
+    commentstyle=\color{gray},
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    breaklines=true,
+    frame=single,
+    captionpos=b,
+    aboveskip=10pt,
+    belowskip=10pt
+}
+
+\usepackage{subfigure}
+
+% 添加网址的命令
+\usepackage{hyperref}
+% 这是一个带链接文本的示例：\href{https://www.example.com}{点击这里访问网站}
+% 普通的示例：\url{https://www.example.com}
+% 表格
+\usepackage{booktabs}
+\usepackage{multirow}
+
+% \setbeamertemplate{navigation symbols}{}
+
+\usepackage{textpos}
+
+\newcommand{\dif}{\mathrm{d}}
+\newtheorem{thm}{{定理}}
+
+% some common command
+\newcommand{\mm}[1]{$ #1$\newline}
+% \newcommand{\tuichu}{\Rightarrow}
+% \newcommand{\li}[1]{\newline#1}
+
+
+
+\newcommand{\analysis}[2]{\forall \mathcal{E}{#1},\exists \delta {#2},s.t.}
+\newcommand{\denyanalysis}[2]{\exists \mathcal{E}{#1},\forall \delta {#2},s.t.}
+\newcommand{\yield}{\Rightarrow }
+\newcommand{\jj}{\newline}
+\newcommand{\ff}[1]{$ #1$}   % math environment + newline
+\newcommand{\fgn}[1]{\begin{equation}#1\end{equation}  }
+\newcommand{\fg}[1]{$$ #1$$}   % math environment + newline 
+\newcommand{\pf}{$proof.$\newline}
+\newcommand{\ee}{\newline\ff{\Box}\newline}
+\newcommand{\fenshi}[2]{\ff{\frac{#1}{#2}}}
+\newcommand{\shenlue}{\vdots\jj}
+\newcommand{\abs}[1]{{\left \lvert #1 \right\rvert}}
+\newcommand{\loge}[1]{In ({#1})}
+\newcommand{\logical}[2]{log_{#2}^{#1}}
+\newcommand{\summary}[3]{$\sum_{{#1}={#2}}^{#3}  $}
+\newcommand{\denjia}[2]{{#1}\Leftrightarrow {#2}}
+\newcommand{\jihe}[3]{ {#1}  = \{ {#2} \mid {#3} \} }
+\newcommand{\ve}[2]{\left\langle {#1},{#2}\right \rangle}
+\newcommand{\dakuohao}[2]{\begin{array}{rcl}{#1}\end{array} \} \Rightarrow{#2}}
+\newcommand{\sxb}[3]{#1^{#2}_{#3}}
+\newcommand{\sss}[2]{#1^{#2}}
+\newcommand{\xxx}[2]{#1_{#2}}
+\newcommand{\bri}[1]{\uppercase\expandafter{\romannumeral#1}}
+\newcommand{\ri}[1]{\romannumeral#1} 
+\newcommand{\polynomial}[8]{#1_{#2}#6^{#7}+#1_{#3}#6^{#8}+...+#1_{#4}#6+#1_{#5} }
+\newcommand{\newd}[4]{f[{#1}_{#2},{#4},{#1}_{#3}]}
+\newcommand{\lb}[2]{\begin{align*}\begin{split}{#1}\{ {#2}\end{split}\end{align*}}
+\newcommand{\tab}[1]{\begin{array}{ll} {#1}\end{array}}
+
+
+% 向量乘积
+\newcommand{\avg}[1]{\left\langle #1 \right\rangle}
+% 偏微分方程
+\newcommand{\difFrac}[2]{\frac{\dif #1}{\dif #2}}
+\newcommand{\pdfrac}[2]{\frac{\partial{#1}}{\partial{#2}}}
+% 不同章节
+\newcommand{\one}[1]{\section{#1}}
+\newcommand{\two}[1]{\subsection{#1}}
+\newcommand{\three}[1]{\subsubsection{#1}}
+\newcommand{\aone}[1]{\section*{#1}}
+\newcommand{\atwo}[1]{\subsection*{#1}}
+\newcommand{\athree}[1]{\subsubsection*{#1}}
+% 大括号，左右都有
+\newcommand{\lbra}[1]{\left\{  {\begin{matrix} #1 \end{matrix}}\right. } 
+% 样式 括号前缀 + 括号 
+\newcommand{\lbras}[2]{{#1}\left\{ {  {\begin{matrix} #2 \end{matrix}}}\right. } 
+\newcommand{\rbra}[1]{ \left.  {\begin{matrix} #1 \end{matrix}} \right\}  } 
+% 模长
+\newcommand{\distance}[1]{\parallel #1\parallel }
+% 等价
+\newcommand{\equ}{\Longleftrightarrow }
+% 共轭
+\newcommand{\cja}[1]{\overline{#1}}
+% 两个矩阵，上面是 方框[] 下面是线条| 中间是 无
+\newcommand{\mtx}[1]{\begin{matrix}#1\end{matrix} }
+\newcommand{\bmtx}[1]{\begin{bmatrix}#1\end{bmatrix} }
+\newcommand{\vmtx}[1]{\begin{vmatrix}#1\end{vmatrix} }
+% \newcommand{\table}[1]{\begin{array}[lr]{ccc} #1 \end{array}}
+
+%输入普通字符
+\newcommand{\ww}[1]{\text{#1}}
+
+% 所有内容 直接头文件搞定
+\newcommand{\everything}[1]{\begin{document}\begin{CJK*}{UTF8}{gkai}#1\end{CJK*}\end{document}}
+
+
+% 存放代码(失败了)
+\newcommand{\cccode}[1]{\begin{lstlisting}#1\end{lstlisting}}
+
+% 改变特定行序列
+\newcommand{\ttt}{\subsection{}}
+
+% 嵌套序号
+\newcommand{\eee}[1]{\begin{enumerate}#1\end{enumerate}}
+
+
+% 模板里面的一些宏
+\newcommand{\pdfFrac}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\OFL}{\mathrm{OFL}}
+\newcommand{\UFL}{\mathrm{UFL}}
+\newcommand{\fl}{\mathrm{fl}}
+\newcommand{\op}{\odot}
+\newcommand{\Eabs}{E_{\mathrm{abs}}}
+\newcommand{\Erel}{E_{\mathrm{rel}}}
+% 变化颜色
+\newcommand{\red}{\textcolor{red}}
+\newcommand{\blue}{\textcolor{blue}}
+% 注释代码
+% \newcommand{\undef}[1]{\iffalse #1 \fi}
+
+% 流程图需要用到的宏包
+\usepackage{palatino}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width = 2cm, minimum height=1cm,text centered, draw = black, fill = red!40]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=2cm, minimum height=1cm, text centered, draw=black, fill = blue!40]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill = yellow!50]
+\tikzstyle{decision} = [diamond, aspect = 3, text centered, draw=black, fill = green!30]
+% 箭头形式
+\tikzstyle{arrow} = [->,>=stealth]
+% 4个非常重要 的新命令
+\newcommand{\start}[2]{    \node (start) [startstop]{#1};\node (in1) [io, below of = start]{#2};\lin{start}{in1}{}}
+\newcommand{\stopp}[3]{\node (out1) [io, below of= #1]{#2};\node (stop) [startstop, below of=out1]{#3};\lin{out1}{stop}{} }
+\newcommand{\pro}[6]{    \node (#3) [process, #2 of=#1,xshift=#4 cm]{#5};}
+\newpage
+\newcommand{\lin}[3]{\draw [arrow] (#1) --node [above] {#3} (#2);}
+
+
+\begin{document}
+\begin{CJK*}{UTF8}{gkai}
+% 一般第一页显示PPT标题以及作者信息
+
+% \BackgroundPic{./Screenshot from 2022-04-20 16-31-08.png}
+
+% 增加学校 前面
+\addtobeamertemplate{title page}{}{
+	\begin{tikzpicture}[remember picture,overlay]
+		% \node[yshift=85pt,xshift=50pt]{\includegraphics[height=2cm]{Screenshot from 2022-04-20 16-51-21.png}};
+\end{tikzpicture}
+}
+	% \title{时间序列数据集}
+	\title{组会汇报}
+	\subtitle {} %不需要
+	\author{
+		陈钶杰\, \\
+		专业:计算数学\,
+	} % 显示作者
+	% \institute {学院：数学科学学院} % 设置学院机构	
+	\date{\today}  % 显示日期
+\titlepage
+
+% 设置目录
+\begin{frame}{目录}
+\frametitle{目录}	
+\tableofcontents  % 显示目录
+\end{frame}
+
+\section{相关文献阅读-MLC模型}
+
+\section{代码调试}
+
+\begin{frame}
+    \frametitle{这周主要做的事情}
+    \eee{
+        % \item 所选用的数据集:美股实时行情数据,经过筛选以后一共得到774支股票,将所有股票数据合并后再分成训练集和测试集.
+        % \item 关于预测的准确度，主要做了以下几个测试,完善一下表格(补充实验，添加单个模型训练的所有数据结果，并进行相应的保存)
+        \item 阅读了一篇关于探索神经网络的系统性组合和概括能力的论文
+        \item 修改LSTM模型,使其固定节点个数为25,并选择频率较高的二/三元组作为序列元素进行预测.
+        \item 将时间序列预测的informer模型修改为序列分类的模型
+    }
+\end{frame}
+
+\begin{frame}
+    \frametitle{MLC模型的系统性组合和概括能力}
+    \begin{itemize}
+        \item 这篇文章的通过创建元学习神经网络来模拟类人系统泛化,简单说就是让神经网络模型具有像人一样的基本泛化能力.
+        \item 文章通过对比人和模型在一些简单的泛化任务的表现来表明观点.
+        \item 关于MLC模型的架构.
+        \item 关于MLC模型的结论.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{人类与MLC模型的对比实验1}
+    \includegraphics[scale=0.3]{png/instruction1.png}\\
+    \begin{itemize}
+        \item 对人类参与者（n = 25）,MCL模型提供了一套由14个学习指令（输入/输出对）组成的课程，并被要求为查询指令生成输出.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{人类与MLC模型的对比实验2}
+    \includegraphics[scale=0.3]{png/instruction2.png}\\
+    \begin{itemize}
+        \item 参与者在未看到任何学习示例的情况下对查询(语言字符串)产生了响应(彩色圆圈的序列).其中1-to-1,IC,ME分别表示以一对一,从左到右的方式将查询翻译为图标串联,相互排斥的行为方式.
+        \item 人类的回应非常有结构,且遵循上述的行为方式，MLC模型也得到了有结构性的回答,且符合上述的行为方式.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{MLC模型的架构}
+    \includegraphics[scale=0.2]{png/struct.png}\\
+    \begin{itemize}
+        \item MLC模型使用了标准的transformer架构,MCL模型学习一种例子的方式就相当于元学习，在训练阶段,优化是在动态变化的情况下进行的（每种情况都有新的学习和问题示例），而不是在静态数据集上进行的.在测试情节中，模型的权重被冻结，不提供任务特定的参数,随机的将每个问题与输出序列进行比对.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{文章的结论}
+    \begin{itemize}
+        \item MLC通过元学习获得其能力,系统性泛化和概括能力不是神经网络架构的固有属性,而是从数据中诱导出来的.
+        \item 展示了MLC如何使标准的神经网络经过优化以实现其组合技能，在比较中,以模仿或超越人类的系统性泛化.MLC的系统性远远强于以标准方式训练的神经网络.
+        % \item MLC还允许神经网络处理其他现有挑战，包括使用孤立基元进行系统化使用11,16以及使用相互排斥来推断含义44。我们使用MLC进行行为建模与其他逆向工程人类归纳偏见的方法相关。贝叶斯方法使建模者能够评估不同的表现形式和参数设置，以捕捉通过模型先验45指定的人类行为，这些先验也可以通过分层贝叶斯建模46与行为数据进行调整，尽管结果设置可能会受到限制。
+        \item MLC也有一些不足之处,比如MLC无法处理更长的输出序列以及更复杂的句子结构,这是将来要解决的问题。
+        \item 由于这篇文章的源代码还没有,所以只能知道大致的框架,无法得知其具体的做法.
+    \end{itemize}
+\end{frame}
+
+
+
+\subsection{当前序列分类任务汇总结果}
+
+% 直接用excl.xsl表示出来，反正用这个没啥意义了。
+\begin{frame}
+    \begin{table}[ht]
+        \centering
+        \caption{准确率结果(均用共享型模型进行测试)}
+        \large
+        \label{tab:example}
+        \begin{tabular}{|c|l|r|c|c|}
+        \hline
+        模型& 平均准确率\\
+        % \hline
+        % 随机初始化词向量,单一模型建模 & 27.26\% \\
+        % \hline
+        % Word2Vec方法,单一模型建模 & {27.36\%}\\
+        % 1
+        % \hline
+        % Word2Vec方法,历史数据点:100,单一模型建模& {27.40\%} \\
+        % 8
+        % \hline
+        % Word2Vec方法,窗口大小为2,单一模型建模 & {27.72\%} \\
+        \hline        
+        Word2Vec方法，窗口大小为1 & {29.49\%} \\        
+        \hline
+        Word2Vec方法,窗口大小为2 & {28.90\%} \\
+        % \hline
+        % Word2Vec方法,窗口大小为3,单一模型建模 & {26.88\%} \\
+        \hline
+        Word2Vec方法,窗口大小为3& {27.06\%} \\
+        \hline
+        TCN模型 & {34.52\%} \\
+        \hline
+        InceptionTime模型 & \red{34.80\%} \\
+        \hline
+        TSiT模型& {34.71\%} \\
+        \hline
+        transformer模型 & {34.55\%} \\
+        \hline
+        chatglm模型 & \blue{32.34\%} \\
+        \hline
+        informer模型使用交叉熵损失函数& {23.46\%} \\
+        \hline
+        Word2Vec方法,选择频率较高的节点 & {34.33\%} \\
+        \hline
+    \end{tabular}
+        \end{table}
+\end{frame}
+
+\subsection{模型的修改思路}
+
+\begin{frame}
+	\frametitle{}
+	\begin{itemize}
+        \item 使用频率较高的节点作为基底
+        \eee{
+        \item 将k线图类别中频率最高的前200个作为基底.\\
+        比如将若干个节点组"A,B,D,G,C,...,G,C,G"变成"AB","D","GC",...,"GCG"(个数为25).
+        \item 每次选择25个节点来预测一个节点\\
+        比如根据25个节点:"AB","D","GC",...,"GCG",去预测最后一个节点,比如预测结果是"AB",那么就把"A"作为预测的结果.
+        }
+        \item 
+        关于informer主要做了如下两个修改:
+        \begin{itemize}
+            \item 取消了原本的标准化,数据的标准化以后会导致所有值都在[-1,1]附近不同值之间的特征变得不明显.
+            \item 对于informer的输出部分的线性层和softmax处理器的修改,新增了一层12类别的线性层,并把损失函数从nn.MSELoss()改为nn.CrossEntropyLoss()
+        \end{itemize}        
+	\end{itemize}
+\end{frame}
+
+
+    
+% \subsection{新的神经网络训练方法——MLC}
+
+% \begin{frame}
+%     \frametitle{MLC 是研究人员提出的一种优化程序，旨在通过一系列少样本合成任务来激励系统性}
+%     \begin{itemize}
+%         \item 探索如何使用元学习技术来帮助模型更好地理解和利用复合性。这可能涉及到训练模型以学习如何组合简单的元素或任务，以构建更复杂的概念或执行更复杂的任务。这个研究领域可能会涉及到深度学习、强化学习、符号推理和其他机器学习方法的结合，以实现更具通用性和适应性的学习系统。其强调如何使用元学习来使模型能够更好地理解和利用任务的复合性，从而提高学习系统的灵活性和性能。
+%         \item (数学大模型)DeepMath的效果相当不错,主要是通过高质量数据集的构建,人工标注了几千条现代数学知识问答指令，涵盖了微积分，实分析，复分析，概率论，泛函分析，抽象代数，微分方程，微分几何，拓扑学等多个方向。DeepMath大模型正是基于这个高质量的数据集监督微调llama2语言模型而来。
+%     \end{itemize}
+% \end{frame}
+
+% \subsection{下一步的计划}
+% \begin{frame}
+% 	\frametitle{下一步计划及相关问题}	
+% 	\begin{itemize}
+%         \item 寻找其他相关模型进行比对？
+%         % \item 提取模型中的注意力权重，查看模型对于输入信息的处理细节
+%         % \eee{
+%         %     \item 如何解决经过规范化以后数值比较接近的问题？
+%         % }
+% 	\end{itemize}
+% \end{frame}
+
+% 结束语
+\section{}
+\begin{frame}
+	\frametitle{}
+	\begin{center}
+		\Huge{谢谢老师和同学们的聆听!}
+	\end{center}
+\end{frame}
+
+\end{CJK*}
+\end{document}
+\iffalse 
+\begin{frame}
+    \frametitle{论文阅读结论}
+    \begin{itemize}
+        \item 通过动态的组合任务流来引导训练。为了比较人类和机器，我们进行了使用指导学习范式的人类行为实验。在考虑了七种不同的模型后，我们发现，与完全系统但刚性的概率符号模型以及完全灵活但非系统性的神经网络不同，只有MLC实现了人类式概括所需的系统性和灵活性。MLC还在多个系统性概括基准测试中提高了机器学习系统的组合能力。
+        我们的结果展示了一种标准神经网络架构，当优化其组合能力时，可以在与人类系统性概括的直接比较中模拟人类系统性概括。
+        \item 例如，一旦孩子学会了“跳跃”，他们就能够理解如何“向后跳跃”或“绕锥体跳跃两次”，这是由于他们的组合能力。
+        \item 在使用复杂的架构时可以更具系统性。近年来，神经网络取得了显著的进展，并取得了一系列突破，包括在自然语言处理领域
+        \item 在本文中，我们提供了证据表明，神经网络可以通过 MLC（一种我们引入的优化过程）实现类似于人类的系统性概括，通过一系列少样本组合任务来鼓励系统性（图1）。我们的MLC实现仅使用常见的神经网络，没有添加符号机制，也没有手工设计的内部表示或归纳偏见。相反，MLC通过高级指导和/或直接人类示例提供了指定所需行为的手段；然后要求神经网络通过元学习来发展正确的学习技能。
+        \item 我们展示了MLC如何提高在受欢迎的少样本系统性概括基准测试中的准确性。
+        \item 行为结果:
+        \eee{
+            \item 系统性的泛化通过少样本学习范式进行评估。如图2所示，参与者（n = 25）提供了一套由14个学习指令（输入/输出对）组成的课程，并被要求为10个查询指令生成输出（详细信息请参阅“行为方法：少样本学习任务”部分的方法）。学习指令与潜在的解释语法一致，通过一组组合重写规则从输入中推导出输出（详见“解释语法”部分的方法）。为了表现出色，参与者必须从仅有的几个示例中学习单词的含义，并推广到更复杂的指令。在80.7\%的情况下，参与者能够生成与代数标准完全匹配的输出序列（如图2b（i）中的星号所示）。如果已知长度，两长度输出序列的随机表现为2.8\%，对于更长的序列，随机表现指数减小。值得注意的是，与培训期间看到的较长的输出序列相比，参与者在72.5\%的情况下也能正确推广（如图2b（i）中的最后一条指令所示），这是神经网络经常难以处理的一种泛化类型11。            
+            \item 这些响应仍然表现出高度非随机性，具有强烈的归纳偏见。许多错误涉及“一对一”翻译，将每个输入单词精确映射到一个输出符号，就好像所有单词都是原语而不是函数（所有错误中的24.4\%; 如图2b（i）中的1-to-1标记所示）。其他错误涉及应用函数但混淆了其参数，通常以一种表明在保持输入单词顺序与输出符号顺序方面存在“图标串联”偏见的方式（所有涉及函数3的错误中，23.3\%都遵循这种模式；如图2b（i）中的IC标记所示）。这些响应模式可以与更普遍的语言习得中的偏见进行比较；事实上，一对一27和图标串联28,29的形式在自然语言中广泛存在。
+            \item 这些归纳偏见通过一个开放性的指令任务进行了更直接的评估，参与者在这个任务中不受学习示例的影响，因此他们的先验偏好更有可能显现出来。不同的人类参与者（n = 29）被要求就七个未知指令的输出以及它们之间的关系进行合理的猜测（对“fep fep”或“fep wif”做出一系列彩色圆圈的响应），而不看任何输入/输出示例以影响他们的回应（有关详细信息，请参阅图3中的完整任务和“方法”部分的“行为方法：开放式任务”）。尽管测试的性质是不受限制的，人们的回应非常有结构，并确认了之前的两种归纳偏见。人们的回应还遵循与相互排斥有关的第三种偏见，该偏见鼓励将独特的含义分配给唯一的词汇27。反映这些偏见的强烈影响，大多数参与者（29人中的17人；58.6\%）的响应都与图3a、b（左侧）中的模式类似，这与所有三种归纳偏见都完全一致。在所有回应中，29名参与者中有18名遵循了一对一（62.1\%），29名参与者中有23名（79.3\%）遵循了图标串联，除两名外，所有参与者都遵循了相互排斥原则，对每个指令产生了唯一的响应（29名参与者中有27名；93.1\%）。
+            \item 关于图3的说明:\\
+            图3 | 开放式指令任务。a、b，参与者在未看到任何学习示例的情况下对查询（语言字符串）产生了响应（彩色圆圈的序列）。每一列都显示了不同的词汇分配和不同的响应，可以是来自不同参与者（a）或MLC样本（b）。最左侧的模式（a和b中都有）是人和MLC的最常见输出，以一对一（1对1）和从左到右的方式将查询翻译为图标串联（IC）方式。最右侧的模式（a和b中都有）结构不太明显，但仍为每个指令生成唯一的含义（相互排斥（ME））。
+            \item 
+        }
+    \end{itemize}
+\end{frame}
+\begin{frame}
+    \frametitle{第四图}
+    \begin{itemize}
+        \item 建模结果(特征)
+        \eee{
+            \item 能够这个过程实在动态变化的情节中进行的
+            \item 
+        }
+        接下来，我们评估了MLC在其产生人类水平的系统性泛化以及在这些具有挑战性的泛化任务上产生类似人类的错误模式的能力。一个成功的模型必须从仅有的几个示例中以系统性的方式学习和使用单词，并倾向于捕捉结构化的输入/输出关系的假设。MLC的目标是引导神经网络到参数数值，以便在面对未知任务时支持正是这些种类的泛化并克服以前对系统性的限制。重要的是，这种方法旨在模拟成年人的组合技能，而不是成年人获得这些技能的过程，这是在一般讨论中进一步考虑的问题。MLC的源代码和预训练模型可在线上获得（代码提供）
+        \item 如图4所示，详细内容请参阅“方法”部分的“架构和优化器”部分，MLC使用标准的变换器架构26进行基于内存的元学习。MLC优化变换器以响应新的指令（查询输入），给定一组输入/输出对（学习示例；也称为支持示例21），所有这些都被连接在一起并一起传递作为输入。这相当于元学习，因为优化是在动态变化的情节中进行的（每个情节都有新的学习和查询示例），而不是在静态数据集上进行的；具体而言，每个情节构成了一个不同的seq2seq任务30,31，通过随机生成的潜在语法来解释输入作为输出（请参阅“MLC和MLC变体的元训练程序”部分）。为了成功，变换器必须找到能够从学习的单词中提取含义并将它们组合以回答查询的参数值，依赖于元学习，同时也依赖于变换器架构的创新，这些创新在Fodor和Pylyshyn的论点中没有预见到1（例如，可变长度输入、参数共享和自我关注）。在测试情节中，模型的权重被冻结，不提供任务特定的参数32。最后，鉴于模拟人类响应（包括错误）是最终目标，我们随机地将每个查询与代数输出序列（通过情节的语法生成）或启发式输出序列（通过一对一翻译或错误应用规则进行采样）配对，采样比例大致与经验观察到的比例相同（请参阅“MLC和MLC变体的元训练程序”部分）。
+        \item MLC能够优化高度系统化行为的模型。最系统的运行产生了一个变换器，当在与人们相同的少样本指令学习任务中选择最佳响应时，该变换器表现得完全系统化（100\%的精确匹配准确度）（图2；详细信息请参阅“方法”的“评估程序”部分以及模型变异性在10次运行中的补充信息1），而且还能够推断出未参与元学习的新规则（补充信息1）。对这次运行的非正式分析进一步显示，MLC还能够表现出更微妙和受偏见驱使的行为；从模型输出的分布中进行采样时（图2b），变换器以接近人类表现（80.7\%）的平均率（82.4\%）生成系统化的输出，并以接近人类水平（72.5\%）的速度适当处理较长的输出序列（77.8\%）。此外，与人们一样，LC变换器会产生反映一对一翻译（56.3\%的错误；人类为24.4\%）和图标级串联（13.8\%涉及函数3的错误；人类为23.3\%）的错误。MLC还可以预测哪些指令对人们来说更容易或更困难（皮尔逊相关系数为0.788，P = 0.031，双尾置换检验，n = 10项；详见扩展数据图1中的项目级性能）。在正式表格1（少样本学习）中，我们通过给定模型预测33所有人类响应（图2b (i)）的对数似然来比较模型。在本段的其余部分，当我们说一个模型胜过另一个模型时，它们之间的自然对数点差大于等于8。MLC变换器（表1；MLC）在预测人类行为方面优于更为严格系统化的模型。这包括一个概率符号模型，假设人们推断出黄金语法但偶尔会出现任意的失误（符号（oracle）；方法部分提供了所有符号和基本seq2seq模型的详细信息），以及一个在与MLC相同的训练情节上优化的变换器，尽管输出响应是严格代数的（而不是基于偏见）（MLC（仅代数）；方法部分提供了所有MLC变体的详细信息）。MLC还优于一个基本的seq2seq变换器，该变换器适应图2中的模式而没有进行元学习，以及一个MLC模型，其优化目标是复制而不是系统性的概括（MLC（仅复制）；在培训过程中，查询示例总是与学习示例之一匹配）。MLC变换器在假设人们推断出黄金语法但根据人类归纳偏见进行偶然失误的概率符号模型方面表现得与其相媲美（符号（oracle/biases））。事实上，MLC同样被优化为（隐式）推断出系统化规则并以相同的基于偏见的模式做出回应，因此这两个模型表现出相似是很自然的。性能最佳的MLC（联合）在少样本学习任务和开放式人类响应中都经过了联合优化，如下一段所述。
+        \item 尽管人类的少样本学习行为可以由MLC或概率符号模型很好地表征，但对更为开放的行为的测试强调了MLC的相对优势。相同的变换器体系结构经过了优化，以在开放式参与者行为中填充输出，然后一次性为七个指令填写输出（图3；详细信息请参阅“方法”的“评估程序”部分）。MLC变换器在65.0\%的样本中完全如模型人类参与者回应（图3b（左）），完美地体现了三个关键的归纳偏见。进一步的非正式分析还揭示了MLC捕获了更微妙的响应模式，只部分使用归纳偏见（图3b（右））。在所有模型样本中，有66.0\%遵循一对一（人类为62.1\%），85.0\%遵循图标级串联（人类为79.3\%），绝大多数（99.0\%）选择了每个唯一命令的唯一响应（人类为93.1\%）。模型预测还通过五折交叉验证33进行了评估：MLC和其他模型分别针对23或24名参与者的响应进行了优化（具体取决于交叉验证的拆分），然后为留出的参与者预测响应。通过对数似然评分，并在表1（开放式）中进行总结（在五次交叉验证拆分上求和，平均在三次运行中）。在本段的其余部分，当我们说一个模型胜过另一个模型时，差异大于等于57个自然对数点。MLC优于所有其他选择，包括在先前实验中描述的高度代数的MLC模型（仅代数）和一个概率符号模型，该模型使用三个归纳偏见生成响应，但与MLC不同，它不能优化人类行为中的其他模式（表1；符号（oracle/biases））。重要的是，单个变换器可以针对少样本学习和开放式指令任务进行优化（MLC（联合））；事实上，这是跨实验预测人类行为的最强大模型（扩展数据图5和补充信息1中显示了额外的分析）。
+    \end{itemize}
+\end{frame}
+\begin{frame}
+    \frametitle{机器学习基准测试}
+    \begin{itemize}
+        \item 机器学习基准测试
+        除了预测人类行为之外，MLC可以在系统化泛化的机器学习基准测试中实现低于1\%的错误率。请注意，这里用于优化的示例是由基准测试设计者通过代数规则生成的，因此没有直接模仿人类行为数据。我们尝试了两个流行的基准测试，SCAN和COGS，重点关注它们的系统化词汇泛化任务，探究对新单词和单词组合的处理（而不是新的句子结构）。MLC仍然只使用标准的变压器组件，但为了处理更长的序列，根据“机器学习基准测试”方法部分的描述，添加了处理学习示例的模块化。
+        SCAN涉及将指令（如“走两次”）翻译成一系列动作（“走走”）。在“添加跳跃”分组中，训练集只有一个关于如何“跳跃”（映射到“跳跃”）的示例，测试集探讨了这个动词的组成用法（例如，“跳来跳去右转两次，走三次”），与我们的人类学习任务类似（“zup”类似于图2中的“跳跃”）。
+        COGS涉及将句子（例如，“一个气球被Emma画了”）翻译成表达其含义的逻辑形式（balloon（x 1 ）∨ draw.theme（x 3 ，x 1 ）∨ draw.agent（x 3 ，Emma））。COGS评估了21种不同类型的系统化泛化，其中大多数检查了名词和动词的一次性学习。为了鼓励少样本推理和意义组合，我们依赖表层词类排列，这是元学习的一个简单变种，它使用最少的结构性知识，详见“机器学习基准测试”方法部分。这些排列通过单词的表面类型改变而不扩展基准测试的词汇，以逼近更具自然性的新单词的不断引入（图1）。
+        基准测试错误率总结在表2中。在SCAN上，MLC解决了三个系统化泛化分组，错误率低至0.22\%或更低（准确率高达99.78\%或更高），包括前面提到的“添加跳跃”分组以及“围绕右转”和“对面右转”，检查已知单词的新组合。在COGS上，MLC在18种词汇泛化类型中实现了0.87\%的错误率。没有进行元学习的基本seq2seq在基准测试中的错误率至少是MLC的七倍，尽管使用了相同的变压器架构。但是，表面层次的排列对于MLC来说不足以解决基准测试中的结构泛化任务。MLC无法处理更长的输出序列（SCAN长度分组）以及更复杂的句子结构（COGS中的三种类型），错误率为100\%。这些任务需要处理“生产力”（参见参考文献1第33页），这在很大程度上不同于系统性。但是，在我们的少样本指令学习任务中，MLC确实处理了新的句子结构（对于具有比学习过程中看到的更长的输入和输出序列的查询，正确率为77.8\%，如图2所示），这表明正确的元训练程序可以促进生产力，这是我们将来要解决的问题。 
+    \end{itemize}
+\end{frame}
+\begin{frame}
+    \frametitle{讨论}
+讨论
+35多年前，当Fodor和Pylyshyn提出了神经网络中系统性的问题1时，今天的模型19及其语言技能可能是难以想象的。作为对Fodor和Pylyshyn的预见能力的肯定，系统性辩论一直存在。系统性仍然挑战着模型11-18并激发了新的框架34-41。在补充信息3中报告的初步实验表明，即使对于最新的大型语言模型（如GPT-4）来说，系统性仍然是一个挑战，或者至少是一个未解之谜。
+为了解决这一辩论，并了解神经网络是否能够捕捉类似于人类的组合技能，我们必须将人类和机器进行并排比较，就像在本文和其他最近的工作7,42,43中一样。在我们的实验中，我们发现人类最常见的响应方式在Fodor和Pylyshyn1讨论的方式上是代数和系统性的。然而，人们还依赖归纳偏见，有时支持代数解决方案，有时偏离代数解决方案；事实上，人们不是纯粹的代数机器3,6,7。我们展示了MLC如何使标准的神经网络经过优化以实现其组合技能，以模仿或超越人类的系统性泛化在并排比较中。MLC的系统性远远强于以标准方式训练的神经网络，并且比纯粹的符号模型表现出更复杂的行为。MLC还允许神经网络处理其他现有挑战，包括使用孤立基元进行系统化使用11,16以及使用相互排斥来推断含义44。我们使用MLC进行行为建模与其他逆向工程人类归纳偏见的方法相关。贝叶斯方法使建模者能够评估不同的表现形式和参数设置，以捕捉通过模型先验45指定的人类行为，这些先验也可以通过分层贝叶斯建模46与行为数据进行调整，尽管结果设置可能会受到限制。MLC展示了如何使用元学习来逆向工程归纳偏见（参见参考文献47，了解正式的关系），尽管需要使用更大的表现能力的神经网络。我们的研究增加了一篇关于使用元学习来理解人类或类似人类行为的文献，以前已经进行了综述48，涉及元学习。在我们的实验中，只有MLC密切复制了人类的行为，包括系统性和偏见，MLC ( joint)模型在这两种蓝图之间的权衡方面最好。
+此外，MLC通过元学习获得其能力，系统性泛化和人类偏见不是神经网络架构的固有属性，而是从数据中诱导出来的。
+尽管取得了成功，MLC并不能解决Fodor和Pylyshyn1中提出的所有挑战。MLC不能自动处理未经训练的泛化形式或在元学习分布之外的概念，降低了完全新颖结构的范围，它可以正确处理（比较在补充信息1中报告的学习新规则的令人鼓舞的结果与它在SCAN和COGS生产力分组上的失败）。此外，MLC无法概括对其进行优化的归纳偏见的微妙差异，因为我们通过补充信息2中的额外行为和模型实验进一步探讨。用机器学习的语言来说，我们认为元学习策略在泛化使新的情节在与训练情节相关分布时成功，在与情节中呈现的学习示例不相关时特定测试项是不成功的。当前的架构也缺乏发出新符号的机制2，尽管通过额外的指针机制55可以发出通过学习
+\end{frame}
+
+\fi
