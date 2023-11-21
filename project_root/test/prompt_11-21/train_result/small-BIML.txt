@@ -1,0 +1,101 @@
+  File output: out_models/small-BIML.pt
+  Episode type: algebraic+biases
+  Training on cpu for 10 epochs with batch size 2
+    for a total of 10000 episode presentations
+    with LR warmup ON (1st epoch)
+
+BIML specs:
+ nparams= 1393801
+ nlayers_encoder= 3
+ nlayers_decoder= 3
+ nhead= 8
+ hidden_size= 128
+ dim_feedforward= 512
+ act_feedforward= gelu
+ dropout= 0.1
+ 
+
+Setting LR=0.0000001
+Epoch 1 
+-------------------------------
+0m 0s (- 19m 44s) (1 0% finished) LR: 0.0000001, TrainLoss: 2.3869, ValLoss: 2.4151
+0m 7s (- 23m 39s) (25 0% finished) LR: 0.0000481, TrainLoss: 2.1279, ValLoss: 1.8536
+0m 28s (- 23m 25s) (100 2% finished) LR: 0.0001981, TrainLoss: 1.6882, ValLoss: 1.4831
+0m 57s (- 22m 52s) (200 4% finished) LR: 0.0003981, TrainLoss: 1.5630, ValLoss: 1.5103
+1m 25s (- 22m 14s) (300 6% finished) LR: 0.0005980, TrainLoss: 1.5132, ValLoss: 1.3598
+1m 53s (- 21m 42s) (400 8% finished) LR: 0.0007980, TrainLoss: 1.4793, ValLoss: 1.4296
+2m 21s (- 21m 12s) (500 10% finished) LR: 0.0009980, TrainLoss: 1.4735, ValLoss: 1.3994
+> Saving model as out_models/small-BIML.pt < Done. >
+Epoch 2 
+-------------------------------
+2m 49s (- 20m 44s) (600 12% finished) LR: 0.0010000, TrainLoss: 1.4839, ValLoss: 1.3229
+3m 17s (- 20m 14s) (700 14% finished) LR: 0.0010000, TrainLoss: 1.4059, ValLoss: 1.2717
+3m 45s (- 19m 46s) (800 16% finished) LR: 0.0010000, TrainLoss: 1.3478, ValLoss: 1.2291
+4m 14s (- 19m 19s) (900 18% finished) LR: 0.0010000, TrainLoss: 1.3097, ValLoss: 1.1276
+4m 43s (- 18m 53s) (1000 20% finished) LR: 0.0010000, TrainLoss: 1.2745, ValLoss: 1.2007
+> Saving model as out_models/small-BIML.pt < Done. >
+Epoch 3 
+-------------------------------
+5m 11s (- 18m 24s) (1100 22% finished) LR: 0.0008813, TrainLoss: 1.2394, ValLoss: 1.1175
+5m 39s (- 17m 55s) (1200 24% finished) LR: 0.0008813, TrainLoss: 1.2274, ValLoss: 1.0999
+6m 8s (- 17m 28s) (1300 26% finished) LR: 0.0008813, TrainLoss: 1.2635, ValLoss: 1.1049
+6m 37s (- 17m 1s) (1400 28% finished) LR: 0.0008813, TrainLoss: 1.2369, ValLoss: 1.1419
+7m 5s (- 16m 32s) (1500 30% finished) LR: 0.0008813, TrainLoss: 1.2192, ValLoss: 1.0508
+> Saving model as out_models/small-BIML.pt < Done. >
+Epoch 4 
+-------------------------------
+7m 33s (- 16m 4s) (1600 32% finished) LR: 0.0007625, TrainLoss: 1.1959, ValLoss: 1.0841
+8m 2s (- 15m 36s) (1700 34% finished) LR: 0.0007625, TrainLoss: 1.2177, ValLoss: 1.1297
+8m 30s (- 15m 8s) (1800 36% finished) LR: 0.0007625, TrainLoss: 1.1796, ValLoss: 1.0619
+8m 59s (- 14m 40s) (1900 38% finished) LR: 0.0007625, TrainLoss: 1.1992, ValLoss: 1.1090
+9m 28s (- 14m 12s) (2000 40% finished) LR: 0.0007625, TrainLoss: 1.2061, ValLoss: 1.0922
+> Saving model as out_models/small-BIML.pt < Done. >
+Epoch 5 
+-------------------------------
+9m 56s (- 13m 43s) (2100 42% finished) LR: 0.0006438, TrainLoss: 1.1869, ValLoss: 1.0874
+10m 23s (- 13m 13s) (2200 44% finished) LR: 0.0006438, TrainLoss: 1.1798, ValLoss: 1.0362
+10m 51s (- 12m 44s) (2300 46% finished) LR: 0.0006438, TrainLoss: 1.1900, ValLoss: 1.0692
+11m 18s (- 12m 15s) (2400 48% finished) LR: 0.0006438, TrainLoss: 1.1752, ValLoss: 1.0778
+11m 46s (- 11m 46s) (2500 50% finished) LR: 0.0006438, TrainLoss: 1.1756, ValLoss: 1.0583
+> Saving model as out_models/small-BIML.pt < Done. >
+Epoch 6 
+-------------------------------
+12m 13s (- 11m 17s) (2600 52% finished) LR: 0.0005250, TrainLoss: 1.1628, ValLoss: 1.0704
+12m 41s (- 10m 48s) (2700 54% finished) LR: 0.0005250, TrainLoss: 1.1688, ValLoss: 0.9889
+13m 8s (- 10m 19s) (2800 56% finished) LR: 0.0005250, TrainLoss: 1.1549, ValLoss: 1.0760
+13m 35s (- 9m 50s) (2900 58% finished) LR: 0.0005250, TrainLoss: 1.1453, ValLoss: 0.9988
+14m 3s (- 9m 22s) (3000 60% finished) LR: 0.0005250, TrainLoss: 1.1517, ValLoss: 1.0109
+> Saving model as out_models/small-BIML.pt < Done. >
+Epoch 7 
+-------------------------------
+14m 30s (- 8m 53s) (3100 62% finished) LR: 0.0004063, TrainLoss: 1.1390, ValLoss: 1.0287
+14m 58s (- 8m 25s) (3200 64% finished) LR: 0.0004063, TrainLoss: 1.1449, ValLoss: 1.0208
+15m 25s (- 7m 56s) (3300 66% finished) LR: 0.0004063, TrainLoss: 1.1475, ValLoss: 0.9952
+15m 52s (- 7m 28s) (3400 68% finished) LR: 0.0004063, TrainLoss: 1.1550, ValLoss: 1.0127
+16m 20s (- 7m 0s) (3500 70% finished) LR: 0.0004063, TrainLoss: 1.1295, ValLoss: 1.0203
+> Saving model as out_models/small-BIML.pt < Done. >
+Epoch 8 
+-------------------------------
+16m 49s (- 6m 32s) (3600 72% finished) LR: 0.0002875, TrainLoss: 1.1424, ValLoss: 0.9889
+17m 16s (- 6m 4s) (3700 74% finished) LR: 0.0002875, TrainLoss: 1.1425, ValLoss: 0.9717
+17m 43s (- 5m 35s) (3800 76% finished) LR: 0.0002875, TrainLoss: 1.1348, ValLoss: 1.0136
+18m 11s (- 5m 7s) (3900 78% finished) LR: 0.0002875, TrainLoss: 1.1286, ValLoss: 1.0201
+18m 38s (- 4m 39s) (4000 80% finished) LR: 0.0002875, TrainLoss: 1.1039, ValLoss: 1.0145
+> Saving model as out_models/small-BIML.pt < Done. >
+Epoch 9 
+-------------------------------
+19m 6s (- 4m 11s) (4100 82% finished) LR: 0.0001688, TrainLoss: 1.1256, ValLoss: 0.9737
+19m 33s (- 3m 43s) (4200 84% finished) LR: 0.0001688, TrainLoss: 1.1283, ValLoss: 0.9763
+20m 0s (- 3m 15s) (4300 86% finished) LR: 0.0001688, TrainLoss: 1.1109, ValLoss: 0.9978
+20m 27s (- 2m 47s) (4400 88% finished) LR: 0.0001688, TrainLoss: 1.1246, ValLoss: 1.0121
+20m 55s (- 2m 19s) (4500 90% finished) LR: 0.0001688, TrainLoss: 1.1205, ValLoss: 0.9888
+> Saving model as out_models/small-BIML.pt < Done. >
+Epoch 10 
+-------------------------------
+21m 23s (- 1m 51s) (4600 92% finished) LR: 0.0000500, TrainLoss: 1.1282, ValLoss: 0.9816
+21m 50s (- 1m 23s) (4700 94% finished) LR: 0.0000500, TrainLoss: 1.1193, ValLoss: 0.9761
+22m 18s (- 0m 55s) (4800 96% finished) LR: 0.0000500, TrainLoss: 1.1169, ValLoss: 0.9783
+22m 45s (- 0m 27s) (4900 98% finished) LR: 0.0000500, TrainLoss: 1.0948, ValLoss: 0.9704
+23m 13s (- 0m 0s) (5000 100% finished) LR: 0.0000500, TrainLoss: 1.1046, ValLoss: 0.9789
+> Saving model as out_models/small-BIML.pt < Done. >
+Training complete.

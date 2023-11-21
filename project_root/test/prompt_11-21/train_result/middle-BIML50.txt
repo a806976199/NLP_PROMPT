@@ -1,0 +1,421 @@
+  File output: out_models/middle-BIML50.pt
+  Episode type: algebraic+biases
+  Training on cuda for 50 epochs with batch size 20
+    for a total of 500000 episode presentations
+    with LR warmup ON (1st epoch)
+
+BIML specs:
+ nparams= 1393801
+ nlayers_encoder= 3
+ nlayers_decoder= 3
+ nhead= 8
+ hidden_size= 128
+ dim_feedforward= 512
+ act_feedforward= gelu
+ dropout= 0.1
+ 
+
+Setting LR=0.0000001
+Epoch 1 
+-------------------------------
+0m 0s (- 207m 48s) (1 0% finished) LR: 0.0000001, TrainLoss: 2.3617, ValLoss: 2.3306
+0m 5s (- 97m 54s) (25 0% finished) LR: 0.0000481, TrainLoss: 2.1404, ValLoss: 1.8954
+0m 21s (- 91m 16s) (100 0% finished) LR: 0.0001981, TrainLoss: 1.6370, ValLoss: 1.4809
+0m 43s (- 90m 45s) (200 1% finished) LR: 0.0003981, TrainLoss: 1.4581, ValLoss: 1.3949
+1m 6s (- 90m 51s) (300 1% finished) LR: 0.0005980, TrainLoss: 1.3997, ValLoss: 1.3574
+1m 25s (- 87m 57s) (400 2% finished) LR: 0.0007980, TrainLoss: 1.3034, ValLoss: 1.1747
+1m 47s (- 87m 40s) (500 2% finished) LR: 0.0009980, TrainLoss: 1.2183, ValLoss: 1.1382
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 2 
+-------------------------------
+2m 6s (- 85m 28s) (600 2% finished) LR: 0.0010000, TrainLoss: 1.1886, ValLoss: 1.1418
+2m 24s (- 83m 51s) (700 3% finished) LR: 0.0010000, TrainLoss: 1.1688, ValLoss: 1.1011
+2m 43s (- 82m 29s) (800 3% finished) LR: 0.0010000, TrainLoss: 1.1579, ValLoss: 1.1033
+3m 2s (- 81m 28s) (900 4% finished) LR: 0.0010000, TrainLoss: 1.1571, ValLoss: 1.0941
+3m 21s (- 80m 34s) (1000 4% finished) LR: 0.0010000, TrainLoss: 1.1435, ValLoss: 1.0783
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 3 
+-------------------------------
+3m 40s (- 79m 52s) (1100 4% finished) LR: 0.0009802, TrainLoss: 1.1384, ValLoss: 1.0720
+3m 59s (- 79m 7s) (1200 5% finished) LR: 0.0009802, TrainLoss: 1.1426, ValLoss: 1.0713
+4m 18s (- 78m 29s) (1300 5% finished) LR: 0.0009802, TrainLoss: 1.1321, ValLoss: 1.0756
+4m 37s (- 77m 53s) (1400 6% finished) LR: 0.0009802, TrainLoss: 1.1290, ValLoss: 1.0779
+4m 56s (- 77m 17s) (1500 6% finished) LR: 0.0009802, TrainLoss: 1.1294, ValLoss: 1.0704
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 4 
+-------------------------------
+5m 14s (- 76m 46s) (1600 6% finished) LR: 0.0009604, TrainLoss: 1.1347, ValLoss: 1.0739
+5m 33s (- 76m 14s) (1700 7% finished) LR: 0.0009604, TrainLoss: 1.1163, ValLoss: 1.0687
+5m 52s (- 75m 45s) (1800 7% finished) LR: 0.0009604, TrainLoss: 1.1286, ValLoss: 1.0668
+6m 11s (- 75m 15s) (1900 8% finished) LR: 0.0009604, TrainLoss: 1.1262, ValLoss: 1.0687
+6m 30s (- 74m 49s) (2000 8% finished) LR: 0.0009604, TrainLoss: 1.1101, ValLoss: 1.0597
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 5 
+-------------------------------
+6m 49s (- 74m 26s) (2100 8% finished) LR: 0.0009406, TrainLoss: 1.1163, ValLoss: 1.0625
+7m 8s (- 74m 0s) (2200 9% finished) LR: 0.0009406, TrainLoss: 1.1121, ValLoss: 1.0529
+7m 27s (- 73m 34s) (2300 9% finished) LR: 0.0009406, TrainLoss: 1.1123, ValLoss: 1.0566
+7m 46s (- 73m 9s) (2400 10% finished) LR: 0.0009406, TrainLoss: 1.1154, ValLoss: 1.0480
+8m 4s (- 72m 44s) (2500 10% finished) LR: 0.0009406, TrainLoss: 1.1101, ValLoss: 1.0473
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 6 
+-------------------------------
+8m 24s (- 72m 22s) (2600 10% finished) LR: 0.0009208, TrainLoss: 1.1071, ValLoss: 1.0524
+8m 42s (- 71m 58s) (2700 11% finished) LR: 0.0009208, TrainLoss: 1.1066, ValLoss: 1.0413
+9m 1s (- 71m 35s) (2800 11% finished) LR: 0.0009208, TrainLoss: 1.1061, ValLoss: 1.0504
+9m 20s (- 71m 13s) (2900 12% finished) LR: 0.0009208, TrainLoss: 1.1064, ValLoss: 1.0497
+9m 39s (- 70m 50s) (3000 12% finished) LR: 0.0009208, TrainLoss: 1.1036, ValLoss: 1.0430
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 7 
+-------------------------------
+9m 58s (- 70m 28s) (3100 12% finished) LR: 0.0009010, TrainLoss: 1.1038, ValLoss: 1.0468
+10m 17s (- 70m 7s) (3200 13% finished) LR: 0.0009010, TrainLoss: 1.0959, ValLoss: 1.0457
+10m 36s (- 69m 44s) (3300 13% finished) LR: 0.0009010, TrainLoss: 1.1016, ValLoss: 1.0469
+10m 55s (- 69m 23s) (3400 14% finished) LR: 0.0009010, TrainLoss: 1.1032, ValLoss: 1.0387
+11m 14s (- 69m 0s) (3500 14% finished) LR: 0.0009010, TrainLoss: 1.0905, ValLoss: 1.0415
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 8 
+-------------------------------
+11m 33s (- 68m 41s) (3600 14% finished) LR: 0.0008813, TrainLoss: 1.0891, ValLoss: 1.0327
+11m 52s (- 68m 19s) (3700 15% finished) LR: 0.0008813, TrainLoss: 1.0866, ValLoss: 1.0269
+12m 10s (- 67m 58s) (3800 15% finished) LR: 0.0008813, TrainLoss: 1.0848, ValLoss: 1.0313
+12m 29s (- 67m 37s) (3900 16% finished) LR: 0.0008813, TrainLoss: 1.0772, ValLoss: 1.0176
+12m 48s (- 67m 16s) (4000 16% finished) LR: 0.0008813, TrainLoss: 1.0781, ValLoss: 1.0226
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 9 
+-------------------------------
+13m 8s (- 66m 57s) (4100 16% finished) LR: 0.0008615, TrainLoss: 1.0707, ValLoss: 1.0165
+13m 26s (- 66m 35s) (4200 17% finished) LR: 0.0008615, TrainLoss: 1.0634, ValLoss: 1.0223
+13m 45s (- 66m 15s) (4300 17% finished) LR: 0.0008615, TrainLoss: 1.0693, ValLoss: 1.0094
+14m 4s (- 65m 54s) (4400 18% finished) LR: 0.0008615, TrainLoss: 1.0629, ValLoss: 0.9936
+14m 23s (- 65m 33s) (4500 18% finished) LR: 0.0008615, TrainLoss: 1.0518, ValLoss: 0.9859
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 10 
+-------------------------------
+14m 42s (- 65m 14s) (4600 18% finished) LR: 0.0008417, TrainLoss: 1.0544, ValLoss: 0.9908
+15m 1s (- 64m 53s) (4700 19% finished) LR: 0.0008417, TrainLoss: 1.0474, ValLoss: 0.9812
+15m 20s (- 64m 32s) (4800 19% finished) LR: 0.0008417, TrainLoss: 1.0391, ValLoss: 0.9742
+15m 39s (- 64m 12s) (4900 20% finished) LR: 0.0008417, TrainLoss: 1.0325, ValLoss: 0.9701
+15m 58s (- 63m 52s) (5000 20% finished) LR: 0.0008417, TrainLoss: 1.0374, ValLoss: 0.9665
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 11 
+-------------------------------
+16m 17s (- 63m 33s) (5100 20% finished) LR: 0.0008219, TrainLoss: 1.0296, ValLoss: 0.9732
+16m 36s (- 63m 13s) (5200 21% finished) LR: 0.0008219, TrainLoss: 1.0235, ValLoss: 0.9590
+16m 55s (- 62m 53s) (5300 21% finished) LR: 0.0008219, TrainLoss: 1.0248, ValLoss: 0.9387
+17m 14s (- 62m 33s) (5400 22% finished) LR: 0.0008219, TrainLoss: 1.0068, ValLoss: 0.9188
+17m 32s (- 62m 13s) (5500 22% finished) LR: 0.0008219, TrainLoss: 0.9971, ValLoss: 0.9003
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 12 
+-------------------------------
+17m 51s (- 61m 53s) (5600 22% finished) LR: 0.0008021, TrainLoss: 0.9824, ValLoss: 0.8923
+18m 10s (- 61m 33s) (5700 23% finished) LR: 0.0008021, TrainLoss: 0.9722, ValLoss: 0.8725
+18m 29s (- 61m 13s) (5800 23% finished) LR: 0.0008021, TrainLoss: 0.9486, ValLoss: 0.8560
+18m 48s (- 60m 53s) (5900 24% finished) LR: 0.0008021, TrainLoss: 0.9387, ValLoss: 0.8333
+19m 7s (- 60m 33s) (6000 24% finished) LR: 0.0008021, TrainLoss: 0.9227, ValLoss: 0.8237
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 13 
+-------------------------------
+19m 26s (- 60m 14s) (6100 24% finished) LR: 0.0007823, TrainLoss: 0.9018, ValLoss: 0.7869
+19m 45s (- 59m 54s) (6200 25% finished) LR: 0.0007823, TrainLoss: 0.8747, ValLoss: 0.7697
+20m 4s (- 59m 34s) (6300 25% finished) LR: 0.0007823, TrainLoss: 0.8640, ValLoss: 0.7491
+20m 23s (- 59m 14s) (6400 26% finished) LR: 0.0007823, TrainLoss: 0.8387, ValLoss: 0.7189
+20m 41s (- 58m 54s) (6500 26% finished) LR: 0.0007823, TrainLoss: 0.8199, ValLoss: 0.6768
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 14 
+-------------------------------
+21m 0s (- 58m 35s) (6600 26% finished) LR: 0.0007625, TrainLoss: 0.7928, ValLoss: 0.6389
+21m 19s (- 58m 15s) (6700 27% finished) LR: 0.0007625, TrainLoss: 0.7769, ValLoss: 0.6326
+21m 38s (- 57m 56s) (6800 27% finished) LR: 0.0007625, TrainLoss: 0.7500, ValLoss: 0.6162
+21m 57s (- 57m 37s) (6900 28% finished) LR: 0.0007625, TrainLoss: 0.7352, ValLoss: 0.6009
+22m 16s (- 57m 17s) (7000 28% finished) LR: 0.0007625, TrainLoss: 0.7136, ValLoss: 0.5839
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 15 
+-------------------------------
+22m 35s (- 56m 57s) (7100 28% finished) LR: 0.0007427, TrainLoss: 0.6977, ValLoss: 0.5567
+22m 54s (- 56m 38s) (7200 29% finished) LR: 0.0007427, TrainLoss: 0.6783, ValLoss: 0.5455
+23m 13s (- 56m 19s) (7300 29% finished) LR: 0.0007427, TrainLoss: 0.6629, ValLoss: 0.5359
+23m 32s (- 55m 59s) (7400 30% finished) LR: 0.0007427, TrainLoss: 0.6505, ValLoss: 0.5173
+23m 51s (- 55m 39s) (7500 30% finished) LR: 0.0007427, TrainLoss: 0.6331, ValLoss: 0.5049
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 16 
+-------------------------------
+24m 10s (- 55m 20s) (7600 30% finished) LR: 0.0007229, TrainLoss: 0.6169, ValLoss: 0.4978
+24m 29s (- 55m 1s) (7700 31% finished) LR: 0.0007229, TrainLoss: 0.6094, ValLoss: 0.4912
+24m 48s (- 54m 41s) (7800 31% finished) LR: 0.0007229, TrainLoss: 0.5977, ValLoss: 0.4756
+25m 7s (- 54m 22s) (7900 32% finished) LR: 0.0007229, TrainLoss: 0.5832, ValLoss: 0.4649
+25m 25s (- 54m 2s) (8000 32% finished) LR: 0.0007229, TrainLoss: 0.5765, ValLoss: 0.4499
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 17 
+-------------------------------
+25m 44s (- 53m 42s) (8100 32% finished) LR: 0.0007031, TrainLoss: 0.5690, ValLoss: 0.4425
+26m 3s (- 53m 23s) (8200 33% finished) LR: 0.0007031, TrainLoss: 0.5562, ValLoss: 0.4334
+26m 22s (- 53m 3s) (8300 33% finished) LR: 0.0007031, TrainLoss: 0.5375, ValLoss: 0.4298
+26m 41s (- 52m 44s) (8400 34% finished) LR: 0.0007031, TrainLoss: 0.5287, ValLoss: 0.4088
+27m 0s (- 52m 25s) (8500 34% finished) LR: 0.0007031, TrainLoss: 0.5265, ValLoss: 0.4057
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 18 
+-------------------------------
+27m 19s (- 52m 6s) (8600 34% finished) LR: 0.0006833, TrainLoss: 0.5141, ValLoss: 0.4054
+27m 38s (- 51m 47s) (8700 35% finished) LR: 0.0006833, TrainLoss: 0.4975, ValLoss: 0.3760
+27m 57s (- 51m 28s) (8800 35% finished) LR: 0.0006833, TrainLoss: 0.4964, ValLoss: 0.3707
+28m 16s (- 51m 8s) (8900 36% finished) LR: 0.0006833, TrainLoss: 0.4870, ValLoss: 0.3637
+28m 35s (- 50m 49s) (9000 36% finished) LR: 0.0006833, TrainLoss: 0.4824, ValLoss: 0.3500
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 19 
+-------------------------------
+28m 54s (- 50m 30s) (9100 36% finished) LR: 0.0006635, TrainLoss: 0.4723, ValLoss: 0.3583
+29m 13s (- 50m 10s) (9200 37% finished) LR: 0.0006635, TrainLoss: 0.4650, ValLoss: 0.3286
+29m 32s (- 49m 51s) (9300 37% finished) LR: 0.0006635, TrainLoss: 0.4616, ValLoss: 0.3283
+29m 51s (- 49m 32s) (9400 38% finished) LR: 0.0006635, TrainLoss: 0.4585, ValLoss: 0.3166
+30m 10s (- 49m 13s) (9500 38% finished) LR: 0.0006635, TrainLoss: 0.4473, ValLoss: 0.3069
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 20 
+-------------------------------
+30m 29s (- 48m 54s) (9600 38% finished) LR: 0.0006438, TrainLoss: 0.4326, ValLoss: 0.2948
+30m 48s (- 48m 34s) (9700 39% finished) LR: 0.0006438, TrainLoss: 0.4366, ValLoss: 0.2744
+31m 6s (- 48m 15s) (9800 39% finished) LR: 0.0006438, TrainLoss: 0.4256, ValLoss: 0.2781
+31m 25s (- 47m 56s) (9900 40% finished) LR: 0.0006438, TrainLoss: 0.4203, ValLoss: 0.2681
+31m 44s (- 47m 36s) (10000 40% finished) LR: 0.0006438, TrainLoss: 0.4196, ValLoss: 0.2641
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 21 
+-------------------------------
+32m 3s (- 47m 17s) (10100 40% finished) LR: 0.0006240, TrainLoss: 0.4079, ValLoss: 0.2592
+32m 22s (- 46m 58s) (10200 41% finished) LR: 0.0006240, TrainLoss: 0.4059, ValLoss: 0.2380
+32m 41s (- 46m 39s) (10300 41% finished) LR: 0.0006240, TrainLoss: 0.3938, ValLoss: 0.2369
+33m 0s (- 46m 19s) (10400 42% finished) LR: 0.0006240, TrainLoss: 0.3904, ValLoss: 0.2482
+33m 19s (- 46m 0s) (10500 42% finished) LR: 0.0006240, TrainLoss: 0.3904, ValLoss: 0.2241
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 22 
+-------------------------------
+33m 38s (- 45m 41s) (10600 42% finished) LR: 0.0006042, TrainLoss: 0.3816, ValLoss: 0.2131
+33m 57s (- 45m 22s) (10700 43% finished) LR: 0.0006042, TrainLoss: 0.3755, ValLoss: 0.2122
+34m 15s (- 45m 3s) (10800 43% finished) LR: 0.0006042, TrainLoss: 0.3734, ValLoss: 0.2071
+34m 34s (- 44m 44s) (10900 44% finished) LR: 0.0006042, TrainLoss: 0.3691, ValLoss: 0.2037
+34m 53s (- 44m 25s) (11000 44% finished) LR: 0.0006042, TrainLoss: 0.3593, ValLoss: 0.2034
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 23 
+-------------------------------
+35m 13s (- 44m 6s) (11100 44% finished) LR: 0.0005844, TrainLoss: 0.3592, ValLoss: 0.1932
+35m 32s (- 43m 47s) (11200 45% finished) LR: 0.0005844, TrainLoss: 0.3526, ValLoss: 0.1884
+35m 51s (- 43m 28s) (11300 45% finished) LR: 0.0005844, TrainLoss: 0.3526, ValLoss: 0.1897
+36m 9s (- 43m 8s) (11400 46% finished) LR: 0.0005844, TrainLoss: 0.3462, ValLoss: 0.1831
+36m 28s (- 42m 49s) (11500 46% finished) LR: 0.0005844, TrainLoss: 0.3439, ValLoss: 0.1796
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 24 
+-------------------------------
+36m 47s (- 42m 30s) (11600 46% finished) LR: 0.0005646, TrainLoss: 0.3378, ValLoss: 0.1912
+37m 6s (- 42m 11s) (11700 47% finished) LR: 0.0005646, TrainLoss: 0.3371, ValLoss: 0.1827
+37m 25s (- 41m 51s) (11800 47% finished) LR: 0.0005646, TrainLoss: 0.3270, ValLoss: 0.1777
+37m 44s (- 41m 32s) (11900 48% finished) LR: 0.0005646, TrainLoss: 0.3289, ValLoss: 0.1784
+38m 3s (- 41m 13s) (12000 48% finished) LR: 0.0005646, TrainLoss: 0.3299, ValLoss: 0.1655
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 25 
+-------------------------------
+38m 22s (- 40m 54s) (12100 48% finished) LR: 0.0005448, TrainLoss: 0.3149, ValLoss: 0.1588
+38m 40s (- 40m 35s) (12200 49% finished) LR: 0.0005448, TrainLoss: 0.3158, ValLoss: 0.1650
+38m 59s (- 40m 15s) (12300 49% finished) LR: 0.0005448, TrainLoss: 0.3182, ValLoss: 0.1633
+39m 18s (- 39m 56s) (12400 50% finished) LR: 0.0005448, TrainLoss: 0.3146, ValLoss: 0.1531
+39m 37s (- 39m 37s) (12500 50% finished) LR: 0.0005448, TrainLoss: 0.3108, ValLoss: 0.1644
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 26 
+-------------------------------
+39m 56s (- 39m 18s) (12600 50% finished) LR: 0.0005250, TrainLoss: 0.3126, ValLoss: 0.1506
+40m 15s (- 38m 59s) (12700 51% finished) LR: 0.0005250, TrainLoss: 0.3047, ValLoss: 0.1505
+40m 34s (- 38m 40s) (12800 51% finished) LR: 0.0005250, TrainLoss: 0.2997, ValLoss: 0.1546
+40m 53s (- 38m 21s) (12900 52% finished) LR: 0.0005250, TrainLoss: 0.2966, ValLoss: 0.1617
+41m 12s (- 38m 2s) (13000 52% finished) LR: 0.0005250, TrainLoss: 0.2911, ValLoss: 0.1552
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 27 
+-------------------------------
+41m 31s (- 37m 43s) (13100 52% finished) LR: 0.0005052, TrainLoss: 0.2894, ValLoss: 0.1416
+41m 50s (- 37m 24s) (13200 53% finished) LR: 0.0005052, TrainLoss: 0.2936, ValLoss: 0.1421
+42m 9s (- 37m 5s) (13300 53% finished) LR: 0.0005052, TrainLoss: 0.2907, ValLoss: 0.1455
+42m 28s (- 36m 46s) (13400 54% finished) LR: 0.0005052, TrainLoss: 0.2886, ValLoss: 0.1500
+42m 47s (- 36m 26s) (13500 54% finished) LR: 0.0005052, TrainLoss: 0.2872, ValLoss: 0.1427
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 28 
+-------------------------------
+43m 6s (- 36m 7s) (13600 54% finished) LR: 0.0004854, TrainLoss: 0.2826, ValLoss: 0.1545
+43m 25s (- 35m 48s) (13700 55% finished) LR: 0.0004854, TrainLoss: 0.2825, ValLoss: 0.1388
+43m 44s (- 35m 29s) (13800 55% finished) LR: 0.0004854, TrainLoss: 0.2771, ValLoss: 0.1408
+44m 2s (- 35m 10s) (13900 56% finished) LR: 0.0004854, TrainLoss: 0.2756, ValLoss: 0.1414
+44m 21s (- 34m 51s) (14000 56% finished) LR: 0.0004854, TrainLoss: 0.2757, ValLoss: 0.1422
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 29 
+-------------------------------
+44m 40s (- 34m 32s) (14100 56% finished) LR: 0.0004656, TrainLoss: 0.2697, ValLoss: 0.1331
+44m 59s (- 34m 13s) (14200 57% finished) LR: 0.0004656, TrainLoss: 0.2701, ValLoss: 0.1349
+45m 18s (- 33m 54s) (14300 57% finished) LR: 0.0004656, TrainLoss: 0.2681, ValLoss: 0.1415
+45m 37s (- 33m 35s) (14400 58% finished) LR: 0.0004656, TrainLoss: 0.2675, ValLoss: 0.1309
+45m 56s (- 33m 16s) (14500 58% finished) LR: 0.0004656, TrainLoss: 0.2695, ValLoss: 0.1305
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 30 
+-------------------------------
+46m 15s (- 32m 57s) (14600 58% finished) LR: 0.0004458, TrainLoss: 0.2612, ValLoss: 0.1369
+46m 34s (- 32m 37s) (14700 59% finished) LR: 0.0004458, TrainLoss: 0.2629, ValLoss: 0.1360
+46m 53s (- 32m 18s) (14800 59% finished) LR: 0.0004458, TrainLoss: 0.2614, ValLoss: 0.1292
+47m 12s (- 31m 59s) (14900 60% finished) LR: 0.0004458, TrainLoss: 0.2644, ValLoss: 0.1280
+47m 31s (- 31m 40s) (15000 60% finished) LR: 0.0004458, TrainLoss: 0.2595, ValLoss: 0.1283
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 31 
+-------------------------------
+47m 50s (- 31m 21s) (15100 60% finished) LR: 0.0004260, TrainLoss: 0.2562, ValLoss: 0.1265
+48m 9s (- 31m 2s) (15200 61% finished) LR: 0.0004260, TrainLoss: 0.2520, ValLoss: 0.1273
+48m 28s (- 30m 43s) (15300 61% finished) LR: 0.0004260, TrainLoss: 0.2580, ValLoss: 0.1308
+48m 47s (- 30m 24s) (15400 62% finished) LR: 0.0004260, TrainLoss: 0.2507, ValLoss: 0.1229
+49m 5s (- 30m 5s) (15500 62% finished) LR: 0.0004260, TrainLoss: 0.2462, ValLoss: 0.1230
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 32 
+-------------------------------
+49m 24s (- 29m 46s) (15600 62% finished) LR: 0.0004063, TrainLoss: 0.2496, ValLoss: 0.1277
+49m 43s (- 29m 27s) (15700 63% finished) LR: 0.0004063, TrainLoss: 0.2478, ValLoss: 0.1270
+50m 2s (- 29m 8s) (15800 63% finished) LR: 0.0004063, TrainLoss: 0.2455, ValLoss: 0.1266
+50m 21s (- 28m 49s) (15900 64% finished) LR: 0.0004063, TrainLoss: 0.2462, ValLoss: 0.1213
+50m 40s (- 28m 30s) (16000 64% finished) LR: 0.0004063, TrainLoss: 0.2474, ValLoss: 0.1208
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 33 
+-------------------------------
+50m 59s (- 28m 11s) (16100 64% finished) LR: 0.0003865, TrainLoss: 0.2437, ValLoss: 0.1192
+51m 18s (- 27m 52s) (16200 65% finished) LR: 0.0003865, TrainLoss: 0.2396, ValLoss: 0.1164
+51m 37s (- 27m 33s) (16300 65% finished) LR: 0.0003865, TrainLoss: 0.2411, ValLoss: 0.1214
+51m 56s (- 27m 14s) (16400 66% finished) LR: 0.0003865, TrainLoss: 0.2409, ValLoss: 0.1214
+52m 14s (- 26m 54s) (16500 66% finished) LR: 0.0003865, TrainLoss: 0.2366, ValLoss: 0.1138
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 34 
+-------------------------------
+52m 34s (- 26m 36s) (16600 66% finished) LR: 0.0003667, TrainLoss: 0.2371, ValLoss: 0.1093
+52m 52s (- 26m 16s) (16700 67% finished) LR: 0.0003667, TrainLoss: 0.2366, ValLoss: 0.1181
+53m 11s (- 25m 57s) (16800 67% finished) LR: 0.0003667, TrainLoss: 0.2341, ValLoss: 0.1124
+53m 30s (- 25m 38s) (16900 68% finished) LR: 0.0003667, TrainLoss: 0.2337, ValLoss: 0.1114
+53m 49s (- 25m 19s) (17000 68% finished) LR: 0.0003667, TrainLoss: 0.2326, ValLoss: 0.1171
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 35 
+-------------------------------
+54m 8s (- 25m 0s) (17100 68% finished) LR: 0.0003469, TrainLoss: 0.2289, ValLoss: 0.1126
+54m 27s (- 24m 41s) (17200 69% finished) LR: 0.0003469, TrainLoss: 0.2297, ValLoss: 0.1182
+54m 45s (- 24m 22s) (17300 69% finished) LR: 0.0003469, TrainLoss: 0.2283, ValLoss: 0.1198
+55m 5s (- 24m 3s) (17400 70% finished) LR: 0.0003469, TrainLoss: 0.2319, ValLoss: 0.1190
+55m 23s (- 23m 44s) (17500 70% finished) LR: 0.0003469, TrainLoss: 0.2259, ValLoss: 0.1138
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 36 
+-------------------------------
+55m 43s (- 23m 25s) (17600 70% finished) LR: 0.0003271, TrainLoss: 0.2243, ValLoss: 0.1114
+56m 2s (- 23m 6s) (17700 71% finished) LR: 0.0003271, TrainLoss: 0.2249, ValLoss: 0.1168
+56m 20s (- 22m 47s) (17800 71% finished) LR: 0.0003271, TrainLoss: 0.2217, ValLoss: 0.1137
+56m 39s (- 22m 28s) (17900 72% finished) LR: 0.0003271, TrainLoss: 0.2244, ValLoss: 0.1165
+56m 58s (- 22m 9s) (18000 72% finished) LR: 0.0003271, TrainLoss: 0.2249, ValLoss: 0.1143
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 37 
+-------------------------------
+57m 17s (- 21m 50s) (18100 72% finished) LR: 0.0003073, TrainLoss: 0.2169, ValLoss: 0.1123
+57m 36s (- 21m 31s) (18200 73% finished) LR: 0.0003073, TrainLoss: 0.2171, ValLoss: 0.1100
+57m 55s (- 21m 12s) (18300 73% finished) LR: 0.0003073, TrainLoss: 0.2187, ValLoss: 0.1098
+58m 14s (- 20m 53s) (18400 74% finished) LR: 0.0003073, TrainLoss: 0.2232, ValLoss: 0.1095
+58m 33s (- 20m 34s) (18500 74% finished) LR: 0.0003073, TrainLoss: 0.2227, ValLoss: 0.1105
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 38 
+-------------------------------
+58m 52s (- 20m 15s) (18600 74% finished) LR: 0.0002875, TrainLoss: 0.2137, ValLoss: 0.1074
+59m 11s (- 19m 56s) (18700 75% finished) LR: 0.0002875, TrainLoss: 0.2144, ValLoss: 0.1040
+59m 30s (- 19m 37s) (18800 75% finished) LR: 0.0002875, TrainLoss: 0.2199, ValLoss: 0.1170
+59m 49s (- 19m 18s) (18900 76% finished) LR: 0.0002875, TrainLoss: 0.2172, ValLoss: 0.1067
+60m 8s (- 18m 59s) (19000 76% finished) LR: 0.0002875, TrainLoss: 0.2195, ValLoss: 0.1092
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 39 
+-------------------------------
+60m 26s (- 18m 40s) (19100 76% finished) LR: 0.0002677, TrainLoss: 0.2111, ValLoss: 0.1031
+60m 45s (- 18m 21s) (19200 77% finished) LR: 0.0002677, TrainLoss: 0.2115, ValLoss: 0.1044
+61m 4s (- 18m 2s) (19300 77% finished) LR: 0.0002677, TrainLoss: 0.2101, ValLoss: 0.1008
+61m 23s (- 17m 43s) (19400 78% finished) LR: 0.0002677, TrainLoss: 0.2100, ValLoss: 0.1056
+61m 42s (- 17m 24s) (19500 78% finished) LR: 0.0002677, TrainLoss: 0.2120, ValLoss: 0.1111
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 40 
+-------------------------------
+62m 1s (- 17m 5s) (19600 78% finished) LR: 0.0002479, TrainLoss: 0.2076, ValLoss: 0.1021
+62m 20s (- 16m 46s) (19700 79% finished) LR: 0.0002479, TrainLoss: 0.2088, ValLoss: 0.1033
+62m 39s (- 16m 27s) (19800 79% finished) LR: 0.0002479, TrainLoss: 0.2042, ValLoss: 0.0998
+62m 58s (- 16m 8s) (19900 80% finished) LR: 0.0002479, TrainLoss: 0.2075, ValLoss: 0.1009
+63m 17s (- 15m 49s) (20000 80% finished) LR: 0.0002479, TrainLoss: 0.2065, ValLoss: 0.1038
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 41 
+-------------------------------
+63m 36s (- 15m 30s) (20100 80% finished) LR: 0.0002281, TrainLoss: 0.2039, ValLoss: 0.1029
+63m 55s (- 15m 11s) (20200 81% finished) LR: 0.0002281, TrainLoss: 0.2087, ValLoss: 0.1010
+64m 14s (- 14m 52s) (20300 81% finished) LR: 0.0002281, TrainLoss: 0.2095, ValLoss: 0.1000
+64m 32s (- 14m 33s) (20400 82% finished) LR: 0.0002281, TrainLoss: 0.2059, ValLoss: 0.0977
+64m 51s (- 14m 14s) (20500 82% finished) LR: 0.0002281, TrainLoss: 0.2043, ValLoss: 0.1013
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 42 
+-------------------------------
+65m 10s (- 13m 55s) (20600 82% finished) LR: 0.0002083, TrainLoss: 0.2003, ValLoss: 0.0978
+65m 29s (- 13m 36s) (20700 83% finished) LR: 0.0002083, TrainLoss: 0.2000, ValLoss: 0.0927
+65m 48s (- 13m 17s) (20800 83% finished) LR: 0.0002083, TrainLoss: 0.2055, ValLoss: 0.1043
+66m 7s (- 12m 58s) (20900 84% finished) LR: 0.0002083, TrainLoss: 0.2024, ValLoss: 0.0988
+66m 26s (- 12m 39s) (21000 84% finished) LR: 0.0002083, TrainLoss: 0.2021, ValLoss: 0.0987
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 43 
+-------------------------------
+66m 45s (- 12m 20s) (21100 84% finished) LR: 0.0001885, TrainLoss: 0.1957, ValLoss: 0.0941
+67m 4s (- 12m 1s) (21200 85% finished) LR: 0.0001885, TrainLoss: 0.1971, ValLoss: 0.0961
+67m 23s (- 11m 42s) (21300 85% finished) LR: 0.0001885, TrainLoss: 0.1966, ValLoss: 0.0975
+67m 42s (- 11m 23s) (21400 86% finished) LR: 0.0001885, TrainLoss: 0.2010, ValLoss: 0.0946
+68m 1s (- 11m 4s) (21500 86% finished) LR: 0.0001885, TrainLoss: 0.2001, ValLoss: 0.0956
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 44 
+-------------------------------
+68m 19s (- 10m 45s) (21600 86% finished) LR: 0.0001688, TrainLoss: 0.1955, ValLoss: 0.0952
+68m 38s (- 10m 26s) (21700 87% finished) LR: 0.0001688, TrainLoss: 0.1968, ValLoss: 0.0964
+68m 57s (- 10m 7s) (21800 87% finished) LR: 0.0001688, TrainLoss: 0.1981, ValLoss: 0.0959
+69m 16s (- 9m 48s) (21900 88% finished) LR: 0.0001688, TrainLoss: 0.1980, ValLoss: 0.0996
+69m 35s (- 9m 29s) (22000 88% finished) LR: 0.0001688, TrainLoss: 0.1962, ValLoss: 0.0937
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 45 
+-------------------------------
+69m 54s (- 9m 10s) (22100 88% finished) LR: 0.0001490, TrainLoss: 0.1967, ValLoss: 0.0964
+70m 13s (- 8m 51s) (22200 89% finished) LR: 0.0001490, TrainLoss: 0.1964, ValLoss: 0.0997
+70m 32s (- 8m 32s) (22300 89% finished) LR: 0.0001490, TrainLoss: 0.1947, ValLoss: 0.0951
+70m 51s (- 8m 13s) (22400 90% finished) LR: 0.0001490, TrainLoss: 0.1921, ValLoss: 0.0979
+71m 10s (- 7m 54s) (22500 90% finished) LR: 0.0001490, TrainLoss: 0.1985, ValLoss: 0.0970
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 46 
+-------------------------------
+71m 29s (- 7m 35s) (22600 90% finished) LR: 0.0001292, TrainLoss: 0.1917, ValLoss: 0.0910
+71m 48s (- 7m 16s) (22700 91% finished) LR: 0.0001292, TrainLoss: 0.1914, ValLoss: 0.0919
+72m 7s (- 6m 57s) (22800 91% finished) LR: 0.0001292, TrainLoss: 0.1925, ValLoss: 0.0971
+72m 26s (- 6m 38s) (22900 92% finished) LR: 0.0001292, TrainLoss: 0.1882, ValLoss: 0.0957
+72m 45s (- 6m 19s) (23000 92% finished) LR: 0.0001292, TrainLoss: 0.1921, ValLoss: 0.0953
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 47 
+-------------------------------
+73m 4s (- 6m 0s) (23100 92% finished) LR: 0.0001094, TrainLoss: 0.1903, ValLoss: 0.0922
+73m 23s (- 5m 41s) (23200 93% finished) LR: 0.0001094, TrainLoss: 0.1853, ValLoss: 0.0952
+73m 42s (- 5m 22s) (23300 93% finished) LR: 0.0001094, TrainLoss: 0.1859, ValLoss: 0.0934
+74m 1s (- 5m 3s) (23400 94% finished) LR: 0.0001094, TrainLoss: 0.1906, ValLoss: 0.0931
+74m 19s (- 4m 44s) (23500 94% finished) LR: 0.0001094, TrainLoss: 0.1906, ValLoss: 0.0900
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 48 
+-------------------------------
+74m 38s (- 4m 25s) (23600 94% finished) LR: 0.0000896, TrainLoss: 0.1832, ValLoss: 0.0926
+74m 57s (- 4m 6s) (23700 95% finished) LR: 0.0000896, TrainLoss: 0.1889, ValLoss: 0.0927
+75m 16s (- 3m 47s) (23800 95% finished) LR: 0.0000896, TrainLoss: 0.1887, ValLoss: 0.0922
+75m 35s (- 3m 28s) (23900 96% finished) LR: 0.0000896, TrainLoss: 0.1876, ValLoss: 0.0914
+75m 54s (- 3m 9s) (24000 96% finished) LR: 0.0000896, TrainLoss: 0.1867, ValLoss: 0.0937
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 49 
+-------------------------------
+76m 13s (- 2m 50s) (24100 96% finished) LR: 0.0000698, TrainLoss: 0.1860, ValLoss: 0.0936
+76m 32s (- 2m 31s) (24200 97% finished) LR: 0.0000698, TrainLoss: 0.1874, ValLoss: 0.0933
+76m 51s (- 2m 12s) (24300 97% finished) LR: 0.0000698, TrainLoss: 0.1844, ValLoss: 0.0902
+77m 10s (- 1m 53s) (24400 98% finished) LR: 0.0000698, TrainLoss: 0.1852, ValLoss: 0.0900
+77m 28s (- 1m 34s) (24500 98% finished) LR: 0.0000698, TrainLoss: 0.1851, ValLoss: 0.0897
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Epoch 50 
+-------------------------------
+77m 47s (- 1m 15s) (24600 98% finished) LR: 0.0000500, TrainLoss: 0.1835, ValLoss: 0.0890
+78m 6s (- 0m 56s) (24700 99% finished) LR: 0.0000500, TrainLoss: 0.1827, ValLoss: 0.0879
+78m 25s (- 0m 37s) (24800 99% finished) LR: 0.0000500, TrainLoss: 0.1821, ValLoss: 0.0892
+78m 44s (- 0m 18s) (24900 100% finished) LR: 0.0000500, TrainLoss: 0.1868, ValLoss: 0.0877
+79m 3s (- 0m 0s) (25000 100% finished) LR: 0.0000500, TrainLoss: 0.1847, ValLoss: 0.0894
+> Saving model as out_models/middle-BIML50.pt < Done. >
+Training complete.

@@ -1,0 +1,401 @@
+  File output: out_models/net-BIML.pt
+  Episode type: algebraic+biases
+  Training on cpu for 50 epochs with batch size 25
+    for a total of 5000000 episode presentations
+    with LR warmup ON (1st epoch)
+
+BIML specs:
+ nparams= 1393801
+ nlayers_encoder= 3
+ nlayers_decoder= 3
+ nhead= 8
+ hidden_size= 128
+ dim_feedforward= 512
+ act_feedforward= gelu
+ dropout= 0.1
+ 
+
+Setting LR=0.0000001
+Epoch 1 
+-------------------------------
+0m 5s (- 18861m 57s) (1 0% finished) LR: 0.0000001, TrainLoss: 2.2482, ValLoss: 2.2454
+2m 33s (- 20429m 36s) (25 0% finished) LR: 0.0000061, TrainLoss: 2.2165, ValLoss: 2.1131
+10m 2s (- 20060m 14s) (100 0% finished) LR: 0.0000248, TrainLoss: 1.8992, ValLoss: 1.5918
+19m 40s (- 19652m 36s) (200 0% finished) LR: 0.0000498, TrainLoss: 1.5673, ValLoss: 1.4540
+29m 16s (- 19492m 43s) (300 0% finished) LR: 0.0000748, TrainLoss: 1.4864, ValLoss: 1.4130
+37m 37s (- 18778m 9s) (400 0% finished) LR: 0.0000998, TrainLoss: 1.4499, ValLoss: 1.3683
+45m 37s (- 18202m 26s) (500 0% finished) LR: 0.0001248, TrainLoss: 1.4196, ValLoss: 1.3416
+53m 37s (- 17822m 34s) (600 0% finished) LR: 0.0001498, TrainLoss: 1.3946, ValLoss: 1.3154
+61m 38s (- 17549m 28s) (700 0% finished) LR: 0.0001748, TrainLoss: 1.3521, ValLoss: 1.2261
+69m 38s (- 17339m 18s) (800 0% finished) LR: 0.0001998, TrainLoss: 1.2717, ValLoss: 1.1415
+77m 44s (- 17198m 13s) (900 0% finished) LR: 0.0002248, TrainLoss: 1.2201, ValLoss: 1.1173
+85m 52s (- 17088m 59s) (1000 0% finished) LR: 0.0002498, TrainLoss: 1.2001, ValLoss: 1.1068
+93m 59s (- 16995m 30s) (1100 1% finished) LR: 0.0002748, TrainLoss: 1.1777, ValLoss: 1.0952
+102m 5s (- 16912m 6s) (1200 1% finished) LR: 0.0002998, TrainLoss: 1.1753, ValLoss: 1.1000
+110m 8s (- 16833m 45s) (1300 1% finished) LR: 0.0003248, TrainLoss: 1.1685, ValLoss: 1.0819
+118m 13s (- 16770m 36s) (1400 1% finished) LR: 0.0003498, TrainLoss: 1.1584, ValLoss: 1.0757
+126m 15s (- 16707m 37s) (1500 1% finished) LR: 0.0003748, TrainLoss: 1.1559, ValLoss: 1.0821
+134m 17s (- 16651m 16s) (1600 1% finished) LR: 0.0003998, TrainLoss: 1.1514, ValLoss: 1.0709
+142m 18s (- 16599m 28s) (1700 1% finished) LR: 0.0004248, TrainLoss: 1.1410, ValLoss: 1.0667
+150m 19s (- 16552m 17s) (1800 1% finished) LR: 0.0004498, TrainLoss: 1.1428, ValLoss: 1.0677
+158m 26s (- 16520m 1s) (1900 1% finished) LR: 0.0004748, TrainLoss: 1.1394, ValLoss: 1.0622
+166m 33s (- 16489m 27s) (2000 1% finished) LR: 0.0004998, TrainLoss: 1.1322, ValLoss: 1.0637
+174m 36s (- 16454m 40s) (2100 1% finished) LR: 0.0005248, TrainLoss: 1.1339, ValLoss: 1.0579
+182m 38s (- 16420m 38s) (2200 1% finished) LR: 0.0005498, TrainLoss: 1.1295, ValLoss: 1.0577
+190m 42s (- 16392m 59s) (2300 1% finished) LR: 0.0005748, TrainLoss: 1.1316, ValLoss: 1.0531
+198m 45s (- 16364m 38s) (2400 1% finished) LR: 0.0005998, TrainLoss: 1.1226, ValLoss: 1.0573
+206m 46s (- 16335m 29s) (2500 1% finished) LR: 0.0006248, TrainLoss: 1.1237, ValLoss: 1.0542
+214m 49s (- 16310m 41s) (2600 1% finished) LR: 0.0006498, TrainLoss: 1.1255, ValLoss: 1.0537
+222m 56s (- 16291m 44s) (2700 1% finished) LR: 0.0006748, TrainLoss: 1.1244, ValLoss: 1.0543
+230m 58s (- 16267m 18s) (2800 1% finished) LR: 0.0006998, TrainLoss: 1.1238, ValLoss: 1.0550
+239m 8s (- 16253m 8s) (2900 1% finished) LR: 0.0007248, TrainLoss: 1.1226, ValLoss: 1.0492
+247m 12s (- 16233m 43s) (3000 2% finished) LR: 0.0007498, TrainLoss: 1.1206, ValLoss: 1.0509
+255m 12s (- 16209m 22s) (3100 2% finished) LR: 0.0007748, TrainLoss: 1.1171, ValLoss: 1.0444
+263m 20s (- 16195m 57s) (3200 2% finished) LR: 0.0007998, TrainLoss: 1.1217, ValLoss: 1.0504
+271m 21s (- 16174m 35s) (3300 2% finished) LR: 0.0008248, TrainLoss: 1.1209, ValLoss: 1.0461
+279m 22s (- 16154m 23s) (3400 2% finished) LR: 0.0008498, TrainLoss: 1.1106, ValLoss: 1.0435
+287m 25s (- 16137m 4s) (3500 2% finished) LR: 0.0008748, TrainLoss: 1.1161, ValLoss: 1.0451
+295m 26s (- 16117m 37s) (3600 2% finished) LR: 0.0008998, TrainLoss: 1.1127, ValLoss: 1.0388
+303m 29s (- 16101m 2s) (3700 2% finished) LR: 0.0009248, TrainLoss: 1.1132, ValLoss: 1.0374
+311m 33s (- 16086m 7s) (3800 2% finished) LR: 0.0009498, TrainLoss: 1.1156, ValLoss: 1.0350
+319m 32s (- 16066m 51s) (3900 2% finished) LR: 0.0009748, TrainLoss: 1.1095, ValLoss: 1.0430
+327m 33s (- 16050m 15s) (4000 2% finished) LR: 0.0009998, TrainLoss: 1.1074, ValLoss: 1.0382
+> Saving model as out_models/net-BIML.pt < Done. >
+Epoch 2 
+-------------------------------
+335m 41s (- 16039m 19s) (4100 2% finished) LR: 0.0010000, TrainLoss: 1.1137, ValLoss: 1.0418
+343m 44s (- 16025m 16s) (4200 2% finished) LR: 0.0010000, TrainLoss: 1.1059, ValLoss: 1.0431
+351m 47s (- 16010m 29s) (4300 2% finished) LR: 0.0010000, TrainLoss: 1.1011, ValLoss: 1.0384
+359m 51s (- 15997m 11s) (4400 2% finished) LR: 0.0010000, TrainLoss: 1.1071, ValLoss: 1.0330
+367m 51s (- 15981m 21s) (4500 2% finished) LR: 0.0010000, TrainLoss: 1.1045, ValLoss: 1.0352
+375m 53s (- 15967m 0s) (4600 2% finished) LR: 0.0010000, TrainLoss: 1.1028, ValLoss: 1.0344
+383m 59s (- 15956m 2s) (4700 2% finished) LR: 0.0010000, TrainLoss: 1.1010, ValLoss: 1.0294
+392m 8s (- 15947m 25s) (4800 2% finished) LR: 0.0010000, TrainLoss: 1.0996, ValLoss: 1.0333
+400m 6s (- 15931m 2s) (4900 2% finished) LR: 0.0010000, TrainLoss: 1.1049, ValLoss: 1.0339
+408m 10s (- 15918m 37s) (5000 2% finished) LR: 0.0010000, TrainLoss: 1.1027, ValLoss: 1.0336
+416m 19s (- 15909m 59s) (5100 3% finished) LR: 0.0010000, TrainLoss: 1.1033, ValLoss: 1.0328
+424m 27s (- 15900m 40s) (5200 3% finished) LR: 0.0010000, TrainLoss: 1.1017, ValLoss: 1.0294
+432m 32s (- 15889m 33s) (5300 3% finished) LR: 0.0010000, TrainLoss: 1.1001, ValLoss: 1.0257
+440m 34s (- 15876m 51s) (5400 3% finished) LR: 0.0010000, TrainLoss: 1.0993, ValLoss: 1.0228
+448m 39s (- 15866m 8s) (5500 3% finished) LR: 0.0010000, TrainLoss: 1.0943, ValLoss: 1.0242
+456m 42s (- 15854m 29s) (5600 3% finished) LR: 0.0010000, TrainLoss: 1.0999, ValLoss: 1.0231
+464m 48s (- 15844m 8s) (5700 3% finished) LR: 0.0010000, TrainLoss: 1.0926, ValLoss: 1.0237
+472m 51s (- 15832m 44s) (5800 3% finished) LR: 0.0010000, TrainLoss: 1.0888, ValLoss: 1.0224
+480m 56s (- 15822m 9s) (5900 3% finished) LR: 0.0010000, TrainLoss: 1.0962, ValLoss: 1.0190
+488m 57s (- 15809m 43s) (6000 3% finished) LR: 0.0010000, TrainLoss: 1.0911, ValLoss: 1.0208
+497m 7s (- 15802m 6s) (6100 3% finished) LR: 0.0010000, TrainLoss: 1.0886, ValLoss: 1.0192
+505m 10s (- 15790m 56s) (6200 3% finished) LR: 0.0010000, TrainLoss: 1.0812, ValLoss: 1.0070
+513m 11s (- 15778m 36s) (6300 3% finished) LR: 0.0010000, TrainLoss: 1.0781, ValLoss: 1.0070
+521m 12s (- 15766m 27s) (6400 3% finished) LR: 0.0010000, TrainLoss: 1.0733, ValLoss: 0.9963
+529m 16s (- 15756m 15s) (6500 3% finished) LR: 0.0010000, TrainLoss: 1.0707, ValLoss: 0.9844
+537m 16s (- 15743m 41s) (6600 3% finished) LR: 0.0010000, TrainLoss: 1.0558, ValLoss: 0.9794
+545m 18s (- 15732m 36s) (6700 3% finished) LR: 0.0010000, TrainLoss: 1.0567, ValLoss: 0.9693
+553m 16s (- 15719m 29s) (6800 3% finished) LR: 0.0010000, TrainLoss: 1.0462, ValLoss: 0.9542
+561m 20s (- 15709m 16s) (6900 3% finished) LR: 0.0010000, TrainLoss: 1.0409, ValLoss: 0.9642
+569m 21s (- 15698m 15s) (7000 4% finished) LR: 0.0010000, TrainLoss: 1.0317, ValLoss: 0.9444
+577m 27s (- 15688m 53s) (7100 4% finished) LR: 0.0010000, TrainLoss: 1.0323, ValLoss: 0.9434
+585m 33s (- 15680m 2s) (7200 4% finished) LR: 0.0010000, TrainLoss: 1.0279, ValLoss: 0.9334
+593m 38s (- 15670m 35s) (7300 4% finished) LR: 0.0010000, TrainLoss: 1.0297, ValLoss: 0.9331
+601m 45s (- 15662m 7s) (7400 4% finished) LR: 0.0010000, TrainLoss: 1.0293, ValLoss: 0.9375
+609m 50s (- 15652m 39s) (7500 4% finished) LR: 0.0010000, TrainLoss: 1.0247, ValLoss: 0.9510
+617m 52s (- 15642m 0s) (7600 4% finished) LR: 0.0010000, TrainLoss: 1.0225, ValLoss: 0.9361
+625m 59s (- 15633m 21s) (7700 4% finished) LR: 0.0010000, TrainLoss: 1.0148, ValLoss: 0.9299
+634m 4s (- 15624m 10s) (7800 4% finished) LR: 0.0010000, TrainLoss: 1.0131, ValLoss: 0.9241
+642m 9s (- 15614m 48s) (7900 4% finished) LR: 0.0010000, TrainLoss: 1.0021, ValLoss: 0.9088
+650m 22s (- 15608m 53s) (8000 4% finished) LR: 0.0010000, TrainLoss: 1.0038, ValLoss: 0.8935
+> Saving model as out_models/net-BIML.pt < Done. >
+Epoch 3 
+-------------------------------
+658m 25s (- 15598m 49s) (8100 4% finished) LR: 0.0009802, TrainLoss: 0.9854, ValLoss: 0.8880
+666m 25s (- 15587m 41s) (8200 4% finished) LR: 0.0009802, TrainLoss: 0.9782, ValLoss: 0.8723
+674m 29s (- 15578m 26s) (8300 4% finished) LR: 0.0009802, TrainLoss: 0.9670, ValLoss: 0.8729
+682m 36s (- 15570m 1s) (8400 4% finished) LR: 0.0009802, TrainLoss: 0.9622, ValLoss: 0.8602
+690m 42s (- 15561m 13s) (8500 4% finished) LR: 0.0009802, TrainLoss: 0.9511, ValLoss: 0.8416
+698m 54s (- 15554m 47s) (8600 4% finished) LR: 0.0009802, TrainLoss: 0.9334, ValLoss: 0.8109
+707m 0s (- 15546m 6s) (8700 4% finished) LR: 0.0009802, TrainLoss: 0.8991, ValLoss: 0.7686
+715m 5s (- 15537m 8s) (8800 4% finished) LR: 0.0009802, TrainLoss: 0.8787, ValLoss: 0.7407
+723m 8s (- 15527m 22s) (8900 4% finished) LR: 0.0009802, TrainLoss: 0.8478, ValLoss: 0.7266
+731m 9s (- 15516m 39s) (9000 4% finished) LR: 0.0009802, TrainLoss: 0.8344, ValLoss: 0.7083
+739m 15s (- 15508m 8s) (9100 5% finished) LR: 0.0009802, TrainLoss: 0.8156, ValLoss: 0.6823
+747m 22s (- 15499m 44s) (9200 5% finished) LR: 0.0009802, TrainLoss: 0.7979, ValLoss: 0.6633
+755m 29s (- 15491m 36s) (9300 5% finished) LR: 0.0009802, TrainLoss: 0.7783, ValLoss: 0.6236
+763m 33s (- 15482m 15s) (9400 5% finished) LR: 0.0009802, TrainLoss: 0.7610, ValLoss: 0.6216
+771m 40s (- 15474m 7s) (9500 5% finished) LR: 0.0009802, TrainLoss: 0.7468, ValLoss: 0.5948
+779m 47s (- 15465m 47s) (9600 5% finished) LR: 0.0009802, TrainLoss: 0.7298, ValLoss: 0.5885
+787m 54s (- 15457m 33s) (9700 5% finished) LR: 0.0009802, TrainLoss: 0.7185, ValLoss: 0.5754
+796m 0s (- 15449m 5s) (9800 5% finished) LR: 0.0009802, TrainLoss: 0.7022, ValLoss: 0.5597
+804m 0s (- 15438m 25s) (9900 5% finished) LR: 0.0009802, TrainLoss: 0.6898, ValLoss: 0.5440
+812m 1s (- 15428m 25s) (10000 5% finished) LR: 0.0009802, TrainLoss: 0.6737, ValLoss: 0.5171
+820m 10s (- 15420m 47s) (10100 5% finished) LR: 0.0009802, TrainLoss: 0.6609, ValLoss: 0.5053
+828m 18s (- 15413m 9s) (10200 5% finished) LR: 0.0009802, TrainLoss: 0.6434, ValLoss: 0.5040
+836m 22s (- 15403m 56s) (10300 5% finished) LR: 0.0009802, TrainLoss: 0.6363, ValLoss: 0.4861
+844m 31s (- 15396m 17s) (10400 5% finished) LR: 0.0009802, TrainLoss: 0.6194, ValLoss: 0.4710
+852m 37s (- 15387m 44s) (10500 5% finished) LR: 0.0009802, TrainLoss: 0.6035, ValLoss: 0.4574
+860m 39s (- 15378m 11s) (10600 5% finished) LR: 0.0009802, TrainLoss: 0.5970, ValLoss: 0.4546
+868m 46s (- 15369m 59s) (10700 5% finished) LR: 0.0009802, TrainLoss: 0.5908, ValLoss: 0.4390
+876m 54s (- 15362m 12s) (10800 5% finished) LR: 0.0009802, TrainLoss: 0.5826, ValLoss: 0.4367
+885m 1s (- 15353m 55s) (10900 5% finished) LR: 0.0009802, TrainLoss: 0.5690, ValLoss: 0.4274
+893m 12s (- 15346m 52s) (11000 6% finished) LR: 0.0009802, TrainLoss: 0.5640, ValLoss: 0.4318
+901m 25s (- 15340m 23s) (11100 6% finished) LR: 0.0009802, TrainLoss: 0.5555, ValLoss: 0.4031
+909m 31s (- 15331m 56s) (11200 6% finished) LR: 0.0009802, TrainLoss: 0.5442, ValLoss: 0.3926
+917m 37s (- 15323m 32s) (11300 6% finished) LR: 0.0009802, TrainLoss: 0.5316, ValLoss: 0.3916
+925m 45s (- 15315m 39s) (11400 6% finished) LR: 0.0009802, TrainLoss: 0.5242, ValLoss: 0.3803
+933m 52s (- 15307m 32s) (11500 6% finished) LR: 0.0009802, TrainLoss: 0.5138, ValLoss: 0.3697
+941m 58s (- 15298m 52s) (11600 6% finished) LR: 0.0009802, TrainLoss: 0.5055, ValLoss: 0.3783
+950m 0s (- 15289m 27s) (11700 6% finished) LR: 0.0009802, TrainLoss: 0.4860, ValLoss: 0.3610
+958m 13s (- 15282m 51s) (11800 6% finished) LR: 0.0009802, TrainLoss: 0.4840, ValLoss: 0.3396
+966m 21s (- 15274m 52s) (11900 6% finished) LR: 0.0009802, TrainLoss: 0.4708, ValLoss: 0.3403
+974m 32s (- 15267m 50s) (12000 6% finished) LR: 0.0009802, TrainLoss: 0.4701, ValLoss: 0.3301
+> Saving model as out_models/net-BIML.pt < Done. >
+Epoch 4 
+-------------------------------
+982m 38s (- 15259m 26s) (12100 6% finished) LR: 0.0009604, TrainLoss: 0.4574, ValLoss: 0.3254
+990m 40s (- 15249m 46s) (12200 6% finished) LR: 0.0009604, TrainLoss: 0.4522, ValLoss: 0.3325
+998m 46s (- 15241m 28s) (12300 6% finished) LR: 0.0009604, TrainLoss: 0.4487, ValLoss: 0.3140
+1006m 57s (- 15234m 24s) (12400 6% finished) LR: 0.0009604, TrainLoss: 0.4417, ValLoss: 0.3106
+1015m 5s (- 15226m 18s) (12500 6% finished) LR: 0.0009604, TrainLoss: 0.4424, ValLoss: 0.3096
+1023m 11s (- 15217m 55s) (12600 6% finished) LR: 0.0009604, TrainLoss: 0.4386, ValLoss: 0.3040
+1031m 16s (- 15209m 22s) (12700 6% finished) LR: 0.0009604, TrainLoss: 0.4296, ValLoss: 0.3049
+1039m 21s (- 15200m 33s) (12800 6% finished) LR: 0.0009604, TrainLoss: 0.4244, ValLoss: 0.2946
+1047m 27s (- 15192m 18s) (12900 6% finished) LR: 0.0009604, TrainLoss: 0.4214, ValLoss: 0.3039
+1055m 35s (- 15184m 22s) (13000 6% finished) LR: 0.0009604, TrainLoss: 0.4196, ValLoss: 0.2787
+1063m 45s (- 15176m 53s) (13100 7% finished) LR: 0.0009604, TrainLoss: 0.4191, ValLoss: 0.2828
+1071m 53s (- 15168m 52s) (13200 7% finished) LR: 0.0009604, TrainLoss: 0.4152, ValLoss: 0.2764
+1080m 3s (- 15161m 26s) (13300 7% finished) LR: 0.0009604, TrainLoss: 0.4077, ValLoss: 0.2747
+1088m 12s (- 15153m 39s) (13400 7% finished) LR: 0.0009604, TrainLoss: 0.4049, ValLoss: 0.2736
+1096m 24s (- 15146m 46s) (13500 7% finished) LR: 0.0009604, TrainLoss: 0.4029, ValLoss: 0.2541
+1104m 27s (- 15137m 32s) (13600 7% finished) LR: 0.0009604, TrainLoss: 0.3954, ValLoss: 0.2540
+1112m 35s (- 15129m 39s) (13700 7% finished) LR: 0.0009604, TrainLoss: 0.3949, ValLoss: 0.2584
+1120m 41s (- 15121m 14s) (13800 7% finished) LR: 0.0009604, TrainLoss: 0.3858, ValLoss: 0.2461
+1128m 46s (- 15112m 38s) (13900 7% finished) LR: 0.0009604, TrainLoss: 0.3837, ValLoss: 0.2511
+1136m 51s (- 15104m 3s) (14000 7% finished) LR: 0.0009604, TrainLoss: 0.3808, ValLoss: 0.2318
+1144m 59s (- 15095m 55s) (14100 7% finished) LR: 0.0009604, TrainLoss: 0.3779, ValLoss: 0.2275
+1153m 1s (- 15086m 42s) (14200 7% finished) LR: 0.0009604, TrainLoss: 0.3689, ValLoss: 0.2178
+1161m 7s (- 15078m 19s) (14300 7% finished) LR: 0.0009604, TrainLoss: 0.3651, ValLoss: 0.2130
+1169m 12s (- 15069m 52s) (14400 7% finished) LR: 0.0009604, TrainLoss: 0.3618, ValLoss: 0.2053
+1177m 19s (- 15061m 40s) (14500 7% finished) LR: 0.0009604, TrainLoss: 0.3524, ValLoss: 0.2062
+1185m 24s (- 15053m 0s) (14600 7% finished) LR: 0.0009604, TrainLoss: 0.3486, ValLoss: 0.1925
+1193m 25s (- 15043m 34s) (14700 7% finished) LR: 0.0009604, TrainLoss: 0.3463, ValLoss: 0.1907
+1201m 31s (- 15035m 20s) (14800 7% finished) LR: 0.0009604, TrainLoss: 0.3433, ValLoss: 0.1861
+1209m 36s (- 15026m 44s) (14900 7% finished) LR: 0.0009604, TrainLoss: 0.3364, ValLoss: 0.1781
+1217m 46s (- 15019m 14s) (15000 8% finished) LR: 0.0009604, TrainLoss: 0.3365, ValLoss: 0.1718
+1225m 54s (- 15011m 11s) (15100 8% finished) LR: 0.0009604, TrainLoss: 0.3296, ValLoss: 0.1667
+1234m 0s (- 15003m 0s) (15200 8% finished) LR: 0.0009604, TrainLoss: 0.3270, ValLoss: 0.1655
+1242m 2s (- 14993m 43s) (15300 8% finished) LR: 0.0009604, TrainLoss: 0.3173, ValLoss: 0.1696
+1250m 11s (- 14986m 6s) (15400 8% finished) LR: 0.0009604, TrainLoss: 0.3183, ValLoss: 0.1666
+1258m 16s (- 14977m 33s) (15500 8% finished) LR: 0.0009604, TrainLoss: 0.3175, ValLoss: 0.1550
+1266m 23s (- 14969m 18s) (15600 8% finished) LR: 0.0009604, TrainLoss: 0.3083, ValLoss: 0.1600
+1274m 24s (- 14960m 7s) (15700 8% finished) LR: 0.0009604, TrainLoss: 0.3070, ValLoss: 0.1498
+1282m 28s (- 14951m 26s) (15800 8% finished) LR: 0.0009604, TrainLoss: 0.3028, ValLoss: 0.1634
+1290m 34s (- 14943m 7s) (15900 8% finished) LR: 0.0009604, TrainLoss: 0.3036, ValLoss: 0.1427
+1298m 40s (- 14934m 48s) (16000 8% finished) LR: 0.0009604, TrainLoss: 0.2931, ValLoss: 0.1427
+> Saving model as out_models/net-BIML.pt < Done. >
+Epoch 5 
+-------------------------------
+1306m 48s (- 14926m 50s) (16100 8% finished) LR: 0.0009406, TrainLoss: 0.2978, ValLoss: 0.1551
+1314m 55s (- 14918m 41s) (16200 8% finished) LR: 0.0009406, TrainLoss: 0.2929, ValLoss: 0.1433
+1323m 5s (- 14911m 5s) (16300 8% finished) LR: 0.0009406, TrainLoss: 0.2886, ValLoss: 0.1404
+1331m 10s (- 14902m 42s) (16400 8% finished) LR: 0.0009406, TrainLoss: 0.2813, ValLoss: 0.1509
+1339m 19s (- 14894m 55s) (16500 8% finished) LR: 0.0009406, TrainLoss: 0.2793, ValLoss: 0.1410
+1347m 24s (- 14886m 20s) (16600 8% finished) LR: 0.0009406, TrainLoss: 0.2721, ValLoss: 0.1320
+1355m 25s (- 14877m 17s) (16700 8% finished) LR: 0.0009406, TrainLoss: 0.2713, ValLoss: 0.1400
+1363m 37s (- 14870m 2s) (16800 8% finished) LR: 0.0009406, TrainLoss: 0.2696, ValLoss: 0.1268
+1371m 46s (- 14862m 19s) (16900 8% finished) LR: 0.0009406, TrainLoss: 0.2698, ValLoss: 0.1241
+1379m 51s (- 14853m 42s) (17000 8% finished) LR: 0.0009406, TrainLoss: 0.2606, ValLoss: 0.1273
+1388m 1s (- 14846m 7s) (17100 9% finished) LR: 0.0009406, TrainLoss: 0.2645, ValLoss: 0.1284
+1396m 6s (- 14837m 43s) (17200 9% finished) LR: 0.0009406, TrainLoss: 0.2596, ValLoss: 0.1293
+1404m 8s (- 14828m 46s) (17300 9% finished) LR: 0.0009406, TrainLoss: 0.2578, ValLoss: 0.1256
+1412m 13s (- 14820m 19s) (17400 9% finished) LR: 0.0009406, TrainLoss: 0.2550, ValLoss: 0.1283
+1420m 23s (- 14812m 43s) (17500 9% finished) LR: 0.0009406, TrainLoss: 0.2565, ValLoss: 0.1333
+1428m 28s (- 14804m 9s) (17600 9% finished) LR: 0.0009406, TrainLoss: 0.2530, ValLoss: 0.1203
+1436m 33s (- 14795m 39s) (17700 9% finished) LR: 0.0009406, TrainLoss: 0.2488, ValLoss: 0.1273
+1444m 38s (- 14787m 12s) (17800 9% finished) LR: 0.0009406, TrainLoss: 0.2473, ValLoss: 0.1242
+1452m 49s (- 14779m 52s) (17900 9% finished) LR: 0.0009406, TrainLoss: 0.2490, ValLoss: 0.1281
+1460m 54s (- 14771m 22s) (18000 9% finished) LR: 0.0009406, TrainLoss: 0.2463, ValLoss: 0.1166
+1469m 1s (- 14763m 18s) (18100 9% finished) LR: 0.0009406, TrainLoss: 0.2411, ValLoss: 0.1200
+1477m 7s (- 14755m 3s) (18200 9% finished) LR: 0.0009406, TrainLoss: 0.2414, ValLoss: 0.1170
+1485m 20s (- 14747m 54s) (18300 9% finished) LR: 0.0009406, TrainLoss: 0.2449, ValLoss: 0.1205
+1493m 32s (- 14740m 32s) (18400 9% finished) LR: 0.0009406, TrainLoss: 0.2395, ValLoss: 0.1187
+1501m 34s (- 14731m 43s) (18500 9% finished) LR: 0.0009406, TrainLoss: 0.2392, ValLoss: 0.1199
+1509m 48s (- 14724m 38s) (18600 9% finished) LR: 0.0009406, TrainLoss: 0.2363, ValLoss: 0.1148
+1517m 54s (- 14716m 22s) (18700 9% finished) LR: 0.0009406, TrainLoss: 0.2390, ValLoss: 0.1128
+1526m 5s (- 14708m 56s) (18800 9% finished) LR: 0.0009406, TrainLoss: 0.2365, ValLoss: 0.1159
+1534m 16s (- 14701m 26s) (18900 9% finished) LR: 0.0009406, TrainLoss: 0.2345, ValLoss: 0.1194
+1542m 21s (- 14693m 3s) (19000 10% finished) LR: 0.0009406, TrainLoss: 0.2338, ValLoss: 0.1181
+1550m 28s (- 14684m 52s) (19100 10% finished) LR: 0.0009406, TrainLoss: 0.2302, ValLoss: 0.1049
+1558m 35s (- 14676m 42s) (19200 10% finished) LR: 0.0009406, TrainLoss: 0.2278, ValLoss: 0.1094
+1566m 40s (- 14668m 13s) (19300 10% finished) LR: 0.0009406, TrainLoss: 0.2246, ValLoss: 0.1081
+1574m 48s (- 14660m 17s) (19400 10% finished) LR: 0.0009406, TrainLoss: 0.2227, ValLoss: 0.1147
+1582m 56s (- 14652m 20s) (19500 10% finished) LR: 0.0009406, TrainLoss: 0.2253, ValLoss: 0.1038
+1591m 2s (- 14644m 4s) (19600 10% finished) LR: 0.0009406, TrainLoss: 0.2220, ValLoss: 0.1030
+1599m 11s (- 14636m 11s) (19700 10% finished) LR: 0.0009406, TrainLoss: 0.2221, ValLoss: 0.1034
+1607m 16s (- 14627m 49s) (19800 10% finished) LR: 0.0009406, TrainLoss: 0.2208, ValLoss: 0.1042
+1615m 26s (- 14620m 8s) (19900 10% finished) LR: 0.0009406, TrainLoss: 0.2243, ValLoss: 0.1162
+1623m 32s (- 14611m 54s) (20000 10% finished) LR: 0.0009406, TrainLoss: 0.2214, ValLoss: 0.1027
+> Saving model as out_models/net-BIML.pt < Done. >
+Epoch 6 
+-------------------------------
+1631m 46s (- 14604m 49s) (20100 10% finished) LR: 0.0009208, TrainLoss: 0.2180, ValLoss: 0.0993
+1639m 57s (- 14597m 12s) (20200 10% finished) LR: 0.0009208, TrainLoss: 0.2204, ValLoss: 0.1020
+1648m 4s (- 14589m 3s) (20300 10% finished) LR: 0.0009208, TrainLoss: 0.2195, ValLoss: 0.1084
+1656m 7s (- 14580m 27s) (20400 10% finished) LR: 0.0009208, TrainLoss: 0.2192, ValLoss: 0.0978
+1664m 13s (- 14572m 5s) (20500 10% finished) LR: 0.0009208, TrainLoss: 0.2105, ValLoss: 0.0997
+1672m 23s (- 14564m 23s) (20600 10% finished) LR: 0.0009208, TrainLoss: 0.2119, ValLoss: 0.1007
+1680m 27s (- 14555m 51s) (20700 10% finished) LR: 0.0009208, TrainLoss: 0.2116, ValLoss: 0.0949
+1688m 33s (- 14547m 38s) (20800 10% finished) LR: 0.0009208, TrainLoss: 0.2174, ValLoss: 0.0981
+1696m 41s (- 14539m 38s) (20900 10% finished) LR: 0.0009208, TrainLoss: 0.2132, ValLoss: 0.0968
+1704m 51s (- 14531m 53s) (21000 10% finished) LR: 0.0009208, TrainLoss: 0.2113, ValLoss: 0.0984
+1713m 0s (- 14524m 4s) (21100 11% finished) LR: 0.0009208, TrainLoss: 0.2070, ValLoss: 0.0982
+1721m 10s (- 14516m 21s) (21200 11% finished) LR: 0.0009208, TrainLoss: 0.2114, ValLoss: 0.0946
+1729m 14s (- 14507m 49s) (21300 11% finished) LR: 0.0009208, TrainLoss: 0.2082, ValLoss: 0.0949
+1737m 22s (- 14499m 45s) (21400 11% finished) LR: 0.0009208, TrainLoss: 0.2088, ValLoss: 0.0942
+1745m 31s (- 14491m 54s) (21500 11% finished) LR: 0.0009208, TrainLoss: 0.2053, ValLoss: 0.0981
+1753m 38s (- 14483m 43s) (21600 11% finished) LR: 0.0009208, TrainLoss: 0.2071, ValLoss: 0.0931
+1761m 38s (- 14474m 41s) (21700 11% finished) LR: 0.0009208, TrainLoss: 0.2042, ValLoss: 0.0960
+1769m 51s (- 14467m 21s) (21800 11% finished) LR: 0.0009208, TrainLoss: 0.2029, ValLoss: 0.0912
+1777m 58s (- 14459m 18s) (21900 11% finished) LR: 0.0009208, TrainLoss: 0.2069, ValLoss: 0.0912
+1786m 3s (- 14450m 53s) (22000 11% finished) LR: 0.0009208, TrainLoss: 0.2074, ValLoss: 0.0908
+1794m 10s (- 14442m 40s) (22100 11% finished) LR: 0.0009208, TrainLoss: 0.2009, ValLoss: 0.0892
+1802m 19s (- 14434m 46s) (22200 11% finished) LR: 0.0009208, TrainLoss: 0.2022, ValLoss: 0.0930
+1810m 24s (- 14426m 28s) (22300 11% finished) LR: 0.0009208, TrainLoss: 0.2050, ValLoss: 0.0935
+1818m 30s (- 14418m 8s) (22400 11% finished) LR: 0.0009208, TrainLoss: 0.2000, ValLoss: 0.0928
+1826m 34s (- 14409m 38s) (22500 11% finished) LR: 0.0009208, TrainLoss: 0.2004, ValLoss: 0.0938
+1834m 34s (- 14400m 35s) (22600 11% finished) LR: 0.0009208, TrainLoss: 0.1982, ValLoss: 0.0866
+1842m 39s (- 14392m 13s) (22700 11% finished) LR: 0.0009208, TrainLoss: 0.1988, ValLoss: 0.0889
+1850m 46s (- 14384m 8s) (22800 11% finished) LR: 0.0009208, TrainLoss: 0.1977, ValLoss: 0.0914
+1858m 55s (- 14376m 12s) (22900 11% finished) LR: 0.0009208, TrainLoss: 0.1995, ValLoss: 0.0895
+1867m 3s (- 14368m 15s) (23000 12% finished) LR: 0.0009208, TrainLoss: 0.1997, ValLoss: 0.0894
+1875m 11s (- 14360m 10s) (23100 12% finished) LR: 0.0009208, TrainLoss: 0.1943, ValLoss: 0.0842
+1883m 19s (- 14352m 15s) (23200 12% finished) LR: 0.0009208, TrainLoss: 0.1958, ValLoss: 0.0825
+1891m 29s (- 14344m 25s) (23300 12% finished) LR: 0.0009208, TrainLoss: 0.1953, ValLoss: 0.0851
+1899m 40s (- 14336m 49s) (23400 12% finished) LR: 0.0009208, TrainLoss: 0.1960, ValLoss: 0.0813
+1907m 53s (- 14329m 27s) (23500 12% finished) LR: 0.0009208, TrainLoss: 0.1925, ValLoss: 0.0828
+1916m 8s (- 14322m 17s) (23600 12% finished) LR: 0.0009208, TrainLoss: 0.1917, ValLoss: 0.0856
+1924m 12s (- 14313m 46s) (23700 12% finished) LR: 0.0009208, TrainLoss: 0.1910, ValLoss: 0.0836
+1932m 18s (- 14305m 31s) (23800 12% finished) LR: 0.0009208, TrainLoss: 0.1907, ValLoss: 0.0808
+1940m 25s (- 14297m 25s) (23900 12% finished) LR: 0.0009208, TrainLoss: 0.1923, ValLoss: 0.0830
+1948m 35s (- 14289m 38s) (24000 12% finished) LR: 0.0009208, TrainLoss: 0.1909, ValLoss: 0.0810
+> Saving model as out_models/net-BIML.pt < Done. >
+Epoch 7 
+-------------------------------
+1956m 44s (- 14281m 43s) (24100 12% finished) LR: 0.0009010, TrainLoss: 0.1917, ValLoss: 0.0826
+1964m 51s (- 14273m 36s) (24200 12% finished) LR: 0.0009010, TrainLoss: 0.1909, ValLoss: 0.0813
+1972m 58s (- 14265m 32s) (24300 12% finished) LR: 0.0009010, TrainLoss: 0.1873, ValLoss: 0.0863
+1981m 9s (- 14257m 47s) (24400 12% finished) LR: 0.0009010, TrainLoss: 0.1919, ValLoss: 0.0795
+1989m 21s (- 14250m 19s) (24500 12% finished) LR: 0.0009010, TrainLoss: 0.1882, ValLoss: 0.0776
+1997m 30s (- 14242m 24s) (24600 12% finished) LR: 0.0009010, TrainLoss: 0.1890, ValLoss: 0.0820
+2005m 34s (- 14233m 54s) (24700 12% finished) LR: 0.0009010, TrainLoss: 0.1885, ValLoss: 0.0794
+2013m 41s (- 14225m 48s) (24800 12% finished) LR: 0.0009010, TrainLoss: 0.1852, ValLoss: 0.0770
+2021m 44s (- 14217m 7s) (24900 12% finished) LR: 0.0009010, TrainLoss: 0.1857, ValLoss: 0.0787
+2029m 56s (- 14209m 37s) (25000 12% finished) LR: 0.0009010, TrainLoss: 0.1845, ValLoss: 0.0775
+2038m 7s (- 14201m 56s) (25100 13% finished) LR: 0.0009010, TrainLoss: 0.1859, ValLoss: 0.0786
+2046m 11s (- 14193m 27s) (25200 13% finished) LR: 0.0009010, TrainLoss: 0.1874, ValLoss: 0.0781
+2054m 18s (- 14185m 15s) (25300 13% finished) LR: 0.0009010, TrainLoss: 0.1831, ValLoss: 0.0844
+2062m 26s (- 14177m 13s) (25400 13% finished) LR: 0.0009010, TrainLoss: 0.1852, ValLoss: 0.0769
+2070m 36s (- 14169m 25s) (25500 13% finished) LR: 0.0009010, TrainLoss: 0.1890, ValLoss: 0.0764
+2078m 42s (- 14161m 11s) (25600 13% finished) LR: 0.0009010, TrainLoss: 0.1884, ValLoss: 0.0759
+2086m 49s (- 14153m 2s) (25700 13% finished) LR: 0.0009010, TrainLoss: 0.1855, ValLoss: 0.0780
+2094m 56s (- 14144m 57s) (25800 13% finished) LR: 0.0009010, TrainLoss: 0.1838, ValLoss: 0.0786
+2103m 2s (- 14136m 38s) (25900 13% finished) LR: 0.0009010, TrainLoss: 0.1813, ValLoss: 0.0771
+2111m 8s (- 14128m 21s) (26000 13% finished) LR: 0.0009010, TrainLoss: 0.1821, ValLoss: 0.0789
+2119m 11s (- 14119m 46s) (26100 13% finished) LR: 0.0009010, TrainLoss: 0.1846, ValLoss: 0.0756
+2127m 18s (- 14111m 42s) (26200 13% finished) LR: 0.0009010, TrainLoss: 0.1827, ValLoss: 0.0776
+2135m 20s (- 14102m 57s) (26300 13% finished) LR: 0.0009010, TrainLoss: 0.1839, ValLoss: 0.0755
+2143m 28s (- 14095m 1s) (26400 13% finished) LR: 0.0009010, TrainLoss: 0.1860, ValLoss: 0.0770
+2151m 41s (- 14087m 31s) (26500 13% finished) LR: 0.0009010, TrainLoss: 0.1829, ValLoss: 0.0760
+2159m 49s (- 14079m 26s) (26600 13% finished) LR: 0.0009010, TrainLoss: 0.1836, ValLoss: 0.0769
+2167m 53s (- 14071m 2s) (26700 13% finished) LR: 0.0009010, TrainLoss: 0.1789, ValLoss: 0.0726
+2175m 59s (- 14062m 47s) (26800 13% finished) LR: 0.0009010, TrainLoss: 0.1834, ValLoss: 0.0746
+2184m 10s (- 14055m 0s) (26900 13% finished) LR: 0.0009010, TrainLoss: 0.1794, ValLoss: 0.0734
+2192m 19s (- 14047m 6s) (27000 14% finished) LR: 0.0009010, TrainLoss: 0.1803, ValLoss: 0.0734
+2200m 22s (- 14038m 31s) (27100 14% finished) LR: 0.0009010, TrainLoss: 0.1774, ValLoss: 0.0745
+2208m 33s (- 14030m 47s) (27200 14% finished) LR: 0.0009010, TrainLoss: 0.1786, ValLoss: 0.0740
+2216m 40s (- 14022m 43s) (27300 14% finished) LR: 0.0009010, TrainLoss: 0.1787, ValLoss: 0.0713
+2224m 47s (- 14014m 31s) (27400 14% finished) LR: 0.0009010, TrainLoss: 0.1786, ValLoss: 0.0712
+2232m 58s (- 14006m 48s) (27500 14% finished) LR: 0.0009010, TrainLoss: 0.1793, ValLoss: 0.0747
+2241m 5s (- 13998m 43s) (27600 14% finished) LR: 0.0009010, TrainLoss: 0.1764, ValLoss: 0.0724
+2249m 13s (- 13990m 39s) (27700 14% finished) LR: 0.0009010, TrainLoss: 0.1798, ValLoss: 0.0704
+2257m 22s (- 13982m 45s) (27800 14% finished) LR: 0.0009010, TrainLoss: 0.1768, ValLoss: 0.0691
+2265m 38s (- 13975m 29s) (27900 14% finished) LR: 0.0009010, TrainLoss: 0.1788, ValLoss: 0.0717
+2273m 45s (- 13967m 21s) (28000 14% finished) LR: 0.0009010, TrainLoss: 0.1748, ValLoss: 0.0727
+> Saving model as out_models/net-BIML.pt < Done. >
+Epoch 8 
+-------------------------------
+2281m 54s (- 13959m 28s) (28100 14% finished) LR: 0.0008812, TrainLoss: 0.1766, ValLoss: 0.0702
+2290m 0s (- 13951m 8s) (28200 14% finished) LR: 0.0008812, TrainLoss: 0.1749, ValLoss: 0.0727
+2298m 10s (- 13943m 20s) (28300 14% finished) LR: 0.0008812, TrainLoss: 0.1718, ValLoss: 0.0701
+2306m 18s (- 13935m 18s) (28400 14% finished) LR: 0.0008812, TrainLoss: 0.1752, ValLoss: 0.0720
+2314m 30s (- 13927m 41s) (28500 14% finished) LR: 0.0008812, TrainLoss: 0.1729, ValLoss: 0.0719
+2322m 40s (- 13919m 50s) (28600 14% finished) LR: 0.0008812, TrainLoss: 0.1752, ValLoss: 0.0702
+2330m 50s (- 13911m 55s) (28700 14% finished) LR: 0.0008812, TrainLoss: 0.1763, ValLoss: 0.0730
+2339m 2s (- 13904m 19s) (28800 14% finished) LR: 0.0008812, TrainLoss: 0.1768, ValLoss: 0.0696
+2347m 5s (- 13895m 46s) (28900 14% finished) LR: 0.0008812, TrainLoss: 0.1766, ValLoss: 0.0692
+2355m 16s (- 13888m 0s) (29000 14% finished) LR: 0.0008812, TrainLoss: 0.1710, ValLoss: 0.0692
+2363m 22s (- 13879m 46s) (29100 15% finished) LR: 0.0008812, TrainLoss: 0.1734, ValLoss: 0.0684
+2371m 29s (- 13871m 37s) (29200 15% finished) LR: 0.0008812, TrainLoss: 0.1758, ValLoss: 0.0697
+2379m 33s (- 13863m 7s) (29300 15% finished) LR: 0.0008812, TrainLoss: 0.1726, ValLoss: 0.0678
+2387m 38s (- 13854m 50s) (29400 15% finished) LR: 0.0008812, TrainLoss: 0.1711, ValLoss: 0.0683
+2395m 48s (- 13846m 55s) (29500 15% finished) LR: 0.0008812, TrainLoss: 0.1725, ValLoss: 0.0673
+2403m 53s (- 13838m 36s) (29600 15% finished) LR: 0.0008812, TrainLoss: 0.1728, ValLoss: 0.0701
+2411m 57s (- 13830m 11s) (29700 15% finished) LR: 0.0008812, TrainLoss: 0.1679, ValLoss: 0.0672
+2420m 8s (- 13822m 27s) (29800 15% finished) LR: 0.0008812, TrainLoss: 0.1731, ValLoss: 0.0697
+2428m 20s (- 13814m 42s) (29900 15% finished) LR: 0.0008812, TrainLoss: 0.1678, ValLoss: 0.0668
+2436m 27s (- 13806m 35s) (30000 15% finished) LR: 0.0008812, TrainLoss: 0.1727, ValLoss: 0.0680
+2444m 37s (- 13798m 44s) (30100 15% finished) LR: 0.0008812, TrainLoss: 0.1722, ValLoss: 0.0690
+2452m 41s (- 13790m 16s) (30200 15% finished) LR: 0.0008812, TrainLoss: 0.1717, ValLoss: 0.0658
+2460m 54s (- 13782m 41s) (30300 15% finished) LR: 0.0008812, TrainLoss: 0.1740, ValLoss: 0.0695
+2469m 1s (- 13774m 31s) (30400 15% finished) LR: 0.0008812, TrainLoss: 0.1685, ValLoss: 0.0669
+2477m 7s (- 13766m 18s) (30500 15% finished) LR: 0.0008812, TrainLoss: 0.1709, ValLoss: 0.0721
+2485m 24s (- 13759m 7s) (30600 15% finished) LR: 0.0008812, TrainLoss: 0.1729, ValLoss: 0.0661
+2493m 28s (- 13750m 42s) (30700 15% finished) LR: 0.0008812, TrainLoss: 0.1675, ValLoss: 0.0641
+2501m 27s (- 13741m 49s) (30800 15% finished) LR: 0.0008812, TrainLoss: 0.1678, ValLoss: 0.0693
+2509m 33s (- 13733m 32s) (30900 15% finished) LR: 0.0008812, TrainLoss: 0.1691, ValLoss: 0.0647
+2517m 41s (- 13725m 26s) (31000 16% finished) LR: 0.0008812, TrainLoss: 0.1656, ValLoss: 0.0629
+2525m 47s (- 13717m 15s) (31100 16% finished) LR: 0.0008812, TrainLoss: 0.1713, ValLoss: 0.0684
+2533m 56s (- 13709m 18s) (31200 16% finished) LR: 0.0008812, TrainLoss: 0.1661, ValLoss: 0.0656
+2542m 4s (- 13701m 13s) (31300 16% finished) LR: 0.0008812, TrainLoss: 0.1695, ValLoss: 0.0656
+2550m 18s (- 13693m 43s) (31400 16% finished) LR: 0.0008812, TrainLoss: 0.1676, ValLoss: 0.0666
+2558m 27s (- 13685m 42s) (31500 16% finished) LR: 0.0008812, TrainLoss: 0.1692, ValLoss: 0.0629
+2566m 31s (- 13677m 20s) (31600 16% finished) LR: 0.0008812, TrainLoss: 0.1700, ValLoss: 0.0654
+2574m 38s (- 13669m 8s) (31700 16% finished) LR: 0.0008812, TrainLoss: 0.1697, ValLoss: 0.0636
+2582m 47s (- 13661m 8s) (31800 16% finished) LR: 0.0008812, TrainLoss: 0.1659, ValLoss: 0.0645
+2590m 59s (- 13653m 26s) (31900 16% finished) LR: 0.0008812, TrainLoss: 0.1658, ValLoss: 0.0664
+2599m 6s (- 13645m 18s) (32000 16% finished) LR: 0.0008812, TrainLoss: 0.1656, ValLoss: 0.0631
+> Saving model as out_models/net-BIML.pt < Done. >
+Epoch 9 
+-------------------------------
+2607m 9s (- 13636m 46s) (32100 16% finished) LR: 0.0008615, TrainLoss: 0.1684, ValLoss: 0.0658
+2615m 22s (- 13629m 11s) (32200 16% finished) LR: 0.0008615, TrainLoss: 0.1647, ValLoss: 0.0655
+2623m 32s (- 13621m 19s) (32300 16% finished) LR: 0.0008615, TrainLoss: 0.1681, ValLoss: 0.0652
+2631m 43s (- 13613m 28s) (32400 16% finished) LR: 0.0008615, TrainLoss: 0.1650, ValLoss: 0.0649
+2639m 52s (- 13605m 31s) (32500 16% finished) LR: 0.0008615, TrainLoss: 0.1632, ValLoss: 0.0623
+2647m 55s (- 13597m 1s) (32600 16% finished) LR: 0.0008615, TrainLoss: 0.1659, ValLoss: 0.0643
+2656m 1s (- 13588m 44s) (32700 16% finished) LR: 0.0008615, TrainLoss: 0.1684, ValLoss: 0.0632
+2664m 7s (- 13580m 31s) (32800 16% finished) LR: 0.0008615, TrainLoss: 0.1683, ValLoss: 0.0622
+2672m 29s (- 13573m 39s) (32900 16% finished) LR: 0.0008615, TrainLoss: 0.1631, ValLoss: 0.0621
+2680m 51s (- 13566m 47s) (33000 16% finished) LR: 0.0008615, TrainLoss: 0.1658, ValLoss: 0.0657
+2688m 59s (- 13558m 39s) (33100 17% finished) LR: 0.0008615, TrainLoss: 0.1647, ValLoss: 0.0634
+2697m 25s (- 13552m 8s) (33200 17% finished) LR: 0.0008615, TrainLoss: 0.1639, ValLoss: 0.0630
+2705m 45s (- 13545m 4s) (33300 17% finished) LR: 0.0008615, TrainLoss: 0.1643, ValLoss: 0.0623
+2714m 3s (- 13537m 48s) (33400 17% finished) LR: 0.0008615, TrainLoss: 0.1653, ValLoss: 0.0606
+2722m 17s (- 13530m 10s) (33500 17% finished) LR: 0.0008615, TrainLoss: 0.1651, ValLoss: 0.0614
+2730m 31s (- 13522m 33s) (33600 17% finished) LR: 0.0008615, TrainLoss: 0.1648, ValLoss: 0.0610
+2738m 36s (- 13514m 16s) (33700 17% finished) LR: 0.0008615, TrainLoss: 0.1642, ValLoss: 0.0612
+2746m 45s (- 13506m 12s) (33800 17% finished) LR: 0.0008615, TrainLoss: 0.1644, ValLoss: 0.0636
+2754m 49s (- 13497m 50s) (33900 17% finished) LR: 0.0008615, TrainLoss: 0.1589, ValLoss: 0.0617
+2762m 54s (- 13489m 29s) (34000 17% finished) LR: 0.0008615, TrainLoss: 0.1613, ValLoss: 0.0646
+2771m 0s (- 13481m 13s) (34100 17% finished) LR: 0.0008615, TrainLoss: 0.1631, ValLoss: 0.0600
+2779m 8s (- 13473m 9s) (34200 17% finished) LR: 0.0008615, TrainLoss: 0.1650, ValLoss: 0.0625
+2787m 12s (- 13464m 43s) (34300 17% finished) LR: 0.0008615, TrainLoss: 0.1670, ValLoss: 0.0648
+2795m 21s (- 13456m 44s) (34400 17% finished) LR: 0.0008615, TrainLoss: 0.1633, ValLoss: 0.0612
+2803m 30s (- 13448m 43s) (34500 17% finished) LR: 0.0008615, TrainLoss: 0.1630, ValLoss: 0.0617
+2811m 31s (- 13440m 5s) (34600 17% finished) LR: 0.0008615, TrainLoss: 0.1579, ValLoss: 0.0628
+2819m 41s (- 13432m 9s) (34700 17% finished) LR: 0.0008615, TrainLoss: 0.1617, ValLoss: 0.0623
+2827m 48s (- 13423m 58s) (34800 17% finished) LR: 0.0008615, TrainLoss: 0.1603, ValLoss: 0.0619
+2835m 56s (- 13415m 50s) (34900 17% finished) LR: 0.0008615, TrainLoss: 0.1634, ValLoss: 0.0605
+2844m 3s (- 13407m 44s) (35000 18% finished) LR: 0.0008615, TrainLoss: 0.1617, ValLoss: 0.0619
+2852m 7s (- 13399m 17s) (35100 18% finished) LR: 0.0008615, TrainLoss: 0.1641, ValLoss: 0.0605
+2860m 11s (- 13390m 54s) (35200 18% finished) LR: 0.0008615, TrainLoss: 0.1651, ValLoss: 0.0613
+2868m 13s (- 13382m 18s) (35300 18% finished) LR: 0.0008615, TrainLoss: 0.1639, ValLoss: 0.0611
+2876m 17s (- 13373m 57s) (35400 18% finished) LR: 0.0008615, TrainLoss: 0.1613, ValLoss: 0.0582
+2884m 33s (- 13366m 28s) (35500 18% finished) LR: 0.0008615, TrainLoss: 0.1619, ValLoss: 0.0602
