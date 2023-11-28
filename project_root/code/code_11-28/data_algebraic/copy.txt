@@ -1,0 +1,43 @@
+*SUPPORT*
+IN: sum two OUT: x x
+IN: sub six OUT: x x x x x x
+IN: sum two sub seven OUT: x x y y y y y y y
+IN: sub seven sum two OUT: y y y y y y y x x
+IN: d my_prod two OUT: d d 
+IN: sum six sub seven sub seven OUT: x x x x x x y y y y y y y x x x x x x x
+IN: sum two sub seven sum seven OUT: x x y y y y y y y x x x x x x x 
+IN: a my_prod seven sum six OUT: a a a a a a a x x x x x x
+IN: d my_prod six sub two OUT: d d d d d d y y
+IN: b my_prod seven sum two OUT: b b b b b b x x
+IN: c my_prod two sub seven OUT: c c y y y y y y y
+IN: c my_prod seven sum seven OUT: c c c c c c c x x x x x x x
+IN: a my_prod sum seven OUT: a a a a a a a a a a a a a a 
+IN: d my_prod sub two OUT: d d d d d d d d d d d d d d 
+
+*QUERY*
+IN: sum three OUT: x x x
+IN: sub seven OUT: y y y y y y y
+IN: sum seven sub six OUT: x x x x x x x y y y y y y 
+IN: sub six sum seven OUT: y y y y y y x x x x x x x
+IN: c my_prod seven OUT: c c c c c c c
+IN: sum seven sub six sum two OUT: x x x x x x x y y y y y y x x
+IN: c my_prod seven sum seven OUT: c c c c c c c x x x x x x x
+IN: a my_prod two sub six OUT: y y y y y y y y y y y y
+IN: b my_prod sum four OUT: x x x x x x x x x x x x x x x x
+IN: a my_prod sub seven OUT: y y y y y y y y y y y y y y 
+
+*GRAMMAR*
+sum -> x
+sub -> y
+a -> a
+b -> b
+c -> c
+d -> d
+u1 two -> [u1] [u1]
+u1 four -> [u1] [u1] [u1] [u1]
+u1 six -> [u1] [u1] [u1] [u1] [u1] [u1]
+u1 seven -> [u1] [u1] [u1] [u1] [u1] [u1] [u1]
+u1 my_prod two -> [u1] [u1]
+u1 my_prod four -> [u1] [u1] [u1] [u1]
+u1 my_prod six -> [u1] [u1] [u1] [u1] [u1] [u1]
+u1 my_prod seven -> [u1] [u1] [u1] [u1] [u1] [u1] [u1]
