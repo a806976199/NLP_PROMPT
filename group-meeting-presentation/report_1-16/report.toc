@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{模型构建}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{数字对齐}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{数字计算}{4}{0}{1}
+\beamer@subsectionintoc {1}{3}{数字进位}{6}{0}{1}
+\beamer@subsectionintoc {1}{4}{训练过程中遇到的一些问题}{9}{0}{1}
