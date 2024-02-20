@@ -1,4 +1,4 @@
-\documentclass[t]{beamer}
+    \documentclass[t]{beamer}
 \usepackage{CJKutf8}
 \usepackage{amsfonts}
     \usepackage{amsmath}
@@ -236,17 +236,18 @@
         \eee{
             \item introduction (等待修改)
             \item related work (等待修改)
-            \item Methodology 
+            \item Methodology (等待修改) 
             \eee{
                 \item 模型策略思路(等待修改)
                 \item 模型的架构图(等待修改) 
             }
             \item experiments
             \eee{
-                \item 目前实现10进制的任意五位数以内的加减运算100\%正确率(已完成)
-                \item 针对别人计算不准确的问题进行比较,比如做一些减法问题(进行测试)
+                \item 目前实现10进制的任意五位数以内的加减运算能够做到100\%正确率(已完成)
+                \item 完成任意10位数的加减运算
+                \item 针对别人计算不准确的问题进行比较,比如某些减法
                 \item 使用公认的数学计算数据集进行测试
-                \item 对特殊问题进行分类，比如小数减大数
+                \item 考虑规则在其他方面上的应用，比如其他可以习得的任务
             }
         }
         \item 代码进度
@@ -263,7 +264,21 @@
     \end{itemize}
 \end{frame}
 
-
+\begin{frame}
+    \frametitle{整理了一些常见语言模型的一些计算结果}
+    用我们的模型以及这些模型进行对比计算:43423-32424
+    \begin{itemize}
+        \item llama-2-7b:11001
+        \item llama-2-13b:11001
+        \item llama-2-70b:-9001
+        \item Claude-instant-100k:10939
+        \item Google-PaLM:11001
+        \item \red{chatgpt3.5:10999}
+        \item Qwen-72b-Chat:11009
+        \item Mistral-Medium:77595
+        \item \red{MathRuleGLM-8k:10999}
+    \end{itemize}
+\end{frame}
 % \subsection{加减法混合运算规则}
 
 % \begin{frame}
@@ -277,7 +292,7 @@
 \begin{frame}
     \frametitle{模型相关信息}
     \begin{itemize}
-        \item 对于一个k进制的n位加法需要的复合规则和子规则数
+        \item 对于一个k进制的n位加减法需要的复合规则和子规则数
         \eee{
         \item 子规则数:\ff{4k^2}
         \item 进位规则数:\ff{2^{n+1}}
@@ -286,9 +301,15 @@
         } 
         合计大约：\ff{O(2^{n+1})}
         \item 模型:transformer
+        \item 五位数以内的加减法训练：
         \eee{
             \item 5层encode,decode
-            \item 参数参数模型文件：300MB
+            \item 参数参数模型文件：162MB
+        }
+        \item 十位数以内的加减法训练：
+        \eee{
+            \item 10层encode,decode
+            \item 参数参数模型文件：312MB
         }
     \end{itemize}
 \end{frame}
