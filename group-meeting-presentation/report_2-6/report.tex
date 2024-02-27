@@ -244,17 +244,19 @@
             \item experiments
             \eee{
                 \item 目前实现10进制的任意五位数以内的加减运算能够做到100\%正确率(已完成)
-                \item 完成任意10位数的加减运算
-                \item 针对别人计算不准确的问题进行比较,比如某些减法
-                \item 使用公认的数学计算数据集进行测试
-                \item 考虑规则在其他方面上的应用，比如其他可以习得的任务
+                % \item 完成任意10位数的加减运算
+                \item 针对小数减大数的问题进行比较测试(已完成)
+                \item 对于加法中需要用到较多进位情况进行结果比对(已完成)
+                \item 对于减法中需要用到较多进位情况进行结果比对(已完成)
+                % \item 使公认的数学计算数据集进行测试
+                \item 考虑规则在其他方面上的应用，比如考虑求导，积分等具有较强规则性的应用。(未完成)
             }
         }
         \item 代码进度
         \eee{
             \item 大致实现各种位数的加减算法(已完成)
-            \item 把稿件中提到的测试完成
-            \item 做一些新例子测试
+            \item 实验数据以及测试结果总结(已完成)
+            \item 做其他方面的应用
         }
         % \item 遇到的问题
         % \eee{
@@ -263,22 +265,44 @@
         % }
     \end{itemize}
 \end{frame}
-
 \begin{frame}
-    \frametitle{整理了一些常见语言模型的一些计算结果}
-    用我们的模型以及这些模型进行对比计算:43423-32424
+    \frametitle{三种数据集合类型}
     \begin{itemize}
-        \item llama-2-7b:11001
-        \item llama-2-13b:11001
-        \item llama-2-70b:-9001
-        \item Claude-instant-100k:10939
-        \item Google-PaLM:11001
-        \item \red{chatgpt3.5:10999}
-        \item Qwen-72b-Chat:11009
-        \item Mistral-Medium:77595
-        \item \red{MathRuleGLM-8k:10999}
+        \item 3种特定数据集类型\\
+        \begin{itemize}
+        \item 进位加法:\\
+        \eee{
+            \item 48551+1449=
+            \item 7223+32777=
+        }
+        \item 负差:\\
+        \eee{
+            \item 1140-26787=
+            \item 234-15579=
+        }
+        \item 逐位差分
+        \eee{
+            \item 41085-80976=
+            \item 65570-73618=
+        }
+        \end{itemize}
     \end{itemize}
 \end{frame}
+% \begin{frame}
+%     \frametitle{整理了一些常见语言模型的一些计算结果}
+%     用我们的模型以及这些模型进行对比计算:43423-32424
+%     \begin{itemize}
+%         \item llama-2-7b:11001
+%         \item llama-2-13b:11001
+%         \item llama-2-70b:-9001
+%         \item Claude-instant-100k:10939
+%         \item Google-PaLM:11001
+%         \item \red{chatgpt3.5:10999}
+%         \item Qwen-72b-Chat:11009
+%         \item Mistral-Medium:77595
+%         \item \red{MathRuleGLM-8k:10999}
+%     \end{itemize}
+% \end{frame}
 % \subsection{加减法混合运算规则}
 
 % \begin{frame}
