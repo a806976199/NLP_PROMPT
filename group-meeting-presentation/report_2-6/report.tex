@@ -265,29 +265,72 @@
         % }
     \end{itemize}
 \end{frame}
+
+% \begin{frame}
+%     \frametitle{三种数据集合类型}
+%     \begin{itemize}
+%         \item 3种特定数据集类型\\
+%         \begin{itemize}
+%         \item 进位加法:\\
+%         \eee{
+%             \item 48551+1449=
+%             \item 7223+32777=
+%         }
+%         \item 负差:\\
+%         \eee{
+%             \item 1140-26787=
+%             \item 234-15579=
+%         }
+%         \item 逐位差分
+%         \eee{
+%             \item 41085-80976=
+%             \item 65570-73618=
+%         }
+%         \end{itemize}
+%     \end{itemize}
+% \end{frame}
+
 \begin{frame}
-    \frametitle{三种数据集合类型}
-    \begin{itemize}
-        \item 3种特定数据集类型\\
-        \begin{itemize}
-        \item 进位加法:\\
-        \eee{
-            \item 48551+1449=
-            \item 7223+32777=
-        }
-        \item 负差:\\
-        \eee{
-            \item 1140-26787=
-            \item 234-15579=
-        }
-        \item 逐位差分
-        \eee{
-            \item 41085-80976=
-            \item 65570-73618=
-        }
-        \end{itemize}
-    \end{itemize}
+    \frametitle{张量积计算，加减计算(混合规则)}
+    \eee{
+        \item 功能:我们的模型能够同时处理两位数的加法,减法以及两个向量的外积
+        \item 例:\\
+        \includegraphics[scale=0.22]{png/lomixule.png}
+        % \item 
+    }
 \end{frame}
+\begin{frame}
+    \frametitle{高位数的加减计算}
+    \eee{
+        \item 功能:作为一个语言模型，能够在不借助外部工具的情况下计算10位数以内的加法，减法等。
+        \item 高位减法例:\\
+        \includegraphics[scale=0.22]{png/sub_rule-h.png}
+        \item 高位加法例:\\
+        \includegraphics[scale=0.22]{png/sum_rule-h.png}
+    }
+\end{frame}
+
+\begin{frame}
+    \frametitle{添加数据说明:}
+    \eee{
+        \item 添加当前热门模型以及我们自己的语言模型的低位数的加减结果。        
+        \item 添加当前热门模型以及我们自己的语言模型的高位数的加减结果。
+        \item 展示我们模型遵循规则的能力，即能同时实现张量积和数字的加减计算。
+        \item 测试普通随机数字计算数据集合以及和我们构造的特定数据集进行比较，从而说明我们的模型在计算数字上能力更加的全面以及精确。
+    }
+\end{frame}
+
+\begin{frame}
+    \frametitle{关于无法使用无限长度规则的计算原因}
+    \eee{
+        \item token数是有限的。
+        \item 对于一个字符串比如‘1,3,4,7,5,5,7,5,5,3，3’，‘4,3,4,7,5,5,7,5,5,3，3’而言，计算过程是必须要对齐的，无线长度是无法处理的。
+        \item 代码是需要借助for循环，语言模型并不可以这么处理。
+    }
+\end{frame}
+
+% \includegraphics[scale=0.3]{png/}
+
 % \begin{frame}
 %     \frametitle{整理了一些常见语言模型的一些计算结果}
 %     用我们的模型以及这些模型进行对比计算:43423-32424
